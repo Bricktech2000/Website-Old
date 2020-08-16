@@ -1,0 +1,25 @@
+src: https://www.howtogeek.com/howto/16226/complete-guide-to-symbolic-links-symlinks-on-windows-or-linux/
+
+open admin cmd in .
+mklink /H "reUpdate-server.js" "../reUpdate/reUpdate-server.js"
+mklink /H "client/reUpdate-client.js" "../reUpdate/client/reUpdate-client.js"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
