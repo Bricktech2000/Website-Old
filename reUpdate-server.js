@@ -11,14 +11,9 @@ var reUpdate = {
     this.clientPath = clientPath;
     this.basePath = basePath;
     return async function(req, res, next){
-      console.log(req.url);
       if(req.url == '/') req.url += '/../';
       req.url = await internal.addIndexHTML(path.join(reUpdate.clientPath, req.url));
 
-      console.log(reUpdate.clientPath, req.url);
-      //else if((await fs.lstat(path.join(reUpdate.basePath, reUpdate.clientPath, req.url))).isDirectory())
-      //  req.url = path.join(req.url, 'index.html');
-      console.log(req.url);
       var f = internal.fileInfo(path.join(reUpdate.basePath, req.url));
       console.log('Requesting: ' + req.url + ', Mime Type: ' + f.mimeType);
 
@@ -58,14 +53,13 @@ var internal = {
           params
         )();
         for await(var html of gen){
-          var isArray = Array.isArray(await html);
-          var html2 = isArray ? await html[0] : await html;
-          var text = html2 !== undefined ? (html2.text || html2) : html2;
+          var html2 = html !== undefined ? html : '';
+          var text = await html2.text || html;
           var params2 = {
             req: params.req,
             res: params.res,
-            path: text !== undefined ? (html2.path || params.path) : params.path,
-            ...(isArray ? html[1] : {})
+            path: html2.path || params.path,
+            ...(html2.params || {})
           };
           //this.yield(html2, params2);
           ret += await internal.parse(text, params2, func);
@@ -78,14 +72,14 @@ var internal = {
     return (await replaceAsync(text, internal.regexes.server, async (a, code) => await exec(code)))
       .replace(internal.regexes.client, (a, code) => func(code) )
   },
-  include: async function(filePath1, filePath2){
+  include: async function(filePath1, filePath2, params){
     //https://stackoverflow.com/questions/17192150/node-js-get-folder-path-from-a-file
     var relPath = await internal.addIndexHTML(path.join(filePath1, filePath2));
     var fullPath = path.join(reUpdate.basePath, relPath);
     
     var f = internal.fileInfo(fullPath);
     var text = await fs.readFile(f.fullPath, {encoding: f.encoding});
-    return {text: text, path: path.dirname(relPath)}; //, {..._params, ...params});
+    return {text: text, path: path.dirname(relPath), params: params}; //, {..._params, ...params});
   },
   fileInfo(filePath){
     return {
