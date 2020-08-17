@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="body/partial/card.css">
+<<<yield include('info.html', {id: params.id})>>>
+<<<//yield JSON.stringify(vars.info)>>>
+
+<a class="card" href="">
+    <img src="body/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
+    <div class="markup-h2">
+        <<<yield vars.info.title>>>
+    </div>
+    <<<yield include('date.html', {date: vars.info.date})>>>
+    <div class="desc"><<<yield vars.info.desc>>></div>
+</a>
+
+
+
+
+

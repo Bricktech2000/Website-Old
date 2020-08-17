@@ -1,5 +1,14 @@
 <main class="markup">
-    <h1><< yield watch.title >></h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque voluptatibus numquam!</p>
-    << yield 'reUpdate' >>
+  <h1><< yield watch.title >></h1>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque voluptatibus numquam!</p>
+  << yield 'reUpdate' >>
+  <br>
+  <br>
+  <br>
+  <<<vars.id = '4A9EI'>>>
+  Here is a test card with id <<<yield vars.id>>>:
+   <br>
+  <div style="max-width: 42.5vh; white-space: initial;">
+    <<<yield include('partial/card.html', {id: vars.id})>>>
+  </div>
 </main>

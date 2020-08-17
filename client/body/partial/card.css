@@ -1,0 +1,39 @@
+.card {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr auto;
+      grid-template-columns: 1fr auto;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  background: var(--dark-card-bg);
+  -webkit-transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
+  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  border-radius: .5vh;
+  text-decoration: none;
+  color: var(--dark-text);
+  white-space: initial;
+  /*border: .05vh solid var(--dark-text);*/
+}
+
+.card > * {
+  grid-column: span 2;
+  white-space: initial;
+}
+
+.card .markup-h2, .card .date {
+  grid-column: span 1;
+}
+
+.card > *:not(img) {
+  margin: calc(calc(.5vh + .5vw) * 1.5);
+}
+
+.card img {
+  width: 100%;
+  border-radius: .5vh;
+}
+/*# sourceMappingURL=card.css.map */

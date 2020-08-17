@@ -1,0 +1,30 @@
+/*https://www.w3schools.com/css/css3_variables.asp*/
+:root{
+  --light-bg: #fff;
+  --dark-bg: #000;
+
+  --light-card-bg: #eee;
+  --dark-card-bg: #191919;
+  --dark-card2-bg: #292929;
+
+  --light-color: #e00;
+  --dark-color: #f00;
+
+  --light-text: #000;
+  --dark-text: #bbb;
+  --dark-title-text: #fff;
+
+  --pixel-ratio: 3; /*the importance of the screen resolution in the scaling of items*/
+}
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /*https://stackoverflow.com/questions/11289166/chrome-on-android-resizes-font*/
+  max-height: 999999999px;
+  word-wrap: break-word;
+}
+body{
+  /*https://www.hostinger.com/tutorials/best-html-web-fonts*/
+  font-family: Calibri, Verdana, sans-serif;
+}

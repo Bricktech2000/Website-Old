@@ -1,0 +1,22 @@
+.card{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    
+    padding: 0;
+    background: var(--dark-card-bg);
+    transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
+    border-radius: .5vh;
+    text-decoration: none;
+    color: var(--dark-text);
+    white-space: initial;
+    /*border: .05vh solid var(--dark-text);*/
+    
+    & > *{ grid-column: span 2; white-space: initial; }
+    .markup-h2, .date{ grid-column: span 1; }
+    & > *:not(img){ margin: calc(calc(.5vh + .5vw) * 1.5); }
+    img{
+        width: 100%;
+		border-radius: .5vh;
+    }
+}
