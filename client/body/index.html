@@ -1,5 +1,10 @@
 << watch.title = 'Website' >>
 <<<yield include('IESupport.html')>>>
-<<<yield include('header.html')>>>
-<<<yield include('main.html')>>>
-<<<yield include('footer.html')>>>
+<link rel="stylesheet" href="body/body-grid.css" style="display: none;">
+<div class="body-grid">
+  <header>  <<<yield include('header.html')>>>  </header>
+  <nav>     <<<yield include('nav.html')>>>        </nav>
+  <aside>   <<<yield include('aside.html')>>>    </aside>
+  <main>    <<<yield include('main.html')>>>      </main>
+  <footer>  <<<yield include('footer.html')>>>  </footer>
+</div>
