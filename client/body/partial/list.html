@@ -1,3 +1,6 @@
 <<<
-  for(var item of params.items) yield include(params.incl, {item: item, ...params.params});
+  for(var item of params.items){
+    var obj = {}; obj[params.name] = item;
+    yield include(params.incl, {...obj, ...params.params})
+  }
 >>>

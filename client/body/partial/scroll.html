@@ -1,13 +1,10 @@
 <style style="display: none;">
   .scroll{
     display: flex;
-    flex-direction: <<<yield params.dir>>>;
+    flex-direction: <<<yield params.dir == 'row' ? 'row' : 'column'>>>;
     width: auto;
     overflow-<<<yield params.dir == 'row' ? 'x' : 'y'>>>: auto;
     overflow-<<<yield params.dir == 'row' ? 'y' : 'x'>>>: hidden;
-  }
-  .scroll > *{
-    /**/
   }
 </style>
 <div class="scroll">

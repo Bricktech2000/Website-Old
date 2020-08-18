@@ -1,21 +1,35 @@
-<link rel="stylesheet" href="body/partial/card.css">
+<link rel="stylesheet" href="body/partial/card.css" style="display: none;">
+<<<
+  vars.dir = params.dir();
+  vars.inv = params.inv() ? 'inv' : 'nor';
+  vars.clss = vars.dir + '-' + vars.inv;
+>>>
+<style style="display: none;">
+  .card.row-nor{ grid-template-areas: "img img img" "title title title" "desc desc desc" "tags tags tags"; }
+  .card.row-inv{ grid-template-areas: "title title title" "desc desc desc" "tags tags tags" "img img img"; }
+  .card.col-nor{ grid-template-areas: "img desc desc" "img desc desc" "img tags tags" "title tags tags"; }
+  .card.col-inv{ grid-template-areas: "desc desc img" "desc desc img" "tags tags img" "tags tags title"; }
+  .card.row-nor, .card.row-inv{ grid-row: span 2; }
+  .card.col-nor, .card.col-inv{ grid-column: span 2; }
+  .card.row-inv img{ align-self: flex-end; }
+</style>
 <<<vars.info = JSON.parse((await include('../pages/' + params.id + '/info.json')).text);>>>
 
-<a class="card" href="">
+<a class="card <<<yield vars.clss>>>" href="">
   <img src="body/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
-  <div class="markup-h2">
+  <div class="title markup-h2">
     <<<yield vars.info.title>>>
   </div>
   <<<//yield include('date.html', {date: vars.info.date})>>>
   <div class="desc"><<<yield vars.info.desc>>></div>
-  <<<
-    yield include('scroll.html', {
-      items: include('list.html', {
-        incl: 'tag.html',
-        params: {type: 'on'},
+  <div class='tags'>
+    <<<
+      yield include('list.html', {
         items: vars.info.tags,
-      }),
-      dir: 'row',
-    })
-  >>>
+        name: 'label',
+        incl: 'tag.html',
+        params: {type: 'off', mini: true},
+      })
+    >>>
+  </div>
 </a>
