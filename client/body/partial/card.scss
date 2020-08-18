@@ -1,12 +1,12 @@
 .card{
-  --padding: calc(calc(.5vh + .5vw) * 2.5);
+  --padding: 2.5vh;
   display: grid;
   grid-template-columns: 1fr .5fr 1fr;
   grid-template-rows: repeat(4, auto);
   grid-gap: 0;
   align-items: center;
   
-  margin: calc(calc(.5vh + .5vw) * 1.25);
+  margin: 1.25vh;
   background: var(--dark-card-bg);
   transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
   border-radius: .5vh;
