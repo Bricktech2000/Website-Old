@@ -1,31 +1,36 @@
 /*https://www.w3schools.com/css/css3_variables.asp*/
-:root {
+:root{
   --light-bg: #fff;
   --dark-bg: #000;
+
   --light-card-bg: #eee;
   --dark-card-bg: #191919;
   --dark-card2-bg: #292929;
+
   --light-color: #e00;
   --dark-color: #f00;
+
   --light-text: #000;
   --dark-text: #bbb;
   --dark-title-text: #fff;
-  --pixel-ratio: 3;
-  /*the importance of the screen resolution in the scaling of items*/
-}
 
-* {
+  --smart-pixel-ratio: 3; /*the importance of the screen resolution in the scaling of items*/
+  --smart-unit: 1vh;
+}
+@media (max-device-width: <<<yield consts.phone>>>){
+  :root{ --smart-unit: 1vmax; }
+}
+:root{ --smart-res-unit: calc(var(--smart-unit) + calc(1px * var(--smart-pixel-ratio))); }
+*{
   padding: 0;
   margin: 0;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /*https://stackoverflow.com/questions/11289166/chrome-on-android-resizes-font*/
   max-height: 999999999px;
   word-wrap: break-word;
 }
-
-body {
-  font-size: calc(2vh + 2px * var(--pixel-ratio));
+body{
+  font-size: calc(var(--smart-res-unit) * 2);
   /*https://www.hostinger.com/tutorials/best-html-web-fonts*/
   font-family: Calibri, Verdana, sans-serif;
   line-height: 1.6;
@@ -35,25 +40,20 @@ body {
   background: var(--light-bg);
 }
 
-::-webkit-scrollbar {
+::-webkit-scrollbar{
   width: 1vh;
   height: 1vh;
 }
-
-::-webkit-scrollbar-track {
+::-webkit-scrollbar-track{
   background: var(--dark-bg);
   /*box-shadow: inset 5px 0 5px #000;*/
   /*background-clip: content-box;*/
 }
-
-::-webkit-scrollbar-thumb {
-  background-color: rgba(255, 0, 0, 0.75);
+::-webkit-scrollbar-thumb{
+  background-color: rgba(255, 0, 0, .75);
   border-radius: .5vh;
-  -webkit-transition: background-color .25s ease-in-out;
   transition: background-color .25s ease-in-out;
 }
-
-::-webkit-scrollbar-thumb:hover {
+::-webkit-scrollbar-thumb:hover{
   background-color: var(--light-color);
 }
-/*# sourceMappingURL=const.css.map */

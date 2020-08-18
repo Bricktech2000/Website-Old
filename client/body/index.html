@@ -1,6 +1,32 @@
 << watch.title = 'Website' >>
 <<<yield include('IESupport.html')>>>
-<link rel="stylesheet" href="body/body-grid.css" style="display: none;">
+<style style="display: none;">
+  .body-grid{
+    display: grid;
+    grid-template-columns: calc(var(--smart-unit) * 10) 1fr calc(var(--smart-unit) * 10);
+    grid-template-rows: calc(var(--smart-unit) * 10) auto auto auto;
+    grid-template-areas:
+      "nav header aside"
+      "nav header aside"
+      "nav main aside"
+      "nav footer aside";
+  }
+  .body-grid header{ grid-area: header; }
+  .body-grid nav{ grid-area: nav; }
+  .body-grid aside{ grid-area: aside; }
+  .body-grid main{ grid-area: main; }
+  .body-grid footer{ grid-area: footer; }
+
+  @media (max-aspect-ratio: <<<yield consts.portrait>>>){
+    .body-grid{
+      grid-template-areas:
+        "nav nav nav"
+        "header header header"
+        "main main main"
+        "footer footer footer";
+    }
+  }
+</style>
 <div class="body-grid">
   <header>  <<<yield include('header.html')>>>  </header>
   <nav>     <<<yield include('nav.html')>>>        </nav>

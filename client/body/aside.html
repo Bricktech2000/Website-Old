@@ -1,11 +1,16 @@
 <style style="display: none;">
   aside{
     background: var(--light-card-bg);
-    position: fixed;
+    position: sticky;
     top: 0;
     right: 0;
-    width: 10vh;
-    height: 100%;
+    width: 100%;
+    height: 100vh;
+  }
+  @media (max-aspect-ratio: <<<yield consts.portrait>>>){
+    aside{
+      display: none;
+    }
   }
 </style>
 <<<for(var i = 0; i < 20; i++) yield 'Aside '>>>

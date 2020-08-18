@@ -1,26 +1,26 @@
 .card{
-  --padding: 2.5vh;
+  --padding: calc(var(--smart-unit) * 2.5);
   display: grid;
   grid-template-columns: 1fr .5fr 1fr;
   grid-template-rows: repeat(4, auto);
   grid-gap: 0;
   align-items: center;
   
-  margin: 1.25vh;
+  margin: calc(var(--smart-unit) * 1.25);
   background: var(--dark-card-bg);
   transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
-  border-radius: .5vh;
+  border-radius: calc(var(--smart-unit) * .5);
   text-decoration: none;
   color: var(--dark-text);
   white-space: initial;
-  /*border: .05vh solid var(--dark-text);*/
+  /*border: calc(var(--smart-unit) * .5) solid var(--dark-text);*/
   
   & > *{ grid-column: span 2; white-space: initial; margin: var(--padding); }
   .date{ grid-column: span 1; }
   img{
     margin: 0;
     width: 100%;
-    border-radius: .5vh;
+    border-radius: calc(var(--smart-unit) * .5);
   }
   img{ grid-area: img; align-self: flex-start; }
   .title{ grid-area: title; }

@@ -1,21 +1,30 @@
 <link rel="stylesheet" href="body/partial/card.css" style="display: none;">
-<<<
-  vars.dir = params.dir();
-  vars.inv = params.inv() ? 'inv' : 'nor';
-  vars.clss = vars.dir + '-' + vars.inv;
->>>
+<<<vars.id = Math.random().toString().split('.')[1]>>>
+<<
+  /* auto-update card mosaic */
+  var dir = watch.cardForcePortrait ? 'row' : '<<<yield params.dir().toString()>>>';
+  var inv = <<<yield params.inv().toString()>>> ? 'inv' : 'nor';
+  var card = document.querySelector('.card-<<<yield vars.id>>>');
+  card.classList.remove('col');
+  card.classList.remove('row');
+  card.classList.add(dir);
+  card.classList.add(inv);
+>>
 <style style="display: none;">
-  .card.row-nor{ grid-template-areas: "img img img" "title title title" "desc desc desc" "tags tags tags"; }
-  .card.row-inv{ grid-template-areas: "title title title" "desc desc desc" "tags tags tags" "img img img"; }
-  .card.col-nor{ grid-template-areas: "img desc desc" "img desc desc" "img tags tags" "title tags tags"; }
-  .card.col-inv{ grid-template-areas: "desc desc img" "desc desc img" "tags tags img" "tags tags title"; }
-  .card.row-nor, .card.row-inv{ grid-row: span 2; }
-  .card.col-nor, .card.col-inv{ grid-column: span 2; }
-  .card.row-inv img{ align-self: flex-end; }
+  .card.row.nor{ grid-template-areas: "img img img" "title title title" "desc desc desc" "tags tags tags"; }
+  .card.row.inv{ grid-template-areas: "title title title" "desc desc desc" "tags tags tags" "img img img"; }
+  .card.col.nor{ grid-template-areas: "img desc desc" "img desc desc" "img tags tags" "title tags tags"; }
+  .card.col.inv{ grid-template-areas: "desc desc img" "desc desc img" "tags tags img" "tags tags title"; }
+  .card.row{ grid-row: span 2; }
+  .card.col{ grid-column: span 2; }
+	.card.row:hover{ transform: translate(0, -1.25%); }
+	.card.col:hover{ transform: translate(0, -2.5%); }
+  .card.row.inv img{ align-self: flex-end; }
+  @media (max-aspect-ratio: <<<yield consts.portrait>>>){ .card{ margin-left: 0; margin-right: 0; } }
 </style>
 <<<vars.info = JSON.parse((await include('../pages/' + params.id + '/info.json')).text);>>>
 
-<a class="card <<<yield vars.clss>>>" href="">
+<a class="card card-<<<yield vars.id>>>" href="">
   <img src="body/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
   <div class="title markup-h2">
     <<<yield vars.info.title>>>

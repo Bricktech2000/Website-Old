@@ -1,5 +1,5 @@
 .card {
-  --padding: 2.5vh;
+  --padding: calc(var(--smart-unit) * 2.5);
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr .5fr 1fr;
@@ -10,17 +10,17 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin: 1.25vh;
+  margin: calc(var(--smart-unit) * 1.25);
   background: var(--dark-card-bg);
   -webkit-transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
   transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
   transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
   transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-  border-radius: .5vh;
+  border-radius: calc(var(--smart-unit) * .5);
   text-decoration: none;
   color: var(--dark-text);
   white-space: initial;
-  /*border: .05vh solid var(--dark-text);*/
+  /*border: calc(var(--smart-unit) * .5) solid var(--dark-text);*/
 }
 
 .card > * {
@@ -36,7 +36,7 @@
 .card img {
   margin: 0;
   width: 100%;
-  border-radius: .5vh;
+  border-radius: calc(var(--smart-unit) * .5);
 }
 
 .card img {
