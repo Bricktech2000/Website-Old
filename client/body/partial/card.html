@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="body/partial/card.css">
-<<<yield include('../info.html', {id: params.id})>>>
+<<<vars.info = JSON.parse((await include('../pages/' + params.id + '/info.json')).text);>>>
 
 <a class="card" href="">
   <img src="body/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
