@@ -1,0 +1,40 @@
+<style style="display: none;">
+  .tag{
+    color: var(--dark-text);
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: calc(2vh + 2px * var(--pixel-ratio));
+    padding: .5vh 1.5vh;
+    margin: .5vh;
+    border-radius: .5vh;
+    border: .1vh solid var(--light-text);
+    transition: color 0.125s ease-in-out, border-color .125s ease-in-out, transform 0.125s ease-in-out;
+    -webkit-tap-highlight-color: rgba(255, 0, 0, .25);
+  }
+  .tag-off{
+    background: #111;
+    color: var(--dark-text);
+    font-weight: lighter;
+  }
+  .tag-on{
+    background: #111;
+    border-color: var(--dark-title-text);
+    color: var(--dark-title-text);
+    font-weight: lighter;
+  }
+  /*https://stackoverflow.com/questions/10964729/javascript-style-overriding-css-hover*/
+  .tag-on:hover{
+    color: var(--dark-color) !important;
+    border-color: var(--dark-color) !important;
+    transform: scale(1.05, 1.05);
+  }
+  .tag-off:hover{
+    color: var(--dark-color) !important;
+    transform: scale(1.05, 1.05);
+  }
+</style>
+<div class="tag tag-<<<yield params.type>>>">
+  <<<yield params.item>>>
+</div>
