@@ -10,8 +10,8 @@
   <br>
   <br>
   <br>
-  <<<vars.id = '4A9EI'>>>
-  Here is a test card mosaic id <<<yield vars.id>>>:
+  <<vars.id = '4A9EI'>>
+  Here is a test card mosaic id <<yield vars.id>>:
   <br>
   <div style="max-width: calc(42.5vh * 2); white-space: initial;">
     <<</*yield include('partial/card.html', {
@@ -20,19 +20,21 @@
       inv: false,
     })*/>>>
   </div>
-  <<<
+  <<
     vars.tags = [];
     for(var i = 0; i < 20; i++) vars.tags.push(vars.id);
-  >>>
-  <<<yield include('partial/mosaic/full.html', {
-    items: include('partial/list.html', {
-      items: vars.tags,
-      name: 'id',
-      incl: 'card.html',
-      params: {
-        dir: () => Math.random() > .5 ? 'row' : 'col',
-        inv: () => Math.random() > .5,
-      }
+  >>
+  <<
+    yield include('body/partial/mosaic/full.html', {
+      items: include('body/partial/list.html', {
+        incl: 'card.html',
+        //https://medium.com/@wisecobbler/4-ways-to-populate-an-array-in-javascript-836952aea79f
+        params: new Array(vars.tags.length).fill(null).map(function(){return {
+          id: vars.id,
+          dir: Math.random() > .5 ? 'row' : 'col',
+          inv: Math.random() > .5,
+        }})
+      })
     })
-  })>>>
+  >>
 </div>

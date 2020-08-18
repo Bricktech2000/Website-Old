@@ -13,7 +13,10 @@
     }
   }
 </style>
-<script style="display: none;">
+<div class="mosaic-full">
+  <<yield params.items>>
+</div>
+<<
   /* auto-update card mosaic */
   var calcGrid = () =>{
     var mosaic = document.querySelector('.mosaic-full');
@@ -25,7 +28,4 @@
   }
   window.addEventListener('load', calcGrid);
   window.addEventListener('resize', calcGrid);
-</script>
-<div class="mosaic-full">
-  <<<yield params.items;>>>
-</div>
+>>
