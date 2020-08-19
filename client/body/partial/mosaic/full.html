@@ -1,7 +1,7 @@
 <style style="display: none;">
   .mosaic-full{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(calc(var(--smart-unit) * 40), 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--smart-unit) * 35), 1fr));
     /*grid-auto-rows: min(33vh);*/
     /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout*/
     grid-auto-flow: dense;
@@ -16,18 +16,3 @@
 <div class="mosaic-full">
   <<yield params.items>>
 </div>
-<<
-  /* auto-update card mosaic */
-  console.log('exec');
-  var calcGrid = () => {
-    console.log('calcGrid');
-    var mosaic = document.querySelector('.mosaic-full');
-    var gridTempCols = window.getComputedStyle(mosaic).gridTemplateColumns.split(' ');
-    if(gridTempCols[0] != gridTempCols[1])
-      reUpdate.watch.cardForcePortrait = true;
-    else
-      reUpdate.watch.cardForcePortrait = false;    
-  }
-  calcGrid();
-  window.addEventListener('resize', calcGrid);
->>
