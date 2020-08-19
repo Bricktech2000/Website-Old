@@ -24,6 +24,9 @@
     vars.tags = [];
     for(var i = 0; i < 20; i++) vars.tags.push(vars.id);
   >>
+  <<<
+    yield utils.miniML(); //include(`body/pages/${vars.id}/index.md`)
+  >>>
   <<
     yield include('body/partial/mosaic/full.html', {
       items: include('body/partial/list.html', {

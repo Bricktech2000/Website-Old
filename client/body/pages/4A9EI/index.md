@@ -1,6 +1,4 @@
-MiniML 1.0
-//Copyright Emilien Breton
-
+MiniML 2.0
 
 The Problem
 -----------
