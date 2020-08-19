@@ -18,7 +18,9 @@
 </div>
 <<
   /* auto-update card mosaic */
-  var calcGrid = () =>{
+  console.log('exec');
+  var calcGrid = () => {
+    console.log('calcGrid');
     var mosaic = document.querySelector('.mosaic-full');
     var gridTempCols = window.getComputedStyle(mosaic).gridTemplateColumns.split(' ');
     if(gridTempCols[0] != gridTempCols[1])
@@ -26,6 +28,6 @@
     else
       reUpdate.watch.cardForcePortrait = false;    
   }
-  window.addEventListener('load', calcGrid);
+  calcGrid();
   window.addEventListener('resize', calcGrid);
 >>
