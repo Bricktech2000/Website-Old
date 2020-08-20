@@ -10,23 +10,16 @@
   <br>
   <br>
   <br>
-  <<vars.id = '4A9EI'>>
-  Here is a test card mosaic id <<yield vars.id>>:
   <br>
-  <div style="max-width: calc(42.5vh * 2); white-space: initial;">
-    <<</*yield include('partial/card.html', {
-      id: vars.id,
-      dir: 'row',
-      inv: false,
-    })*/>>>
-  </div>
+  <<<vars.id = '4A9EI'>>>
+  <<vars.id = <<<yield JSON.stringify(vars.id)>>> >>
   <<
     vars.tags = [];
     for(var i = 0; i < 20; i++) vars.tags.push(vars.id);
   >>
-  <<<
-    yield utils.miniML(); //include(`body/pages/${vars.id}/index.md`)
-  >>>
+  <<yield include('body/miniML.html', {incl: `pages/${vars.id}/index.md`})>>
+  <br><br>
+  Here is a test card mosaic id <<yield vars.id>>:
   <<
     yield include('body/partial/mosaic/full.html', {
       items: include('body/partial/list.html', {
