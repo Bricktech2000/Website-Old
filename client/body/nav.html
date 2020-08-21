@@ -1,17 +1,56 @@
 <style style="display: none;">
   nav{
-    background: var(--dark-color);
+    width: 100%;
+    height: 100vh;
     position: sticky;
     top: 0;
     left: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--card-bg);
+  }
+  nav div{
+    height: calc(var(--smart-unit) * 12.5);
+    width: calc(var(--smart-unit) * 12.5);
+    padding: calc(calc(var(--smart-unit) * 12.5) * 15 / 100);
+  }
+  nav div:nth-of-type(1){
+    background: var(--color);
+    border-bottom-right-radius: calc(var(--smart-unit) * 2);
+  }
+  nav div img{
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    display: block;
+    background: var(--card2-bg);
+    border-radius: 50%;
+    border: 0 solid var(--card-bg);
+    transition: border .125s ease;
+  }
+  nav div img:hover{
+    border-width: calc(var(--smart-unit) * .5);
+  }
+  nav div:nth-of-type(1) img{
+    background: #fff;
+    border-color: var(--color);
   }
   @media (max-aspect-ratio: <<<yield consts.portrait>>>){
     nav{
       width: 100vw;
       height: 100%;
+      flex-direction: row;
     }
   }
 </style>
-<<<for(var i = 0; i < 20; i++) yield 'Nav Bar '>>>
+<div>
+  <a href="/"><img src="/" alt=""></a>
+</div>
+<div>
+  <a href="#"><img src="/" alt=""></a>
+</div>
+<div>
+  <a href="#"><img src="/" alt=""></a>
+</div>
+<div>
+  <a href="#"><img src="/" alt=""></a>
+</div>

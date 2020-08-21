@@ -1,1 +1,10 @@
-<<yield include('/body/miniML.html', {incl: `../pages/${params.id}/index.md`})>>
+<style style="display: none;">
+  .main-columns{
+    column-width: calc(var(--smart-unit) * 100);
+    column-rule: calc(var(--smart-unit) * .5) solid var(--card2-bg);
+    column-gap: calc(var(--smart-unit) * 10);
+  }
+</style>
+<div class="main-columns">
+  <<yield include('/body/miniML.html', {incl: `../pages/${params.id}/index.md`})>>
+</div>
