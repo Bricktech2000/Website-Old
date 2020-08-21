@@ -19,21 +19,25 @@
     background: var(--color);
     border-bottom-right-radius: calc(var(--smart-unit) * 2);
   }
-  nav div img{
+  nav div svg{
     width: 100%;
     height: 100%;
     display: block;
-    background: var(--card2-bg);
-    border-radius: 50%;
+    fill: var(--card2-bg);
+    /*border-radius: 50%;*/
     border: 0 solid var(--card-bg);
-    transition: border .125s ease;
+    transition: fill .125s ease, border .125s ease;
   }
-  nav div img:hover{
-    border-width: calc(var(--smart-unit) * .5);
+  nav div svg:hover{
+    border-width: calc(var(--smart-unit) * .25);
+    fill: var(--color);
   }
-  nav div:nth-of-type(1) img{
-    background: #fff;
+  nav div:nth-of-type(1) svg{
+    fill: #fff;
     border-color: var(--color);
+  }
+  nav div:nth-of-type(2) svg{
+    transform: scaleX(-1);
   }
   @media (max-aspect-ratio: <<<yield consts.portrait>>>){
     nav{
@@ -44,14 +48,31 @@
   }
 </style>
 <div>
-  <a href="/" onclick="reUpdate.utils.redirect(event)"><img src="/" alt=""></a>
+  <a href="/" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/042-home.svg')>>></a>
 </div>
 <div>
-  <a href="" onclick="reUpdate.utils.redirect(event)"><img src="/" alt=""></a>
+  <a href="/search" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/050-search.svg')>>></a>
 </div>
 <div>
-  <a href="" onclick="reUpdate.utils.redirect(event)"><img src="/" alt=""></a>
+  <a href="/tags" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/031-tag-1.svg')>>></a>
 </div>
 <div>
-  <a href="" onclick="reUpdate.utils.redirect(event)"><img src="/" alt=""></a>
+  <a href="<<<yield consts.github>>>" target="_blank"><<<yield include('icons/045-cat.svg')>>></a>
+</div>
+<<
+  vars.toggleMode = (e) => {
+    e.preventDefault();
+    vars.isDark = !vars.isDark;
+    watch.mode = ['light', 'dark'][vars.isDark ? 1 : 0];
+  }
+  vars.toggleMode({preventDefault: () => {}});
+>>
+<div>
+  <a href="" onclick="reUpdate.vars.toggleMode(event)">
+    <<
+      var mode = watch.mode;
+      if(mode == 'dark') yield include('/body/icons/032-summer.svg');
+      else if(mode == 'light') yield include('/body/icons/030-moon.svg');
+    >>
+  </a>
 </div>

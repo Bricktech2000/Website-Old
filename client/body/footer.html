@@ -1,10 +1,51 @@
 <style style="display: none;">
   footer{
     width: 100%;
-    height: 33vh;
-    border-top: calc(var(--smart-unit) * .5) solid var(--color);
+    height: auto;
+    padding: calc(var(--smart-unit) * 5);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    justify-items: center;
     color: var(--text);
+    font-size: min(calc(var(--smart-res-unit) * 2), 4vw);
+    text-align: center;
+  }
+  footer div *{
+    display: inline-block;
+  }
+  footer div.hr{
+    padding-bottom: calc(var(--smart-unit) * 2.5);
+    width: calc(var(--smart-res-unit) * 30);
+    max-width: 75vw;
+    border-top: calc(var(--smart-unit) * .5) solid var(--card2-bg);
+    height: calc(var(--smart-unit) * .5);
+  }
+  /*
+  https://css-tricks.com/almanac/properties/f/fill/
+  https://stackoverflow.com/questions/39743161/svg-fill-color-not-working
+  https://stackoverflow.com/questions/28652648/how-to-use-external-svg-in-html
+  yeah just using reUpdate's `yield include`
+  */
+  footer div svg{
+    fill: var(--color);
+    margin-bottom: -.1em;
+    height: .75em;
+    width: auto;
   }
 </style>
-<<<for(var i = 0; i < 35; i++) yield 'Footer '>>>
-  
+<div class="hr">
+</div>
+<div>
+  Icons made by <a class="markup-link" href="https://www.flaticon.com/authors/dave-gandy" target="_blank" title="Dave Gandy">Dave Gandy</a> from <a class="markup-link" href="https://www.flaticon.com/" target="_blank" title="Flaticon">www.flaticon.com</a>
+</div>
+<div>
+  <p>Created with </p>
+  <a href="https://en.wikipedia.org/wiki/HTML5" target="_blank"><<<yield include('icons/015-logo.svg')>>></a>
+  <a href="<<<yield consts.reUpdateGithub>>>" target="_blank"><<<yield include('icons/047-coding.svg')>>></a>
+  <p>by <a class="markup-link" href="/about" onclick="reUpdate.utils.redirect(event)">Emilien Breton</a></p>
+  <br>
+</div>
+<div>
+  <p>Copyright &copy; <<<yield new Date().getFullYear()>>></p>
+</div>
