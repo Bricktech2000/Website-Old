@@ -46,7 +46,7 @@ body{
   /*background-clip: content-box;*/
 }
 ::-webkit-scrollbar-thumb{
-  background-color: rgba(255, 0, 0, .75);
+  background-color: var(--color2);
   border-radius: .5vh;
   transition: background-color .25s ease-in-out;
 }
