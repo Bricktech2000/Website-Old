@@ -1,17 +1,22 @@
 /*https://www.w3schools.com/css/css3_variables.asp*/
 :root{
-  --bg: #000;
+  --black: #000;
+  --bg: #0b0b0b;
   --card-bg: #222;
   --card2-bg: #444;
 
   --color: #f44;
   --color2: #e22;
-
   --text: #bbb;
   --title: #fff;
 
   --smart-pixel-ratio: 3; /*the importance of the screen resolution in the scaling of items*/
   --smart-unit: 1vh;
+
+  --bs:
+    0 0
+    calc(var(--smart-unit) * 1)
+    var(--black);
 }
 @media (max-device-width: <<<yield consts.phone>>>){
   :root{ --smart-unit: 1vmax; }
@@ -41,7 +46,7 @@ body{
   height: 1vh;
 }
 ::-webkit-scrollbar-track{
-  background: var(--bg);
+  background: inherit;
   /*box-shadow: inset 5px 0 5px #000;*/
   /*background-clip: content-box;*/
 }

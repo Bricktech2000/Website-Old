@@ -22,26 +22,26 @@
     -webkit-tap-highlight-color: rgba(255, 0, 0, .25);
   }
   .tag-off{
-    background: #111;
-    color: var(--dark-text);
+    background: var(--card-bg);
+    color: var(--text);
     font-weight: lighter;
   }
   .tag-on{
-    background: #111;
-    border-color: var(--dark-title-text);
-    color: var(--dark-title-text);
+    background: var(--card-bg);
+    border-color: var(--black);
+    color: var(--black);
     font-weight: lighter;
   }
   /*https://stackoverflow.com/questions/10964729/javascript-style-overriding-css-hover*/
   <<<
     if(!params.mini) yield `
       .tag-on:hover{
-        color: var(--dark-color) !important;
-        border-color: var(--dark-color) !important;
+        color: var(--color2) !important;
+        border-color: var(--color2) !important;
         transform: scale(1.05, 1.05);
       }
       .tag-off:hover{
-        color: var(--dark-color) !important;
+        color: var(--color2) !important;
         transform: scale(1.05, 1.05);
       }
     `
