@@ -1,0 +1,26 @@
+<style style="display: none;">
+  .button{
+    display: inline-block;
+    margin: calc(var(--smart-unit) * .5);
+    padding: calc(var(--smart-unit) * .5) calc(var(--smart-unit) * 4);
+    padding-bottom: calc(var(--smart-unit) * .75);
+    color: var(--title);
+    border: calc(var(--smart-unit) * .5) solid var(--color);
+    border-radius: 100vh; /* let's gooooo */
+    text-decoration: none;
+    font-weight: 500;
+    transition: background .125s ease, border-color .125s ease;
+  }
+  .button:hover{
+    border-color: var(--color2);
+    background: var(--color2);
+  }
+  .button-on{
+    background: var(--color);
+  }
+</style>
+<a class="button <<<if(params.label.startsWith('-')) yield 'button-on'>>>"
+  href="<<<yield params.href>>>"
+  onclick="reUpdate.utils.redirect(event)">
+  <<<yield params.label.replace(/^-/, '')>>>
+</a>

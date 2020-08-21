@@ -1,0 +1,70 @@
+<style style="display: none;">
+  header{
+    width: 100%;
+    height: auto;
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: calc(var(--smart-unit) * 5);*/
+    column-width: calc(var(--smart-unit) * 55);
+    column-gap: calc(var(--smart-unit) * 5);
+    /*column-rule: calc(var(--smart-unit) * .5) solid var(--card2-bg);*/
+
+    padding: calc(var(--smart-unit) * 5) calc(var(--smart-unit) * 15);
+    color: var(--text);
+  }
+  header > *{
+    margin: calc(var(--smart-unit) * 1);
+    break-inside: avoid;
+  }
+  header .markup-h1{
+    margin-top: 0;
+  }
+  header img{
+    /*width: 100%;*/
+    width: 100%;
+    height: auto;
+    /*object-fit: cover;*/
+  }
+  @media(max-aspect-ratio: 2/1){
+    header{
+      padding-right: calc(var(--smart-unit) * 5);
+      padding-left: calc(var(--smart-unit) * 5);
+    }
+  }
+  @media(max-aspect-ratio: <<<yield consts.portrait>>>){
+    header{
+      /*padding-right: calc(var(--smart-unit) * 5);
+      padding-left: calc(var(--smart-unit) * 5);*/
+      column-count: 1;
+    }
+  }
+</style>
+<<<vars.info = JSON.parse((await include('../pages/' + params.id + '/info.json')).text);>>>
+<img src="/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
+<div class="markup-h1">
+  <<<yield vars.info.title>>>
+</div>
+<p>
+  <<<yield vars.info.desc>>>
+</p>
+<div class='tags'>
+  <<<
+    yield include('partial/list.html', {
+      incl: 'tag.html',
+      params: new Array(vars.info.tags.length).fill(null).map(function(){return {
+        label: vars.info.tags.shift(),
+        type: 'off',
+        mini: false,
+      }})
+    })
+  >>>
+</div>
+<div class="btns">
+  <<<
+    for(var label of Object.keys(vars.info.btns))
+      yield include('partial/button.html', {
+        label: label,
+        href: vars.info.btns[label],
+      });
+  >>>
+</div>

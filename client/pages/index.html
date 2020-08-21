@@ -1,10 +1,12 @@
 <style style="display: none;">
   .main-columns{
     column-width: calc(var(--smart-res-unit) * 75);
-    column-rule: calc(var(--smart-unit) * .5) solid var(--card2-bg);
     column-gap: calc(var(--smart-unit) * 10);
+    column-rule: calc(var(--smart-unit) * .5) solid var(--card2-bg);
+    padding: calc(var(--smart-unit) * 5) calc(var(--smart-unit) * 15);
   }
 </style>
 <div class="main-columns">
+  <base href="/pages/<<<yield params.id>>>/">
   <<yield include('/body/miniML.html', {incl: `../pages/${params.id}/index.md`})>>
 </div>

@@ -1,9 +1,11 @@
+import { MiniML } from './MiniML Compiler.js'
+
 var miniML = {
   compile: function(_src){
     var src = _src.text || _src;
     var ast = parse(src);
     var html = gen(ast);
-    return html; //_compile(code, 'miniML');
+    return MiniML.MiniMLCompile(src); //_compile(code, 'miniML');
   },
 };
 var parse = function(src, stx = 'miniML'){

@@ -1,4 +1,4 @@
-MiniML 2.0
+MiniML 1.0
 
 The Problem
 -----------

@@ -46,6 +46,17 @@
       }
     `
   >>>
+  .tag u{
+    text-decoration: none;
+    font-variant: small-caps;
+    font-weight: 400;
+  }
+  .tag b{
+    font-weight: 500;
+  }
+  .tag i{
+    font-style: italic;
+  }
 </style>
 <<<vars.tag = params.mini ? 'div' : 'a'>>>
 <<<yield '<' + vars.tag>>> class="tag tag-<<<yield params.type>>>">
