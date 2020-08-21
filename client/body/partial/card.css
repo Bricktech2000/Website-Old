@@ -10,12 +10,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
+  top: 0;
   margin: calc(var(--smart-unit) * 1.25);
   background: var(--card-bg);
-  -webkit-transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
-  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
-  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out, -webkit-transform 0.25s ease-in-out;
+  -webkit-transition: opacity .25s ease-in-out, background-color 0.25s ease-in-out, top 0.25s ease-in-out;
+  transition: opacity .25s ease-in-out, background-color 0.25s ease-in-out, top 0.25s ease-in-out;
   border-radius: calc(var(--smart-unit) * .5);
   text-decoration: none;
   color: var(--text);
@@ -64,7 +64,6 @@
 }
 
 .card:hover {
-  -webkit-transform: translate(0, -2.5%);
-          transform: translate(0, -2.5%);
+  top: calc(var(--smart-unit) * -1);
 }
 /*# sourceMappingURL=card.css.map */

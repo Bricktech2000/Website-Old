@@ -5,10 +5,11 @@
   grid-template-rows: repeat(4, auto);
   grid-gap: 0;
   align-items: center;
+  position: relative; top: 0;
   
   margin: calc(var(--smart-unit) * 1.25);
   background: var(--card-bg);
-  transition: opacity .25s ease-in-out, margin-left .25s ease-in-out, margin-right .25s ease-in-out, background-color 0.25s ease-in-out, transform 0.25s ease-in-out;
+  transition: opacity .25s ease-in-out, background-color 0.25s ease-in-out, top 0.25s ease-in-out;
   border-radius: calc(var(--smart-unit) * .5);
   text-decoration: none;
   color: var(--text);
@@ -27,5 +28,5 @@
   .desc{ grid-area: desc; }
   .tags{ grid-area: tags; align-self: flex-end; }
 	&:hover .markup-h2{ color: var(--color); }
-	&:hover{ transform: translate(0, -2.5%); }
+	&:hover{ top: calc(var(--smart-unit) * -1); }
 }
