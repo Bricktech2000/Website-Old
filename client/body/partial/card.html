@@ -13,10 +13,10 @@
   .card.row.inv img{ align-self: flex-end; }
   @media (max-aspect-ratio: <<<yield consts.portrait>>>){ .card{ margin-left: 0; margin-right: 0; } }
 </style>
-<<<vars.info = JSON.parse((await include('../pages/' + params.id + '/info.json')).text);>>>
+<<<vars.info = JSON.parse((await include('../../pages/' + params.id + '/info.json')).text);>>>
 
 <a class="card card-<<<yield vars.id>>>" href="">
-  <img src="body/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
+  <img src="/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
   <div class="title markup-h2">
     <<<yield vars.info.title>>>
   </div>

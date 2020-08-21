@@ -1,0 +1,29 @@
+<a href="/pages/4A9EI">View Page</a>
+<h1><< yield watch.title >></h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque voluptatibus numquam!</p>
+<< yield 'reUpdate' >>
+<br>
+<br>
+<br>
+<br>
+<<<vars.id = '4A9EI'>>>
+<<vars.id = <<<yield JSON.stringify(vars.id)>>> >>
+<<
+  vars.tags = [];
+  for(var i = 0; i < 20; i++) vars.tags.push(vars.id);
+>>
+<br><br>
+Here is a test card mosaic id <<yield vars.id>>:
+<<
+  yield include('body/partial/mosaic/full.html', {
+    items: include('body/partial/list.html', {
+      incl: 'card.html',
+      //https://medium.com/@wisecobbler/4-ways-to-populate-an-array-in-javascript-836952aea79f
+      params: new Array(vars.tags.length).fill(null).map(function(){return {
+        id: vars.id,
+        dir: Math.random() > .5 ? 'row' : 'col',
+        inv: Math.random() > .5,
+      }})
+    })
+  })
+>>
