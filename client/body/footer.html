@@ -21,6 +21,9 @@
     border-top: calc(var(--smart-unit) * .5) solid var(--card2-bg);
     height: calc(var(--smart-unit) * .5);
   }
+  footer div .copy {
+    font-family: sans-serif;
+  }
   /*
   https://css-tricks.com/almanac/properties/f/fill/
   https://stackoverflow.com/questions/39743161/svg-fill-color-not-working
@@ -47,5 +50,5 @@
   <br>
 </div>
 <div>
-  <p>Copyright &copy; <<<yield new Date().getFullYear()>>></p>
+  <p>Copyright <font class="copy">&copy;</font> <<<yield new Date().getFullYear()>>></p>
 </div>
