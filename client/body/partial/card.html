@@ -13,7 +13,9 @@
 </style>
 <<<vars.info = JSON.parse((await include('../../pages/' + params.id + '/info.json')).text);>>>
 
-<a class="card card-<<<yield vars.id>>>" href="">
+<a class="card card-<<<yield vars.id>>>"
+  href="/pages/<<<yield params.id>>>"
+  onclick="reUpdate.utils.redirect(event)">
   <img src="/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
   <div class="title markup-h2">
     <<<yield vars.info.title>>>
@@ -34,11 +36,15 @@
   </div>
 </a>
 <<
+  var card = document.querySelector('.card-<<<yield vars.id>>>');
   var func = () => {
+    if(!document.body.contains(card)){
+      window.removeEventListener('resize', func);
+      return;
+    }
     var forcePortrait = window.matchMedia('(max-aspect-ratio: 8/7)').matches;
     var dir = forcePortrait ? 'row' : <<<yield JSON.stringify(params.dir)>>>;
     var inv = <<<yield JSON.stringify(params.inv)>>> ? 'inv' : 'nor';
-    var card = document.querySelector('.card-<<<yield vars.id>>>');
     card.classList.remove('row');
     card.classList.remove('col');
     card.classList.add(dir);

@@ -1,1 +1,22 @@
 << consts.lang = '<<<yield consts.lang>>>' >>
+<!-- dynamic watch.url and watch.path definitions -->
+<!-- https://stackoverflow.com/questions/5817505/is-there-any-method-to-get-the-url-without-query-string -->
+<< watch.url = window.location.pathname >>
+<< history.scrollRestoration = 'manual' >>
+<< vars.firstLoad = true >>
+<<
+  var url = watch.url;
+  history.pushState(null, null, url);
+  window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+  if(!vars.firstLoad) await utils.sleep(500);
+  watch.path = url.split('?')[0].replace(/^\//, '').split('/');
+  vars.firstLoad = false;
+>>
+<<
+  utils.redirect = (e) => {
+    e.preventDefault();
+    //https://stackoverflow.com/questions/14721388/how-to-get-the-exact-href-value-only-without-their-domain
+    //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
+    watch.url = e.currentTarget.pathname || '/';
+  }
+>>
