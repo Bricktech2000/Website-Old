@@ -14,5 +14,16 @@
   }
 </style>
 <div class="mosaic-full">
-  <<yield params.items>>
+  <<
+    var ids = params.ids.slice();
+    yield  include('/body/partial/list.html', {
+      incl: 'card.html',
+      //https://medium.com/@wisecobbler/4-ways-to-populate-an-array-in-javascript-836952aea79f
+      params: new Array(ids.length).fill(null).map(function(){return {
+        id: ids.shift(),
+        dir: Math.random() > .5 ? 'row' : 'col',
+        inv: Math.random() > .5,
+      }})
+    })
+  >>
 </div>

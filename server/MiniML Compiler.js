@@ -5,6 +5,7 @@ var MiniML = {
     if(markup.substr(0, str.length) != 'MiniML 1.0') return '';
     else markup = markup.substr(str.length, markup.length - 1 - str.length);
     markup = markup.replace(/\r\n/g, '\n');
+    markup = '\n' + markup.replace(/^\n*/, '');
 
     var html = parse([markup], false, true);
     //console.log(html);
@@ -55,7 +56,7 @@ var MiniML = {
         {find: /^\{([^\}]*?):(:?) ([^\}]*?([^\}\\]|\\\\))\}/, replace: (a, b, c, d, e) => `<a class="markup-link markup-inline" target="${c == ':' ? '_blank' : '_self'}" href="${d}">${parse([b], false)}</a>`},
         //{find: /^\{([^]*?): ([^]*?([^\\]|\\\\))\}/, replace: (a, b, c, d) => `<a class="markup-link markup-inline" target="_self" href="${c}">${parse([b])}</a>`},
         {find: /^\n\"\"([^]*?([^\\]|\\\\))\"\"/, replace: (a, b) => `${br}<div class="markup-quote">${parse([b], false)}</div>`},
-        {find: /^\n\*([^\n]*)/, replace: (a, b) => `<ul><li class="">${parse([b], isCode)}</li></ul>${br}`},
+        {find: /^\n\*([^\n]*)/, replace: (a, b) => `<ul><li class="">${parse([b], isCode)}</li></ul>`},
         {find: /^([^\n]*)\n=+\n/, replace: (a, b) => `<div class="markup-h1">${parse([b], isCode)}</div>${br}`},
         {find: /^([^\n]*)\n-+\n/, replace: (a, b) => `<div class="markup-h2">${parse([b], isCode)}</div>${br}`},
         {find: /^\/([^\n]*?([^\\\n]|\\\\))\//, replace: (a, c) => `<div class="markup-italic markup-inline">${parse([c], isCode)}</div>`},

@@ -1,5 +1,6 @@
 <style style="display: none;">
-  .tag{
+  <<<vars.type = params.mini ? '-mini' : ''>>>
+  .tag<<<yield vars.type>>>{
     color: var(--dark-text);
     display: inline-block;
     cursor: pointer;
@@ -21,44 +22,42 @@
     transition: color 0.125s ease-in-out, border-color .125s ease-in-out, transform 0.125s ease-in-out;
     -webkit-tap-highlight-color: rgba(255, 0, 0, .25);
   }
-  .tag-off{
+  .tag<<<yield vars.type>>>-off{
     background: var(--bg);
     color: var(--text);
     font-weight: lighter;
   }
-  .tag-on{
+  .tag<<<yield vars.type>>>-on{
     background: var(--card-bg);
     border-color: var(--black);
     color: var(--black);
     font-weight: lighter;
   }
   /*https://stackoverflow.com/questions/10964729/javascript-style-overriding-css-hover*/
-  <<<
-    if(!params.mini) yield `
-      .tag-on:hover{
-        color: var(--color2) !important;
-        border-color: var(--color2) !important;
-        transform: scale(1.05, 1.05);
-      }
-      .tag-off:hover{
-        color: var(--color2) !important;
-        transform: scale(1.05, 1.05);
-      }
-    `
-  >>>
-  .tag u{
+  
+  .tag-on:hover{
+    color: var(--color2) !important;
+    border-color: var(--color2) !important;
+    transform: scale(1.05, 1.05);
+  }
+  .tag-off:hover{
+    color: var(--color2) !important;
+    transform: scale(1.05, 1.05);
+  }
+
+  .tag<<<yield vars.type>>> u{
     text-decoration: none;
     font-variant: small-caps;
     font-weight: 400;
   }
-  .tag b{
+  .tag<<<yield vars.type>>> b{
     font-weight: 500;
   }
-  .tag i{
+  .tag<<<yield vars.type>>> i{
     font-style: italic;
   }
 </style>
 <<<vars.tag = params.mini ? 'div' : 'a'>>>
-<<<yield '<' + vars.tag>>> class="tag tag-<<<yield params.type>>>">
+<<<yield '<' + vars.tag>>> class="tag<<<yield vars.type>>> tag<<<yield vars.type>>>-<<<yield params.type>>>">
   <<<yield params.label>>>
 </<<<yield vars.tag>>> >

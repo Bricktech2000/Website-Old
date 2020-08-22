@@ -1,0 +1,219 @@
+{
+  '4A9EI': {
+    title: 'DoS Protection',
+    date: '2020-08-12',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<i>JavaScript</i>', '<u>NodeJS</u>', '<u>Web</u>', '<u>Hacking</u>'],
+    desc: 'This website has been vulnerable to DoS attacks for way too long now. Explaining why this is a problem and how I solved it!'
+  },
+  'TIH4G': {
+    title: '>>> dirsize',
+    date: '2020-07-30',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>Python</i>', '<u>Tech</u>'],
+    desc: 'Have you ever noticed that you cannot sort folders by size in windows? I certainly have. Writing about how the \'dirsize\' command works and how you can try it out!'
+  },
+  'D3G4U': {
+    title: 'Lock Picking',
+    date: '2020-07-24',
+    tags: ['<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Hardware</b>', '<u>Tech</u>'],
+    desc: 'Ever wanted to be able to pick locks? I certainly did, which is why I learned how to do it! Explaining how I first started and how it works.'
+  },
+  'WW5C0': {
+    title: 'Crash.js',
+    date: '2020-07-22',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<u>Hacking</u>'],
+    desc: 'Just a simple program that crashes any computer you run it on... Explaining in-depth how it all works and how to try it out!'
+  },
+  '859GS': {
+    title: 'AI Image Compression',
+    date: '2020-07-19',
+    tags: ['<b>Showcase</b>', '<b>Software</b>', '<i>Python</i>', '<i>Git</i>'],
+    desc: 'Showing you how a machine learning program made in 5 days can compress images! This is my second AI program, but one of my best ever!'
+  },
+  'PA83K': {
+    title: 'MultiToast.JS',
+    date: '2020-07-13',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>Git</i>', '<u>Web</u>'],
+    desc: 'A highly customizable JavaScript toast library. Writing about how I got the idea to write this library, and about how you can try it out for yourself!'
+  },
+  'BEO5E': {
+    title: 'DIY Grenade',
+    date: '2020-06-27',
+    tags: ['<b>Work in Progress</b>', '<b>Hardware</b>', '<u>3D Printing</u>'],
+    desc: 'Taking you through the 3 prototypes I made for my DIY grenade, and sharing my thought process with you!'
+  },
+  'J0EXS': {
+    title: '5&quot; Drone Prototype',
+    date: '2020-06-22',
+    tags: ['<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Hardware</b>', '<u>Electronics</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Ever since I made my 2-inch drone, I wanted more. Talking a about an upgraded version and showing you the virtual prototype of the drone!'
+  },
+  'IPI8U': {
+    title: '3D Printer Music',
+    date: '2020-06-20',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<u>Hacking</u>', '<u>3D Printing</u>'],
+    desc: 'Ever wanted to compose music using your 3D printer? Yeah no me neither lol. Writing a useless post about it all!'
+  },
+  'MZ490': {
+    title: 'Learning the Stock Market',
+    date: '2020-06-08',
+    tags: ['<b>Work in Progress</b>', '<b>Software</b>'],
+    desc: 'Taking you through my go at learning the stock market! This post will be updated whenever I learn something new!'
+  },
+  'WVUMK': {
+    title: 'Caps Hotkeys',
+    date: '2020-06-05',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>C++</i>'],
+    desc: 'Ever wanted to find a use for that infamous CAPS LOCK key? Caps Hotkeys is a software that allows CAPS LOCK to be used for hotkeys! Talking about how it works and how you can try it out!'
+  },
+  '02117': {
+    title: 'C++ Keylogger',
+    date: '2020-05-23',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>C++</i>', '<u>Hacking</u>'],
+    desc: 'Want an easy way to steal passwords? Use a Keylogger! Writing about what is a keylogger, how it works under the hood and how to try it out for yourself.'
+  },
+  'OE1UD': {
+    title: 'Auto Cloud Backup',
+    date: '2020-05-18',
+    tags: ['<b>Showcase</b>', '<b>Software</b>', '<i>Python</i>', '<u>Web</u>'],
+    desc: 'Who likes making backups? No one! Writing about how I created AutoCloudBackup, a script which automatically backs up your files to the cloud.'
+  },
+  /*'TEST': {
+    title: 'MiniML Test',
+    date: '2020-05-12',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'adfasdfadsfasdf'
+  },*/
+  '46V57': {
+    title: 'Raspberry Pi Server',
+    date: '2020-05-09',
+    tags: ['<b>Showcase</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<u>NodeJS</u>', '<u>Web</u>', ],
+    desc: 'What is the server that makes this website work? You may be surprised to know that it is only 7cm by 3cm! Writing about Raspberry Pi\'s and how they work.'
+  },
+  '751BX': {
+    title: 'Game of Life',
+    date: '2020-05-02',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<u>Web</u>'],
+    desc: 'Complex behavior can emerge from very simple rules. The game of live is a great example of this. Talking about how it works and how you can try it out!'
+  },
+  'V7SAX': {
+    title: 'Geometry Ninja',
+    date: '2020-04-30',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>Java</i>', '<u>App</u>', '<u>Web</u>'],
+    desc: 'Cut glowing geometric shapes to earn points! Writing about my first android game and how you can try it out for yourself!'
+  },
+  'V33V2': {
+    title: 'Encoder 2.0',
+    date: '2020-04-24',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<u>Web</u>'],
+    desc: 'Want to verify if you are more intelligent than average? This encoder encodes text to make it really hard to read. See if you are still able to!'
+  },
+  'DQ00Y': {
+    title: 'Modular Containers',
+    date: '2020-04-22',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Hardware</b>', '<u>Arduino</u>', '<u>Electronics</u>', '<u>3D Printing</u>', '<u>Tech</u>'],
+    desc: 'Talking about how I improved the sorting of my electronics!'
+  },
+  '2H08J': {
+    title: 'Scylla',
+    date: '2020-04-14',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<u>Web</u>', '<u>Hacking</u>', '<u>Tech</u>'],
+    desc: 'Writing about Scylla, a program to split a secret file into many key files, all of which are needed to reconstruct the secret file!'
+  },
+  '4KW18': {
+    title: 'Hacking a Computer!',
+    date: '2020-04-11',
+    tags: ['<b>Showcase</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Talking about how this USB key can literally take control of a computer wirelessly, from a cell phone!'
+  },
+  '6BH17': {
+    title: 'iBUS to Simulator Adapter',
+    date: '2020-04-10',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Hardware</b>', '<u>Arduino</u>', '<u>Electronics</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Full tutorial on how to connect any FlySky transmitter to a PC wirelessly!'
+  },
+  'NU91F': {
+    title: 'YouTube Channel',
+    date: '2020-04-10',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Link to my YouTube Channel, TechnoViper. Writing about why I wanted to create a YouTube Channel, and its purpose'
+  },
+  '79OD3': {
+    title: 'My First Website',
+    date: '2020-04-07',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<u>Web</u>', '<u>Tech</u>'],
+    desc: 'Links to my first website. Talking about how the (very strange) page system used to work, using an iframe to load HTML code.'
+  },
+  'NZW63': {
+    title: 'MiniML',
+    date: '2020-04-06',
+    tags: ['<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<u>NodeJS</u>', '<u>Web</u>'],
+    desc: 'How were the pages in this blog created? Using a custom markup language called \'MiniML\'! Showing how it works.'
+  },
+  'LZK4H': {
+    title: 'Spider Robot',
+    date: '2019-12-14',
+    tags: ['<b>Showcase</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>C++</i>', '<u>Arduino</u>', '<u>Electronics</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'The most complex project I have done to date? Definetly this spider robot. Talking about how I got to build it, and how it works.'
+  },
+  'GLDY3': {
+    title: 'Racing Drone',
+    date: '2019-12-12',
+    tags: ['Youtube', 'Tech', 'Electronics', 'Radio Controlled', 'Drone'],
+    tags: ['<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<u>Electronics</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Writing about how I got started into drone racing. Parts list to build my first drone, first test flight comming soon!'
+  },
+  '.': {
+    title: 'Home',
+    date: 'a random blog by Emilien Breton',
+    tags: [],
+    desc: 'A portfolio for many of my projects!'
+  },
+  'ERR': {
+    title: 'Internal Error',
+    date: 'Please try again later',
+    tags: [],
+    desc: ''
+  },
+  '404': {
+    title: '404 Not Found',
+    date: 'Requested page not found',
+    tags: [],
+    desc: ''
+  },
+  'TAGS': {
+    title: '',
+    date: '',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: ''
+  },
+  /*'PH1': {
+    title: 'Place Holder',
+    date: '2000-01-01',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis finibus nisl. Mauris dictum erat eget quam auctor, ut feugiat.'
+  },
+  'PH2': {
+    title: 'Place Holder',
+    date: '2000-01-01',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis finibus nisl. Mauris dictum erat eget quam auctor, ut feugiat.'
+  },
+  'PH3': {
+    title: 'Place Holder',
+    date: '2000-01-01',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis finibus nisl. Mauris dictum erat eget quam auctor, ut feugiat.'
+  },
+  'PH4': {
+    title: 'Place Holder',
+    date: '2000-01-01',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis finibus nisl. Mauris dictum erat eget quam auctor, ut feugiat.'
+  },
+  'PH5': {
+    title: 'Place Holder',
+    date: '2000-01-01',
+    tags: ['<b>Try it Now</b>', '<b>Showcase</b>', '<b>Work in Progress</b>', '<b>Software</b>', '<b>Hardware</b>', '<i>JavaScript</i>', '<i>HTML</i>', '<i>CSS</i>', '<i>C++</i>', '<i>Python</i>', '<i>Java</i>', '<i>Git</i>', '<u>App</u>', '<u>Arduino</u>', '<u>NodeJS</u>', '<u>Electronics</u>', '<u>Web</u>', '<u>Hacking</u>', '<u>3D Printing</u>', '<u>Radio Controlled</u>', '<u>Tech</u>'],
+    desc: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis finibus nisl. Mauris dictum erat eget quam auctor, ut feugiat.'
+  }*/
+}

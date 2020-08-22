@@ -1,0 +1,46 @@
+<style style="display: none;">
+  .mosaic-small{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--smart-res-unit) * 50), 1fr));
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout*/
+    grid-auto-flow: dense;
+  }
+  .mosaic-small > div{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--smart-res-unit) * 25), 1fr));
+    grid-template-rows: auto auto;
+    /*https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Auto-placement_in_CSS_Grid_Layout*/
+    grid-auto-flow: dense;
+  }
+	/*Portrait*/
+	@media (max-aspect-ratio: <<<yield consts.portrait>>>){
+    .mosaic-small{
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+<div class="mosaic-small">
+  <<
+    vars.firstIsRow = Math.random() > .5;
+    vars.secondIsRow = !vars.firstIsRow;
+
+    var ids = params.ids.slice();
+    vars.func = (dir) => {
+      return include('/body/partial/list.html', {
+        incl: 'card.html',
+        //https://medium.com/@wisecobbler/4-ways-to-populate-an-array-in-javascript-836952aea79f
+        params: new Array(2).fill(null).map(function(){return {
+          id: ids.shift(),
+          dir: dir ? 'row' : 'col',
+          inv: Math.random() > .5,
+        }})
+      });
+    }
+  >>
+  <div>
+    << yield vars.func(vars.firstIsRow); >>
+  </div>
+  <div>
+    << yield vars.func(vars.secondIsRow); >>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<<<
+  var ids = JSON.parse((await include('../../pages/pages.json')).text);
+  var scores = [];
+  for(var id of ids){
+    var score = params.opr == 'and' ? 1 : 0;
+    var info = JSON.parse((await include('../../pages/' + id + '/info.json')).text);
+    for(var paramTag of params.tags){
+      var match = false;
+      for(var infoTag of info.tags){
+        switch(params.opr){
+        case 'or':
+          if(infoTag == paramTag) score = 1;
+          break;
+        case 'and':
+          if(infoTag == paramTag) match = true;
+          break;
+        case 'like':
+          if(infoTag == paramTag) score++;
+          break;
+        }
+      }
+      if(params.opr == 'and' && !match) score = 0;
+    }
+    scores.push({id: id, score: score});
+    //yield await include(params.incl, param);
+  }
+  var sortedScores = scores.sort(function(element1, element2){
+    if(element1.score == element2.score) return 0;
+    else return element1.score < element2.score ? 1 : -1;
+  });
+  var sortedIds = [];
+  var max = params.max;
+  for(var i = 0; i < max; i++)
+    if(sortedScores[i].id == params.excl) max++;
+    else sortedIds.push(sortedScores[i].id);
+  yield JSON.stringify(sortedIds);
+>>>
+
+
+<<</*yield include('list-cards.html', {
+  opr: 'or' | 'like',
+  tags: ['ASDF'],
+  max: 4,
+})*/>>>
