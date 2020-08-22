@@ -29,6 +29,7 @@ li{
   font-family: monospace;
   background: var(--card-bg);
   border-radius: calc(.5 * var(--smart-unit));
+  box-shadow: var(--bs);
 }
 .markup-code{
   /*white-space: nowrap;*/
@@ -57,7 +58,7 @@ li{
   padding: 1vh 2vw;
   padding-left: 2.5vw;
   border-left: .375vw solid var(--color);
-  box-shadow: .5vh .5vh 1vh var(--card-bg);
+  box-shadow: .5vh .5vh 1vh var(--black);
 }
 .markup-link{
   color: var(--color);
@@ -79,7 +80,7 @@ li{
   width: 100%;
   height: auto;
   border-radius: .5vh;
-  box-shadow: 0 0 .5vh #888;
+  box-shadow: var(--bs);
   /*min-height: 25vw;*/
 }
 iframe{

@@ -20,6 +20,8 @@
   text-decoration: none;
   color: var(--text);
   white-space: initial;
+  -webkit-box-shadow: var(--bs);
+          box-shadow: var(--bs);
   /*border: calc(var(--smart-unit) * .5) solid var(--text);*/
 }
 
