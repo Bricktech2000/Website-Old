@@ -18,6 +18,7 @@
     e.preventDefault();
     //https://stackoverflow.com/questions/14721388/how-to-get-the-exact-href-value-only-without-their-domain
     //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
-    watch.url = e.currentTarget.pathname || '/';
+    watch.url = e.currentTarget.pathname; // || '/';
+    window.location.hash = e.currentTarget.hash;
   }
 >>

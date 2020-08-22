@@ -23,7 +23,7 @@
   }
 </style>
 <div class="main-columns">
-  <base href="/pages/<<<yield params.id>>>/">
+  <!--<base href="/pages/<<<yield params.id>>>/">-->
   <<<vars.info = JSON.parse((await include('../pages/' + params.id + '/info.json')).text)>>>
   <<yield include('/body/miniML.html', {incl: `../pages/${params.id}/index.md`})>>
   <div class="related">
