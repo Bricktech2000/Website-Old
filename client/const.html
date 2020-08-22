@@ -9,6 +9,7 @@
   history.pushState(null, null, url);
   window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
   if(!vars.firstLoad) await utils.sleep(500);
+
   watch.path = url.split('?')[0].replace(/^\//, '').split('/');
   vars.firstLoad = false;
 >>

@@ -3,6 +3,8 @@
     overflow-x: hidden;
     padding: calc(var(--smart-unit) * 5);
     min-height: 50vh;
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
   }
   @media(max-aspect-ratio: <<<yield consts.portrait>>>){
     main{
@@ -11,6 +13,15 @@
     }
   }
 </style>
+<<
+  var a = watch.url;
+  
+  var main = document.getElementsByTagName('main')[0];
+  if(!main) return;
+  main.style.opacity = '0';
+  await utils.sleep(500);
+  main.style.opacity = '1';
+>>
 <<
   var path = watch.path;
   

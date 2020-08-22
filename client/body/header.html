@@ -1,3 +1,20 @@
+<style style="display: none;">
+  header{
+    opacity: 0;
+    transition: opacity .25s ease-in-out;
+  }
+</style>
+
+<<
+  var a = watch.url;
+  
+  var header = document.getElementsByTagName('header')[0];
+  if(!header) return;
+  header.style.opacity = '0';
+  await utils.sleep(500);
+  header.style.opacity = '1';
+>>
+
 <<
   var path = watch.path;
   
