@@ -35,11 +35,11 @@
         tags: <<<yield JSON.stringify(vars.info.tags)>>>,
         excl: params.id,
         max: 4,
-      })).text).slice()
+      })).text).slice();
       
       yield include('/body/partial/mosaic/small.html', {
         ids: ids,
-      })
+      });
     >>
   </div>
 </div>

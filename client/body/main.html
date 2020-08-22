@@ -27,4 +27,5 @@
   
   if(path.length == 3 && path[0] == 'pages' && path[2] == '') yield include('/pages', {id: path[1]});
   else if(path.length == 1 && path[0] == '') yield include('/pages/home.html');
+  else if(path.length == 2 && path[0] == 'tags' && path[1] == '') yield include('/pages/tags.html');
 >>

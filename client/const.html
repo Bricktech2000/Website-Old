@@ -16,6 +16,7 @@
 <<
   utils.redirect = (e) => {
     e.preventDefault();
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); //if the url doesn't change
     //https://stackoverflow.com/questions/14721388/how-to-get-the-exact-href-value-only-without-their-domain
     //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
     watch.url = e.currentTarget.pathname; // || '/';

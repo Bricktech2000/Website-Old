@@ -1,0 +1,19 @@
+<a href="/pages/4A9EI" onclick="reUpdate.utils.redirect(event)">View Page</a>
+<h1><< yield watch.title >></h1>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati cumque voluptatibus numquam!</p>
+<< yield 'reUpdate' >>
+<br>
+<br>
+<br>
+<br>
+<<<vars.id = '4A9EI'>>>
+<<vars.id = <<<yield JSON.stringify(vars.id)>>> >>
+
+<br><br>
+Here is a test card mosaic:
+<<
+  var ids = JSON.parse((await include('/pages/pages.json')).text);
+  yield include('/body/partial/mosaic/full.html', {
+    ids: ids,
+  })
+>>
