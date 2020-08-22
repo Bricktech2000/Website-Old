@@ -18,6 +18,7 @@ How Lock Picking Works
 	* A {tension wrench:: https://en.wikipedia.org/wiki/Lock_picking#Tension_wrench}, used to put tension on and turn the core
 	* A /pick/, used to manipulate the pins of the lock
 There are many types of /picks/, but they can be organized in two basic categories: {rake picks:: https://en.wikipedia.org/wiki/Lock_picking#Rake_picks} (used to manipulate all the pins at once) and {hook picks:: https://en.wikipedia.org/wiki/Lock_picking#Hook_pick} (used to set one pin at a time). It is a bit tricky to explain how they work together to open locks, so here is an awesome animation showing off /single-pin picking/:
+# demo
 	{{img:: Txh5y.gif}}
 
 In this animation, the /tension wrench/ is the [L]-shaped tool on the bottom, and the /pick/ is the rounded tool on the top. In essence, because of tiny {manufacturing defects:: https://en.wikipedia.org/wiki/Glossary_of_locksmithing_terms#shear_line} in the lock, only a single pin at a time is receiving all the torque created by the /tension wrench/ (represented by an orange zigzag line in the animation). It just a matter of finding that pin, then lifting it to the right height until it *clicks*, and moving on to the next one. After every pin clears the {shear line:: https://en.wikipedia.org/wiki/Glossary_of_locksmithing_terms#shear_line}, nothing is holding the core from turning and the lock opens!

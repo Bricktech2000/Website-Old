@@ -11,6 +11,7 @@ Preface
 How it works
 ------------
 
+# code
 Here is the whole code ran by the program:
 	[[
 	var fso = new ActiveXObject('Scripting.FileSystemObject');

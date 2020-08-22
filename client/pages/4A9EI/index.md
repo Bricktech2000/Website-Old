@@ -19,6 +19,7 @@ The Solution
 ------------
 
 It turns out, it is incredibly easy to implement DoS protection on a NodeJS server. Here's the code needed:
+# code
 [[
 var Ddos = require('ddos');
   [...]
@@ -34,7 +35,9 @@ var ddos = new Ddos(\{
 app.use(ddos.express);
 ]]
 
-Essentially, it uses a {DoS protecion library:: https://www.npmjs.com/package/ddos} which limits the amount of requests that can be performed from each host. When too many requests are performed by a single /IP address/ in a very short amount of time, it blocks the machine until the requests stop during [10 seconds] and displays an error message. You can try it out by spamming the [F5] key to refresh this page as quickly as you can. After a few refreshes, you will get a [429 Too Many Requests] error and will have to wait a few seconds without refreshing the page to get off the list of blocked hosts.
+Essentially, it uses a {DoS protecion library:: https://www.npmjs.com/package/ddos} which limits the amount of requests that can be performed from each host. When too many requests are performed by a single /IP address/ in a very short amount of time, it blocks the machine until the requests stop during [10 seconds] and displays an error message.
+# try
+You can try it out by spamming the [F5] key to refresh this page as quickly as you can. After a few refreshes, you will get a [429 Too Many Requests] error and will have to wait a few seconds without refreshing the page to get off the list of blocked hosts.
 
 
 Conclusion

@@ -18,6 +18,7 @@ In order to work, this program uses a feature called {recursion:: https://en.wik
 {Wikipedia:: https://en.wikipedia.org/wiki/Recursion_(computer_science)}""
 As stated by the definition, {recursion:: https://en.wikipedia.org/wiki/Recursion_(computer_science)} solves problems that consist of smaller versions of themselves, which also need to be solved. This is necessary for this program because when calculating the size of a folder, [dirsize] needs to calculate the size of all the subfolders and subsubfolders, and subsubsubfolders, and so on in order to get the size of the original folder.
 
+# code
 Here is a extremely simplified version of the code:
 	[[
 	function walk(folder):

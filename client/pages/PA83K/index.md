@@ -15,6 +15,7 @@ I first got the idea to create this library when my friend, Alexis, was programm
 He wanted an easy way to make a login page, so he used the [prompt(...)] method, included in every browser. The only problem is that this method is blocking, which means that everything in the page stops the when the [prompt] is displayed: animations, videos, [JavaScript] code... Everything just halts until the user closes it. Moreover, [alert], [prompt] and [confirm] dialogs are not customizable at all, so you are stuck with the browser's style. This is where {MultiToast.JS:: https://github.com/Bricktech2000/multiToast} comes in: it is entirely customizable and it is based on [Promise]s, so the rest of the page continues to work even when a toast is displayed.
 
 
+# demo
 Demo
 ----
 

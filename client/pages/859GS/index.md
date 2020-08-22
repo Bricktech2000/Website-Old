@@ -14,6 +14,7 @@ I first got the idea for this project when a friend of mine showed me a neural n
 There are many advantages for using {Machine Learning:: https://en.wikipedia.org/wiki/Machine_learning} to compress images. For example, if the neural network is trained long enough, it could potentially compress images to even smaller file sizes and keep even more detail than standard methods. Moreover, if the AI is trained on a specific category of images, like logos, cartoon characters or landscapes, it could learn to compress some image features way more effectively.
 
 
+# demo
 What it Can Do
 --------------
 

@@ -30,6 +30,9 @@
   max-height: 999999999px;
   word-wrap: break-word;
 }
+html{
+  scroll-behavior: smooth;
+}
 body{
   font-size: calc(var(--smart-res-unit) * 2);
   /*https://www.hostinger.com/tutorials/best-html-web-fonts*/
