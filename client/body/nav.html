@@ -11,18 +11,19 @@
     background: var(--card-bg);
     box-shadow: var(--bs), var(--bs);
   }
-  nav div{
+  nav a{
+    display: block;
     height: calc(var(--smart-unit) * 10);
     width: calc(var(--smart-unit) * 10);
     padding: calc(calc(var(--smart-unit) * 10) * 20 / 100);
     transition: background .125s ease;
   }
-  nav div:nth-of-type(1){
+  nav a:nth-of-type(1){
     background: var(--color);
     /*border-bottom-right-radius: calc(var(--smart-unit) * 2);*/
     box-shadow: var(--bs);
   }
-  nav div svg{
+  nav a svg{
     width: 100%;
     height: 100%;
     display: block;
@@ -31,19 +32,19 @@
     border: 0 solid var(--card-bg);
     transition: fill .125s ease, border .125s ease;
   }
-  nav div:hover svg{
+  nav a:hover svg{
     border-width: calc(var(--smart-unit) * .25);
     fill: var(--color2);
   }
 
-  nav div:nth-of-type(1) svg{
+  nav a:nth-of-type(1) svg{
     fill: #fff;
     border-color: var(--color);
   }
-  nav div:nth-of-type(1):hover{
+  nav a:nth-of-type(1):hover{
     background: var(--color2);
   }
-  nav div:nth-of-type(1):hover svg{
+  nav a:nth-of-type(1):hover svg{
     border-color: var(--color2);
   }
 
@@ -58,18 +59,11 @@
     }
   }
 </style>
-<div>
-  <a href="/" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/042-home.svg')>>></a>
-</div>
-<div>
-  <a href="/search" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/050-search.svg')>>></a>
-</div>
-<div>
-  <a href="/tags" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/031-tag-1.svg')>>></a>
-</div>
-<div>
-  <a href="<<<yield consts.github>>>" target="_blank"><<<yield include('icons/045-cat.svg')>>></a>
-</div>
+<a href="/" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/042-home.svg')>>></a>
+<a href="/search" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/050-search.svg')>>></a>
+<a href="/tags" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/031-tag-1.svg')>>></a>
+<a href="<<<yield consts.github>>>" target="_blank"><<<yield include('icons/045-cat.svg')>>></a>
+
 <<
   vars.toggleMode = (e) => {
     e.preventDefault();
@@ -78,12 +72,10 @@
   }
   vars.toggleMode({preventDefault: () => {}});
 >>
-<div>
-  <a href="" onclick="reUpdate.vars.toggleMode(event)">
-    <<
-      var mode = watch.mode;
-      if(mode == 'dark') yield include('/body/icons/032-summer.svg');
-      else if(mode == 'light') yield include('/body/icons/030-moon.svg');
-    >>
-  </a>
-</div>
+<a href="" onclick="reUpdate.vars.toggleMode(event)">
+  <<
+    var mode = watch.mode;
+    if(mode == 'dark') yield include('/body/icons/032-summer.svg');
+    else if(mode == 'light') yield include('/body/icons/030-moon.svg');
+  >>
+</a>
