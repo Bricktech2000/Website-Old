@@ -16,7 +16,7 @@
     height: calc(var(--smart-unit) * 10);
     width: calc(var(--smart-unit) * 10);
     padding: calc(calc(var(--smart-unit) * 10) * 20 / 100);
-    transition: background .125s ease;
+    transition: background .125s ease, transform .125s ease;
   }
   nav a:nth-of-type(1){
     background: var(--color);
@@ -30,10 +30,11 @@
     fill: var(--card2-bg);
     /*border-radius: 50%;*/
     border: 0 solid var(--card-bg);
-    transition: fill .125s ease, border .125s ease;
+    transition: fill .125s ease, border .125s ease, transform .125s ease;
   }
   nav a:hover svg{
-    border-width: calc(var(--smart-unit) * .25);
+    transform: scale(1.05);
+    /*border-width: calc(var(--smart-unit) * .25);*/
     fill: var(--color2);
   }
 
@@ -51,6 +52,21 @@
   nav div:nth-of-type(2) svg{
     transform: scaleX(-1);
   }
+  
+  @keyframes active-animation{
+    0% {
+      transform: scale(1.05);
+    }
+    50% {
+      transform: scale(.95);
+    }
+    100% {
+      transform: scale(1.05);
+    }
+  }
+  nav a:active svg{
+    animation: active-animation .125s linear;
+  }
   @media (max-aspect-ratio: <<<yield consts.portrait>>>){
     nav{
       width: 100vw;
@@ -65,14 +81,14 @@
 <a href="<<<yield consts.github>>>" target="_blank"><<<yield include('icons/045-cat.svg')>>></a>
 
 <<
-  vars.toggleMode = (e) => {
+  window.toggleMode = (e) => {
     e.preventDefault();
     vars.isDark = !vars.isDark;
     watch.mode = ['light', 'dark'][vars.isDark ? 1 : 0];
   }
-  vars.toggleMode({preventDefault: () => {}});
+  window.toggleMode({preventDefault: () => {}});
 >>
-<a href="" onclick="reUpdate.vars.toggleMode(event)">
+<a href="" onclick="window.toggleMode(event)">
   <<
     var mode = watch.mode;
     if(mode == 'dark') yield include('/body/icons/032-summer.svg');
