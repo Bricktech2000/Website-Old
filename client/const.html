@@ -2,6 +2,7 @@
 <!-- dynamic watch.url and watch.path definitions -->
 <!-- https://stackoverflow.com/questions/5817505/is-there-any-method-to-get-the-url-without-query-string -->
 << watch.url = window.location.pathname >>
+<< watch.hash = window.location.hash.replace(/^#/, '') >>
 << history.scrollRestoration = 'manual' >>
 << vars.firstLoad = true >>
 <<
@@ -14,12 +15,15 @@
   vars.firstLoad = false;
 >>
 <<
+  if(watch.hash) history.pushState(null, null, '#' + watch.hash);
+>>
+<<
   utils.redirect = (e) => {
     e.preventDefault();
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); //if the url doesn't change
     //https://stackoverflow.com/questions/14721388/how-to-get-the-exact-href-value-only-without-their-domain
     //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
     watch.url = e.currentTarget.pathname; // || '/';
-    window.location.hash = e.currentTarget.hash;
+    watch.hash = e.currentTarget.hash.replace(/^#/, '');
   }
 >>

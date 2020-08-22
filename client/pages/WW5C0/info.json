@@ -1,7 +1,7 @@
 {
   "title": "Crash.js",
   "date": "2020-07-22",
-  "tags": ["<b>Try it Now</b>", "<b>Showcase</b>", "<b>Software</b>", "<i>JavaScript</i>", "<u>Hacking</u>"],
+  "tags": ["*Try it Now", "*Showcase", "*Software", "/JavaScript", "-Hacking"],
   "btns": {
     "-Try it!": "-./Crash.js",
     "Code": "#code"

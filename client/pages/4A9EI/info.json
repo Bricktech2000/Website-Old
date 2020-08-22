@@ -1,7 +1,7 @@
 {
   "title": "DoS Protection",
   "date": "2020-08-12",
-  "tags": ["<b>Try it Now</b>", "<b>Showcase</b>", "<b>Work in Progress</b>", "<b>Software</b>", "<i>JavaScript</i>", "<u>NodeJS</u>", "<u>Web</u>", "<u>Hacking</u>"],
+  "tags": ["*Try it Now", "*Showcase", "*Work in Progress", "*Software", "/JavaScript", "-NodeJS", "-Web", "-Hacking"],
   "btns": {
     "-Try it!": "#try",
     "Code": "#code"

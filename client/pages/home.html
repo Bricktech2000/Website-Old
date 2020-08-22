@@ -1,3 +1,18 @@
+<style style="display: none;">
+  .tags-list{
+    background: var(--card-bg);
+    margin: calc(var(--smart-unit) * 5) 7.5vw;
+    padding: calc(var(--smart-unit) * 2);
+    border-radius: calc(var(--smart-unit) * .5);
+  }
+  @media(max-aspect-ratio: <<<yield consts.portrait>>>){
+    .tags-list{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>
+
 <<
   vars.func = async function(tag){
     var ids = JSON.parse((await include('/body/partial/card-list.html', {
@@ -20,9 +35,22 @@
 <br>
 <h1 class="markup-h1">Projects to Try</h1>
 <br>
-<< yield vars.func('<b>Try it Now</b>') >>
+<< yield vars.func('*Try it Now') >>
 <br>
 <br>
 <h1 class="markup-h1">Projects by Tag</h1>
 <br>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sequi reiciendis, inventore maiores explicabo totam ab odio consectetur repellat iure consequuntur perferendis veritatis suscipit, nostrum illo cum repudiandae id qui assumenda quo? Excepturi odit deserunt quisquam consequatur magni sequi laborum amet quasi corporis cum maxime facilis asperiores porro sit, nesciunt nostrum blanditiis qui voluptas sunt reprehenderit! Laboriosam ab praesentium ducimus impedit fugiat laudantium officia saepe tenetur, vel corrupti beatae adipisci eaque laborum obcaecati dignissimos ipsa autem, debitis facilis culpa quidem ut veniam corporis neque. Totam sunt dolorum unde possimus eos, reprehenderit incidunt est, adipisci consequatur quod nemo dicta perferendis voluptatum?
+<div class="tags-list">
+  <<<
+    var tags = JSON.parse((await include('../pages/tags.json')).text);
+  
+    yield include('../body/partial/list.html', {
+      incl: 'tag.html',
+      params: new Array(tags.length).fill(null).map(function(){return {
+        label: tags.shift(),
+        type: 'off',
+        mini: false,
+      }})
+    })
+  >>>
+</div>

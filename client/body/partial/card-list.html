@@ -30,8 +30,9 @@
   });
   var sortedIds = [];
   var max = params.max;
-  for(var i = 0; i < max; i++)
-    if(sortedScores[i].id == params.excl) max++;
+  for(var i = 0; i < max && i < sortedScores.length; i++)
+    if(params.excl == 'zero' && sortedScores[i].score == 0 ||
+      sortedScores[i].id == params.excl) max++;
     else sortedIds.push(sortedScores[i].id);
   yield JSON.stringify(sortedIds);
 >>>

@@ -57,7 +57,13 @@
     font-style: italic;
   }
 </style>
+<<<vars.label = params.label.replace(/^([\*\/-])([^]*)/, function(_, idf, label){
+  var tag = {'*': 'b', '/': 'i', '-': 'u'}[idf];
+  return `<${tag}>${label}</${tag}>`;
+})>>>
 <<<vars.tag = params.mini ? 'div' : 'a'>>>
-<<<yield '<' + vars.tag>>> class="tag<<<yield vars.type>>> tag<<<yield vars.type>>>-<<<yield params.type>>>">
-  <<<yield params.label>>>
+<<<yield '<' + vars.tag>>>
+  class="tag<<<yield vars.type>>> tag<<<yield vars.type>>>-<<<yield params.type>>>"
+  href="/tags/#<<<yield params.label.replace(/ /g, '-')>>>" onclick="reUpdate.utils.redirect(event)">
+  <<<yield vars.label>>>
 </<<<yield vars.tag>>> >

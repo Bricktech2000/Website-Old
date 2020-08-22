@@ -1,7 +1,7 @@
 {
   "title": "AI Image Compression",
   "date": "2020-07-19",
-  "tags": ["<b>Showcase</b>", "<b>Software</b>", "<i>Python</i>", "<i>Git</i>"],
+  "tags": ["*Showcase", "*Software", "/Python", "/Git"],
   "btns": {
     "-Demo": "#demo"
   },

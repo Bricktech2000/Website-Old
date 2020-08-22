@@ -10,9 +10,16 @@
 <<vars.id = <<<yield JSON.stringify(vars.id)>>> >>
 
 <br><br>
-Here is a test card mosaic:
+Results Mosaic:
 <<
-  var ids = JSON.parse((await include('/pages/pages.json')).text);
+  var ids = JSON.parse((await include('/body/partial/card-list.html', {
+    opr: 'or',
+    tags: [watch.hash.replace(/-/g, ' ')],
+    excl: "zero",
+    max: 1000,
+  })).text).slice();
+  //var ids = JSON.parse((await include('/pages/pages.json')).text);
+  var hash = watch.hash;
   yield include('/body/partial/mosaic/full.html', {
     ids: ids,
   })
