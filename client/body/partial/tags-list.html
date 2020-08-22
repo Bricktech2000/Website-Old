@@ -1,0 +1,37 @@
+
+<style style="display: none;">
+  .tags-list{
+    background: var(--card-bg);
+    margin: calc(var(--smart-unit) * 5) 7.5vw;
+    padding: calc(var(--smart-unit) * 2);
+    border-radius: calc(var(--smart-unit) * .5);
+    box-shadow: var(--bs);
+  }
+  @media(max-aspect-ratio: <<<yield consts.portrait>>>){
+    .tags-list{
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+</style>
+
+
+<div class="tags-list">
+  <<
+    var tags = JSON.parse((await include('/pages/tags.json')).text);
+    //https://stackoverflow.com/questions/15669557/regex-match-pattern-as-long-as-its-not-in-the-beginning
+    var hashTag = watch.hash.replace(/(?!^)-/g, ' ');
+
+    yield include('/body/partial/list.html', {
+      incl: 'tag.html',
+      params: new Array(tags.length).fill(null).map(function(){
+        var tag = tags.shift();
+        return {
+          label: tag,
+          type: hashTag == tag ? 'on' : 'off',
+          mini: false,
+        }
+      })
+    })
+  >>
+</div>
