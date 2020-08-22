@@ -31,3 +31,13 @@
     watch.urlh = e.currentTarget.hash.replace(/^#/, '');
   }
 >>
+<<
+  var func = (e) => {
+    utils.redirect({
+      preventDefault: () => null,
+      currentTarget: window.location,
+    });
+  }
+  //window.addEventListener('pushstate', func);
+  window.addEventListener('popstate',  func);
+>>

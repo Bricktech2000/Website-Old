@@ -21,6 +21,6 @@
 </style>
 <a class="button <<<if(params.label.startsWith('-')) yield 'button-on'>>>"
   href="<<<yield params.href.replace(/^-/, '')>>>" target="<<<if(params.href.startsWith('-')) yield '_blank'>>>"
-  onclick="<<<if(!params.href.startsWith('-')) yield 'reUpdate.utils.redirect(event)'>>>">
+  onclick="<<<if(!params.href.startsWith('-') && !params.href.startsWith('#')) yield 'reUpdate.utils.redirect(event)'>>>">
   <<<yield params.label.replace(/^-/, '')>>>
 </a>
