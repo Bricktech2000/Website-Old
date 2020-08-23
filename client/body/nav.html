@@ -52,6 +52,10 @@
   nav div:nth-of-type(2) svg{
     transform: scaleX(-1);
   }
+
+  nav .svg-on svg{
+    fill: var(--color);
+  }
   
   @keyframes active-animation{
     0% {
@@ -75,10 +79,28 @@
     }
   }
 </style>
-<a href="/" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/042-home.svg')>>></a>
-<a href="/search/" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/050-search.svg')>>></a>
-<a href="/tags/" onclick="reUpdate.utils.redirect(event)"><<<yield include('icons/031-tag-1.svg')>>></a>
-<a href="<<<yield consts.github>>>" target="_blank"><<<yield include('icons/045-cat.svg')>>></a>
+<a href="/"        onclick="reUpdate.utils.redirect(event)" class="home">   <<<yield include('icons/042-home.svg')>>>   </a>
+<a href="/search/" onclick="reUpdate.utils.redirect(event)" class="search"> <<<yield include('icons/050-search.svg')>>> </a>
+<a href="/tags/"   onclick="reUpdate.utils.redirect(event)" class="tags">   <<<yield include('icons/031-tag-1.svg')>>>  </a>
+<a href="<<<yield consts.github>>>"         target="_blank" class="pages">  <<<yield include('icons/045-cat.svg')>>>    </a>
+
+<< vars.lastClss = 'home' >>
+<<
+  var path = watch.path;
+  var clss = '';
+
+  if(path.length == 3 && path[0] == 'pages' && path[2] == '') clss = 'pages';
+  else if(path.length == 1 && path[0] == '') clss = 'home';
+  else if(path.length == 2 && path[1] == '') clss = path[0];
+
+  document.getElementsByClassName(vars.lastClss)[0].classList.remove('svg-on');
+
+  var elems = document.getElementsByClassName(clss) || [];
+  for(var elem of elems)
+    elem.classList.add('svg-on');
+
+  vars.lastClss = clss;
+>>
 
 <<
   window.toggleMode = (e) => {
