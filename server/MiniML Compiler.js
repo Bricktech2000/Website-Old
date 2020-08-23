@@ -57,7 +57,7 @@ var MiniML = {
         //{find: /^\{([^]*?): ([^]*?([^\\]|\\\\))\}/, replace: (a, b, c, d) => `<a class="markup-link markup-inline" target="_self" href="${c}">${parse([b])}</a>`},
         {find: /^\n\"\"([^]*?([^\\]|\\\\))\"\"/, replace: (a, b) => `${br}<div class="markup-quote">${parse([b], false)}</div>`},
         {find: /^\n\*([^\n]*)/, replace: (a, b) => `<ul><li class="">${parse([b], isCode)}</li></ul>`},
-        {find: /^\n# ?([^\n]*)/, replace: (a, b) => `<a name="${b}" class="markup-link markup-inline"></a>`},
+        {find: /^\n# ?([^\n]*)/, replace: (a, b) => `<a name="${b}" class="markup-anchor markup-inline"></a>`},
         {find: /^([^\n]*)\n=+\n/, replace: (a, b) => `<div class="markup-h1">${parse([b], isCode)}</div>${br}`},
         {find: /^([^\n]*)\n-+\n/, replace: (a, b) => `<div class="markup-h2">${parse([b], isCode)}</div>${br}`},
         {find: /^\/([^\n]*?([^\\\n]|\\\\))\//, replace: (a, c) => `<div class="markup-italic markup-inline">${parse([c], isCode)}</div>`},
