@@ -1,11 +1,9 @@
 << consts.lang = '<<<yield consts.lang>>>' >>
 <!-- dynamic watch.url and watch.path definitions -->
 <!-- https://stackoverflow.com/questions/5817505/is-there-any-method-to-get-the-url-without-query-string -->
-<< watch.url = window.location.pathname >>
-<< watch.urlh = window.location.hash.replace(/^#/, '') >>
 << history.scrollRestoration = 'manual' >>
 << vars.firstLoad = 0; >>
-
+<< vars.url = null; vars.urlh = null; >>
 <<
   utils.redirect = async (e, popstate = false) => {
     e.preventDefault();
@@ -13,18 +11,20 @@
     //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
     var url = e.currentTarget.pathname; // || '/';
     var urlh = e.currentTarget.hash.replace(/^#/, '');
-    watch.url = url;
-    watch.urlh = urlh;
+    var urlChanged = vars.url != url;
+    var urlhChanged = vars.urlh != urlh;
 
-    if(!popstate){
-      if(urlh) history.pushState(null, null, url + '#' + urlh);
+    if(!popstate && urlChanged){
+      if(urlh && urlhChanged) history.pushState(null, null, url + '#' + urlh);
       else history.pushState(null, null, url);
     }
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-    if(vars.firstLoad > 0) await utils.sleep(500);
 
-    watch.hash = urlh;
-    watch.path = url.split('?')[0].replace(/^\//, '').split('/');
+    watch.url = vars.url = url;
+    watch.urlh = vars.urlh = urlh;
+    if(vars.firstLoad > 0) await utils.sleep(500);
+    if(urlChanged) watch.path = url.split('?')[0].replace(/^\//, '').split('/');
+    if(urlhChanged) watch.hash = urlh;
 
     vars.firstLoad++;
   }
@@ -38,5 +38,5 @@
   }
   func();
   //window.addEventListener('pushstate', func);
-  window.addEventListener('popstate',  func);
+  window.addEventListener('popstate',  func); //function(e){ console.log(e.preventDefault); }
 >>
