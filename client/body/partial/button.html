@@ -1,6 +1,7 @@
 <style style="display: none;">
   .button{
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
     margin: calc(var(--smart-unit) * .5);
     padding: calc(var(--smart-unit) * .5) calc(var(--smart-unit) * 4);
     padding-bottom: calc(var(--smart-unit) * .75);
@@ -19,9 +20,26 @@
   .button-on{
     background: var(--color);
   }
+  .button svg{
+    display: inline-block;
+    height: 1em;
+    width: auto;
+    margin: calc(var(--smart-res-unit) * .5);
+    margin-left: calc(var(--smart-res-unit) * 1);
+    fill: var(--title) !important;
+  }
 </style>
-<a class="button <<<if(params.label.startsWith('-')) yield 'button-on'>>>"
-  href="<<<yield params.href.replace(/^-/, '')>>>" target="<<<if(params.href.startsWith('-')) yield '_blank'>>>"
-  onclick="<<<if(!params.href.startsWith('-') && !params.href.startsWith('#')) yield 'reUpdate.utils.redirect(event)'>>>">
-  <<<yield params.label.replace(/^-/, '')>>>
+<<<
+  vars.icon = {
+    'Try it!': '018-gamepad',
+    'Code': '047-coding',
+    'Demo': '019-play',
+    'Github': '045-cat',
+  }[params.label];
+>>>
+<a class="button <<<if(params.href.startsWith('#')) yield 'button-on'>>>"
+  href="<<<yield params.href.replace(/^:/, '')>>>" target="<<<if(params.href.startsWith(':')) yield '_blank'>>>"
+  onclick="<<<if(!params.href.startsWith(':') && !params.href.startsWith('#')) yield 'reUpdate.utils.redirect(event)'>>>">
+  <<<yield params.label>>>
+  <<<yield include(`../icons/${vars.icon}.svg`)>>>
 </a>
