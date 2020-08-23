@@ -1,24 +1,25 @@
 <style style="display: none;">
-  .button{
-    display: inline-flex;
-    align-items: center;
-    margin: calc(var(--smart-unit) * .5);
-    padding: calc(var(--smart-unit) * .5) calc(var(--smart-unit) * 3);
-    padding-bottom: calc(var(--smart-unit) * .75);
+  .button-container{
+    display: inline-block;
     color: var(--title);
-    border: calc(var(--smart-unit) * .5) solid var(--color);
+    margin: calc(var(--smart-unit) * .5);
+    padding: calc(var(--smart-unit) * .5);
     border-radius: 100vh; /* let's gooooo */
     box-shadow: var(--bs);
     text-decoration: none;
     font-weight: 500;
-    transition: background .125s ease, border-color .125s ease;
   }
-  .button:hover{
-    border-color: var(--color2);
-    background: var(--color2);
+  .button{
+    display: flex;
+    align-items: center;
+    padding: calc(var(--smart-unit) * .5) calc(var(--smart-unit) * 3);
+    border-radius: inherit;
+  }
+  .button{
+    background: var(--bg);
   }
   .button-on{
-    background: var(--color);
+    background: transparent;
   }
   .button svg{
     display: inline-block;
@@ -37,9 +38,11 @@
     'Github': '045-cat',
   }[params.label];
 >>>
-<a class="button <<<if(params.href.startsWith('#')) yield 'button-on'>>>"
+<a class="button-container lg-hover"
   href="<<<yield params.href.replace(/^:/, '')>>>" target="<<<if(params.href.startsWith(':')) yield '_blank'>>>"
   onclick="<<<if(!params.href.startsWith(':') && !params.href.startsWith('#')) yield 'reUpdate.utils.redirect(event)'>>>">
-  <<<yield params.label>>>
-  <<<yield include(`../icons/${vars.icon}.svg`)>>>
+  <div class="button <<<if(params.href.startsWith('#')) yield 'button-on'>>>">
+    <<<yield params.label>>>
+    <<<yield include(`../icons/${vars.icon}.svg`)>>>
+  </div>
 </a>

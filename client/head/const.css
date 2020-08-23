@@ -5,8 +5,9 @@
   --card-bg: #282828;
   --card2-bg: #444;
 
-  --color: #f44;
-  --color2: #e22;
+  --color-l: #f66;
+  --color: #e33;
+  --color-d: #d00;
   --text: #bbb;
   --title: #fff;
 
@@ -17,6 +18,11 @@
     0 0
     calc(var(--smart-unit) * 1)
     var(--black);
+  /* https://developer.mozilla.org/en-US/docs/Web/CSS/linear-gradient */
+  --lg:
+    linear-gradient(-45deg, var(--color-l), var(--color));
+  --lg-d:
+    linear-gradient(-45deg, var(--color), var(--color-d));
 }
 @media (max-device-width: <<<yield consts.phone>>>){
   :root{ --smart-unit: 1vmax; }
@@ -28,20 +34,21 @@
   box-sizing: border-box;
   /*https://stackoverflow.com/questions/11289166/chrome-on-android-resizes-font*/
   max-height: 999999999px;
-  word-wrap: break-word;
+  -webkit-tap-highlight-color: transparent;
 }
 html{
   scroll-behavior: smooth;
 }
 body{
-  font-size: calc(var(--smart-res-unit) * 2);
-  /*https://www.hostinger.com/tutorials/best-html-web-fonts*/
-  font-family: Calibri, Verdana, sans-serif;
-  line-height: 1.6;
   width: 100%;
   overflow-x: hidden;
+  /*https://www.hostinger.com/tutorials/best-html-web-fonts*/
+  font-family: Calibri, Verdana, sans-serif;
+  font-size: calc(var(--smart-res-unit) * 2);
+  line-height: 1.6;
   color: var(--text);
   background: var(--bg);
+  word-wrap: break-word;
 }
 
 ::-webkit-scrollbar{
@@ -54,10 +61,9 @@ body{
   /*background-clip: content-box;*/
 }
 ::-webkit-scrollbar-thumb{
-  background-color: var(--color2);
+  background: var(--lg);
   border-radius: .5vh;
-  transition: background-color .25s ease-in-out;
 }
 ::-webkit-scrollbar-thumb:hover{
-  background-color: var(--color);
+  background: var(--lg-d);
 }
