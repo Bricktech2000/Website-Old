@@ -5,30 +5,28 @@
 << watch.urlh = window.location.hash.replace(/^#/, '') >>
 << history.scrollRestoration = 'manual' >>
 << vars.firstLoad = 0; >>
-<<
-  var url = watch.url;
-  history.pushState(null, null, url);
-  window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
-  if(vars.firstLoad > 0) await utils.sleep(500);
 
-  watch.path = url.split('?')[0].replace(/^\//, '').split('/');
-  vars.firstLoad++;
->>
 <<
-  var hash = watch.urlh;
-  if(hash) history.pushState(null, null, '#' + hash);
-  if(vars.firstLoad > 1) await utils.sleep(500);
-  watch.hash = hash;
-  vars.firstLoad++;
->>
-<<
-  utils.redirect = (e) => {
+  utils.redirect = async (e, popstate = false) => {
     e.preventDefault();
-    window.scrollTo({top: 0, left: 0, behavior: 'smooth'}); //if the url doesn't change
     //https://stackoverflow.com/questions/14721388/how-to-get-the-exact-href-value-only-without-their-domain
     //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
-    watch.url = e.currentTarget.pathname; // || '/';
-    watch.urlh = e.currentTarget.hash.replace(/^#/, '');
+    var url = e.currentTarget.pathname; // || '/';
+    var urlh = e.currentTarget.hash.replace(/^#/, '');
+    watch.url = url;
+    watch.urlh = urlh;
+
+    if(!popstate){
+      if(urlh) history.pushState(null, null, url + '#' + urlh);
+      else history.pushState(null, null, url);
+    }
+    window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
+    if(vars.firstLoad > 0) await utils.sleep(500);
+
+    watch.hash = urlh;
+    watch.path = url.split('?')[0].replace(/^\//, '').split('/');
+
+    vars.firstLoad++;
   }
 >>
 <<
@@ -36,8 +34,9 @@
     utils.redirect({
       preventDefault: () => null,
       currentTarget: window.location,
-    });
+    }, true);
   }
+  func();
   //window.addEventListener('pushstate', func);
   window.addEventListener('popstate',  func);
 >>
