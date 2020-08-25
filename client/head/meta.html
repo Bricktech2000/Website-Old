@@ -1,5 +1,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<<<
+  var url = params.req.url;
+  var path = url.split('?')[0].replace(/^\//, '').split('/');
+  vars.info = '';
+
+  if(path.length == 3 && path[0] == 'pages' && path[2] == ''){
+    info = JSON.parse((await include('../pages/' + path[1] + '/info.json')).text);
+    vars.info = {
+      ogTitle: 'TechnoViper - ' + info.title,
+      ogDescription: info.desc,
+      ogImage: consts.href + '/pages/' + path[1] + '/thumbnail.jpg',
+    };
+  }else if(path.length == 1 && path[0] == ''){
+    vars.info = {
+      ogTitle: 'TechnoViper Official Website - by Emilien Breton',
+      ogDescription: 'TODO: find a description',
+      ogImage: consts.href + '/thumbnail.jpg',
+    };
+  }else if(path.length == 2 && path[1] == ''){
+    vars.info = {
+      ogTitle: 'TechnoViper - ' + path[0],
+      ogDescription: '',
+      ogImage: consts.href + '/thumbnail.jpg',
+    };
+  }
+  vars.info.icon = consts.href + '/icon.png';
+  vars.info.description = vars.info.ogTitle + ' | ' + vars.info.ogDescription;
+>>>
 <!-- TODO -->
 <!--https://codelabs.developers.google.com/codelabs/add-to-home-screen/index.html?index=..%2F..index#5-->
 <!--https://developers.google.com/web/ilt/pwa/introduction-to-push-notifications-->
@@ -9,12 +37,12 @@
 <!--https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Femilien.ml%2F&tab=mobile&hl=en_GB-->
 <!--https://developer.apple.com/library/archive/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html-->
 <meta name="apple-mobile-web-app-title" content="TechnoViper">
-<meta property="og:title" content="<<<yield this.ogTitle>>>" /> <!--TechnoViper Official Website - by Emilien Breton-->
-<meta property="og:description" content="<<<yield this.ogDescription>>>" /> <!--A portfolio for many of my projects!-->
-<meta property="og:type" content="<<<yield this.type>>>" />
+<meta property="og:title" content="<<<yield vars.info.ogTitle>>>" /> <!--TechnoViper Official Website - by Emilien Breton-->
+<meta property="og:description" content="<<<yield vars.info.ogDescription>>>" /> <!--A portfolio for many of my projects!-->
+<meta property="og:type" content="<<<yield consts.type>>>" />
 <!--<meta property="og:url" content="" />--> <!--http://emilien.ml/-->
-<meta property="og:image" content="<<<yield this.ogImage>>>" /> <!--http://emilien.ml/Logo_Body1_Faces_Pixlr.com3.png-->
-<meta name="description" content="<<<yield this.description>>>"> <!--TechnoViper Official Website - by Emilien Breton. A portfolio for many of my projects!-->
+<meta property="og:image" content="<<<yield vars.info.ogImage>>>" /> <!--http://emilien.ml/Logo_Body1_Faces_Pixlr.com3.png-->
+<meta name="description" content="<<<yield vars.info.description>>>"> <!--TechnoViper Official Website - by Emilien Breton. A portfolio for many of my projects!-->
 <meta name="google-site-verification" content="dQrqb9ILoGX465ghpxcxAbHxpP7rw_Lo9GG2f7Gjg9U" />
-<link rel="shortcut icon" href="<<<yield this.icon>>>"> <!--./../favicon.png-->
-<link rel="apple-touch-icon" href="<<<yield this.ogImage>>>">
+<link rel="shortcut icon" href="<<<yield vars.info.icon>>>"> <!--./../favicon.png-->
+<link rel="apple-touch-icon" href="<<<yield vars.info.ogImage>>>">
