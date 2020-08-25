@@ -1,6 +1,7 @@
 <style style="display: none;">
   nav{
-    width: 100%;
+    --item-count: 5;
+    width: min(calc(100vh / var(--item-count)), 100%);
     height: 100vh;
     position: sticky;
     top: 0;
@@ -13,8 +14,10 @@
   }
   nav a{
     display: block;
-    height: calc(var(--smart-unit) * 10);
     width: calc(var(--smart-unit) * 10);
+    height: calc(var(--smart-unit) * 10);
+    max-width: min(calc(100vw / var(--item-count)), calc(100vh / var(--item-count)));
+    max-height: min(calc(100vw / var(--item-count)), calc(100vh / var(--item-count)));
     padding: calc(calc(var(--smart-unit) * 10) * 20 / 100);
     transition: background .125s ease, transform .125s ease;
   }
@@ -65,7 +68,7 @@
   @media (max-aspect-ratio: <<<yield consts.portrait>>>){
     nav{
       width: 100vw;
-      height: 100%;
+      height: min(calc(100vw / var(--item-count)), 100%);
       flex-direction: row;
     }
   }
