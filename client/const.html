@@ -30,13 +30,9 @@
   }
 >>
 <<
-  var func = (e) => {
-    utils.redirect({
-      preventDefault: () => null,
-      currentTarget: window.location,
-    }, true);
-  }
-  func();
-  //window.addEventListener('pushstate', func);
-  window.addEventListener('popstate',  func); //function(e){ console.log(e.preventDefault); }
+  utils.redirect({
+    preventDefault: () => null,
+    currentTarget: window.location,
+  });
+  window.addEventListener('popstate',  utils.redirect);
 >>
