@@ -6,11 +6,12 @@
 << vars.url = null; vars.urlh = null; >>
 <<
   utils.redirect = async (e, popstate = false) => {
+    currentTarget = e.currentTarget.location || e.currentTarget;
     e.preventDefault();
     //https://stackoverflow.com/questions/14721388/how-to-get-the-exact-href-value-only-without-their-domain
     //https://stackoverflow.com/questions/50149925/click-event-target-gives-element-or-its-child-not-parent-element
-    var url = e.currentTarget.pathname; // || '/';
-    var urlh = e.currentTarget.hash.replace(/^#/, '');
+    var url = currentTarget.pathname; // || '/';
+    var urlh = currentTarget.hash.replace(/^#/, '');
     var urlChanged = vars.url != url;
     var urlhChanged = vars.urlh != urlh;
 
