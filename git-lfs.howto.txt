@@ -1,0 +1,23 @@
+https://git-lfs.github.com/
+
+
+git lfs install
+git lfs track "*.mp4"
+git add .gitattributes
+git commit -m ...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
