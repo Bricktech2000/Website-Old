@@ -44,31 +44,17 @@
     justify-self: baseline;
   }
   @keyframes header-gradient{
-    0%   { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+    0%   { background-position: left; }
+    50%  { background-position: right; }
+    100% { background-position: left; }
   }
   header .header-gradient{
     grid-area: gradient;
-    overflow: hidden;
-    display: grid; /*flex cuts off content*/
-    flex-wrap: nowrap;
-    background: transparent;
     border-radius: calc(var(--smart-unit) * 2.5);
     box-shadow: var(--bs), var(--bs);
-  }
-  header .header-gradient::before{
-    --sqrt-2: 1.41421;
-    content: "";
-    display: block;
-    align-self: center;
-    justify-self: center;
-    width: calc(100% * var(--sqrt-2) * 1.5);
-    height: calc(100% * var(--sqrt-2) * 1.5);
-    z-index: -1;
-    /*https://www.google.com/search?q=grayscale+subtle+texture&tbm=isch&ved=2ahUKEwjZp8fW48HrAhU7VzABHUptBCMQ2-cCegQIABAA&oq=grayscale+subtle+texture&gs_lcp=CgNpbWcQAzoCCAA6BggAEAgQHjoECAAQGFCNQVjBTWC4TmgAcAB4AIAB8AOIAasZkgEDNC03mAEAoAEBqgELZ3dzLXdpei1pbWfAAQE&sclient=img&ei=LwFLX5nUCbuuwbkPytqRmAI&rlz=1C1CHBF_enCA881CA881&safe=strict#imgrc=Crav_H9O07UIsM*/
-    background-image: linear-gradient(var(--color-d), #f80), url("/body/grayscale-pattern.jpg");
-    background-blend-mode: darken;
-    animation: header-gradient 30s infinite linear;
+    background-image: linear-gradient(90deg, var(--color-d), #f80, var(--color-d));
+    background-size: 200%;
+    animation: header-gradient 10s infinite;
   }
   @media(max-aspect-ratio: <<<yield consts.portrait>>>){
     header{
