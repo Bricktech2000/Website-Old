@@ -4,7 +4,7 @@ MiniML 1.0
 Preface
 -------
 
-During the last year of high school in the {IB program:: https://www.ibo.org/} (aka PEI), students need to do a very complex prject called the /Personnal Project/. It is divided into 4 main sections: [Research], [Planification], [Action] and [Reflexion]. For my personnal project, which I started a few months ago, I decided to build a very fast quadcopter, often called a {/Racing Drone/:: https://www.google.com/search?q=racing+drone&safe=strict&tbm=isch}. I had already built a drone before starting this project, which you can check out by {clicking here: /GLDY3}. However, it was 2.5 times smaller and about 5 times less powerful than the one I will build for my personnal project, which will spin 5" propellers. This will be an awesome opportunity to learn a bunch about how drones work, but most importantly to work on my problem-solving skills.
+During the last year of high school in the {IB program:: https://www.ibo.org/} (aka PEI), students need to do a very complex project called the /Personnal Project/. It is divided into 4 main sections: [Research], [Planification], [Action] and [Reflexion]. For my personnal project, which I started a few months ago, I decided to build a very fast quadcopter, often called a {/Racing Drone/:: https://www.google.com/search?q=racing+drone&safe=strict&tbm=isch}. I had already built a drone before starting this project, which you can check out by {clicking here: ../GLDY3}. However, it was 2.5 times smaller and about 5 times less powerful than the one I will build for my personnal project, which will spin 5" propellers. This will be an awesome opportunity to learn a bunch about how drones work, but most importantly to work on my problem-solving skills.
 
 
 The Prototype
@@ -17,7 +17,7 @@ May 26th, I had the idea to try to make a virtual prototype of the drone in an {
 The Parts Used
 ---------------
 
-Here's a list of every part I will use to make this drone (keep in mind that I will not be using a camera nor a VTX, to keep the build as simple as possible):
+Here's a list of all the parts I will use to make this drone (keep in mind that I will not be using a camera nor a VTX, to keep the build as simple as possible):
 	* {(4x) Emax Eco Series 2207 1700KV 3-6S:: https://www.banggood.com/4PCS-Emax-ECO-Series-2207-1700KV-3-6S-Brushless-Motor-for-RC-Drone-FPV-Racing-p-1582953.html?akmClientCountry=CA&rmmds=cart_middle_products&cur_warehouse=CN}
 	* {(2x 2 Pairs) Emax Avan Flow 5" 3-blade:: https://www.banggood.com/2-Pairs-Emax-AVAN-Flow-5-Inch-5x4_3x3-3-blade-RC-Drone-FPV-Racing-Propeller-for-2206-2207-2306-Motor-p-1277627.html?akmClientCountry=CA&rmmds=cart_middle_products&ID=515405&cur_warehouse=CN}
 	* {Transtek Frog Lite 218mm Carbon Fiber:: https://www.banggood.com/Frog-Race-Frog-Lite-218mm-Carbon-Fiber-4mm-Arm-X-Frame-DIY-Frame-Kit-p-1131900.html?akmClientCountry=CA&rmmds=cart_middle_products&ID=528662&cur_warehouse=CN}

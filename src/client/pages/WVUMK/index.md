@@ -28,7 +28,7 @@ How it Works
 
 In order to register a hotkey in windows, you need to use the [RegisterHotKey] function:
 	[[
-	BOOL {RegisterHotKey:: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerhotkey}(HWND hWnd, int  id, UINT fsModifiers, UINT vk);
+	BOOL {RegisterHotKey:: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerhotkey}(HWND hWnd, int id, UINT fsModifiers, UINT vk);
 	]]
 There are only two important parameters for this function. First, vk is the {virtual key code:: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes} of the key that will be pressed after the modifier key. For example, in the hotkey [CTRL + A], the {virtual key code:: https://docs.microsoft.com/en-us/windows/win32/inputdev/virtual-key-codes} would be equal to the letter [A]. Second, [fsModifiers] is a list of modifier keys that need to be held down, but it can only consist of the following: [ALT], [CONTROL], [SHIFT] or [WINDOWS]. As you can see, there is no way to register a hotkey using the [CAPS LOCK] key. To solve this problem, a simple hack is used: whenever the user holds down the [CAPS LOCK] key, the program holds down [CONTROL] and [ALT] in the background. This means that we are then able to register a hotkey using the [{RegisterHotKey:: https://docs.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-registerhotkey}] function without any problem.
 
