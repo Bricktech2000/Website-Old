@@ -1,12 +1,21 @@
 https://git-lfs.github.com/
 
 
+download
+download and run installer
+OR
+sudo apt-get install git-lfs
+
+
+initialize:
 git lfs install
 git lfs track "*.mp4"
 git add .gitattributes
-git commit -m ...
+git commit -m "initialized git-lfs"
 
 
+pull:
+git lfs pull
 
 
 
