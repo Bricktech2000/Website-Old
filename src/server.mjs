@@ -1,10 +1,13 @@
 import http from 'http';
+import https from 'https';
 import path from 'path';
+import fs from 'fs';
 import express from 'express';
 var app = express();
 
 //https://stackoverflow.com/questions/8817423/node-dirname-not-defined
 const basePath = path.resolve(); //__dirname
+const serverPath = 'server';
 const clientPath = 'client';
 //https://stackoverflow.com/questions/58384179/syntaxerror-cannot-use-import-statement-outside-a-module
 import { reUpdate } from './reUpdate-server.js';
@@ -20,16 +23,28 @@ app.use(reUpdate.express(basePath, clientPath));
 app.use(express.static(clientPath, {
   index: 'index.html'
 }));
-//https://expressjs.com/en/guide/error-handling.html
-//https://stackoverflow.com/questions/29481729/chaining-express-js-4s-res-status401-to-a-redirect
-//app.use(function (req, res, next) {
-//  res.status(404).sendFile(clientPath + '/404.html');//redirect(404, '/emilien.ml/#404');
-//});
 
 
-var httpServer = http.createServer(app);
-httpServer.listen(80, function(){
+var p = path.join(basePath, serverPath);
+var credentials = {
+  key: fs.readFileSync(path.join(p, '/private.key')),
+  cert: fs.readFileSync(path.join(p, '/certificate.crt')),
+  ca: fs.readFileSync(path.join(p, '/ca_bundle.crt')),
+};
+
+//start an HTTP redirect server
+var httpServer = http.createServer(function(req, res){
+  res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
+  res.end();
+  //res.redirect('https://' + req.headers.host + req.url);
+  //console.log('https://' + req.headers.host + req.url);
+});
+httpServer.listen(80);
+
+//start the server and log to the console
+var httpsServer = https.createServer(credentials, app);
+httpsServer.listen(443, function(){
     var host = 'localhost';
-    var port = httpServer.address().port;
+    var port = httpsServer.address().port;
     console.log('listening on http://' + host + ':' + port + '/');
 });

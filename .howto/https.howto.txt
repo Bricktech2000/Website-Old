@@ -1,0 +1,99 @@
+tuto: https://stackoverflow.com/questions/11744975/enabling-https-on-express-js
+get SSL certificate: https://zerossl.com/ (recommended: https://letsencrypt.org/getting-started/)
+
+copy: ca_bundle.crt, certificate.crt, private.key to server
+
+express https: https://stackoverflow.com/questions/11744975/enabling-https-on-express-js
+express http to https redirect: https://stackoverflow.com/questions/7450940/automatic-https-connection-redirect-with-node-js-express
+include ca certificate: https://stackoverflow.com/questions/51903880/facebook-curl-error-ssl-cacert-ssl-certificate
+
+edit: server.js
+using: express https, express http to https redirect, include ca certificate (for fb sharing debugger)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+old:
+
+install: tuto: https://blog.didierstevens.com/2015/03/30/howto-make-your-own-cert-with-openssl-on-windows/
+download: https://slproweb.com/products/Win32OpenSSL.html //NOT THE LIGHT INSTALLER!!!
+
+admin cmd:
+according to https://stackoverflow.com/questions/16658038/cant-open-config-file-usr-local-ssl-openssl-cnf-on-windows:
+set OPENSSL_CONF=C:\Program Files\OpenSSL-Win64\bin\cnf\openssl.cnf
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./server.key -out ./server.crt
+
+type:
+You are about to be asked to enter information that will be incorporated
+into your certificate request.
+What you are about to enter is what is called a Distinguished Name or a DN.
+There are quite a few fields but you can leave some blank
+For some fields there will be a default value,
+If you enter '.', the field will be left blank.
+-----
+Country Name (2 letter code) [AU]:CA
+State or Province Name (full name) [Some-State]:Quebec
+Locality Name (eg, city) []:.
+Organization Name (eg, company) [Internet Widgits Pty Ltd]:TechnoViper
+Organizational Unit Name (eg, section) []:.
+Common Name (e.g. server FQDN or YOUR name) []:66.187.117.105
+Email Address []:.
+
+verify exist: server.crt
+verify exist: server.key
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
