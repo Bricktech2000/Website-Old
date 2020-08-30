@@ -5,7 +5,7 @@ var miniML = {
     var src = _src.text || _src;
     var ast = parse(src);
     var html = gen(ast);
-    return MiniML.MiniMLCompile(src); //_compile(code, 'miniML');
+    return {..._src, text: MiniML.MiniMLCompile(src)}; //_compile(code, 'miniML');
   },
 };
 var parse = function(src, stx = 'miniML'){
