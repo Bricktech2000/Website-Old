@@ -39,6 +39,7 @@
     'Github': '045-cat',
     'Image': '013-paper',
     'Update': '048-next',
+    'Previous': '012-arrow-2',
   }
   vars.icon = '';
   for(var icon of Object.keys(icons))
@@ -49,6 +50,6 @@
   onclick="<<<if(!params.href.startsWith(':') && !params.href.startsWith('#')) yield 'reUpdate.utils.redirect(event)'>>>">
   <div class="button <<<if(params.href.startsWith('#')) yield 'button-on'>>>">
     <<<yield params.label>>>
-    <<<yield include(`../icons/${vars.icon}.svg`)>>>
+    <<<if(vars.icon) yield include(`../icons/${vars.icon}.svg`)>>>
   </div>
 </a>
