@@ -1,0 +1,21 @@
+<style style="display: none;">
+  .img-mosaic{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(calc(var(--smart-unit) * 40), 1fr));
+    grid-gap: calc(var(--smart-unit) * 2.5);
+    break-inside: avoid;
+  }
+  .img-mosaic img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+</style>
+<div class="img-mosaic">
+  <<<for(var src of params.srcs) yield `
+    <img class="markup-object" src="${src}">
+  `>>>
+</div>
+
+
+
