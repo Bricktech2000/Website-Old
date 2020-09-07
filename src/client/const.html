@@ -15,7 +15,7 @@
     var urlChanged = vars.url != url;
     var urlhChanged = vars.urlh != urlh;
 
-    if(!popstate && urlChanged){
+    if(!popstate && (urlChanged || urlhChanged)){
       if(urlh && urlhChanged) history.pushState(null, null, url + '#' + urlh);
       else history.pushState(null, null, url);
     }
