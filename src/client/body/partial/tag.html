@@ -1,3 +1,11 @@
+<<<
+  if(params.type == 'auto')
+    params.type = {
+      '*Blog': 'on',
+      '*Software': 'on',
+      '*Hardware': 'on',
+    }[params.label] || 'off';
+>>>
 <style style="display: none;">
   <<<vars.type = params.mini ? '-mini' : ''>>>
   .tag<<<yield vars.type>>>{
