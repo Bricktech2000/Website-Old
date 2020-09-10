@@ -1,4 +1,5 @@
 <<<
+  if(params.opr == 'search') return yield 'Searching for: ' + params.tags[0];
   var ids = JSON.parse((await include('../../pages/pages.json')).text);
   var scores = [];
   for(var id of ids){

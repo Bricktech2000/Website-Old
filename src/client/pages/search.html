@@ -1,9 +1,47 @@
-<script async src="https://cse.google.com/cse.js?cx=5298dd506372f10ec"></script>
-
+<style style="display: none;">
+  .search{
+  }
+</style>
 <<document.title = "TechnoViper - search" >>
-<div class="gcse-search" enableAutoComplete="true">
-  Search Box:
-  <div class="gcse-searchbox"></div>
-  Search Results:
-  <div class="gcse-searchresults"></div>
+<div class="search">
+  <<<
+    yield include('../body/partial/input.html', {
+      value: '',
+      placeholder: 'Search...',
+    });
+    yield include('../body/partial/button.html', {
+      label: 'Search',
+      href: '#',
+    });
+  >>>
+  <<
+    vars.input = document.querySelector('.search .input');
+    vars.button = document.querySelector('.search .button');
+  >>
+  <<
+    vars.button.onclick = (e) => {
+      e.preventDefault();
+      watch.searchQuery = vars.input.value;
+    }
+    vars.button.click();
+    consts.searchDelay = 2000;
+    vars.lastKeyup = 0;
+    vars.input.onkeyup = (e) => {
+      vars.lastKeyup++;
+      if(e.key == 'Enter') vars.button.click();
+      else setTimeout((lku) => {
+        if(vars.lastKeyup == lku) vars.button.click();
+      }, consts.searchDelay, vars.lastKeyup);
+    }
+  >>
+  <<
+    var search = watch.searchQuery;
+    if(search == '') return;
+    yield include('../body/partial/card-list.html', {
+      opr: 'search',
+      tags: [search],
+      excl: null,
+      max: 8,
+    });
+  >>
 </div>
