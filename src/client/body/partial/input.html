@@ -1,0 +1,22 @@
+<style style="display: none;">
+  .input{
+    display: inline-block;
+    width: 100%;
+    color: var(--title);
+    border: calc(var(--smart-unit) * .5) solid transparent;
+    margin: calc(var(--smart-unit) * .5);
+    padding: calc(var(--smart-unit) * 1.5) calc(var(--smart-unit) * 3);
+    border-radius: 100vh; /* let's gooooo */
+    box-shadow: var(--bs);
+    outline: none;
+    text-decoration: none;
+    font-size: inherit;
+    font-weight: 500;
+    transition: border-color .125s ease;
+  }
+  .input:focus{
+    border-color: var(--color);
+  }
+</style>
+
+<input type="text" class="input lg-hover" value="<<<yield params.value>>>" placeholder="<<<yield params.placeholder>>>">
