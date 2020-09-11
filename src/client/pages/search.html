@@ -1,9 +1,31 @@
 <style style="display: none;">
-  .search{
+  .search-header{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-gap: calc(var(--smart-unit) * 2.5);
+    align-items: center;
+
+    padding: calc(var(--smart-unit) * 5) 7.5vw;
+    color: var(--text);
+  }
+  .search-text-result{
+    display: grid;
+    width: 100;
+    height: calc(var(--smart-res-unit) * 20);
+    align-items: center;
+    justify-content: center;
+  }
+  @media(max-aspect-ratio: <<<yield consts.portrait>>>){
+    .search-header{
+      padding-left: calc(var(--smart-unit) * 2);
+      padding-right: calc(var(--smart-unit) * 2);
+      grid-template-columns: 1fr;
+      justify-items: right;
+    }
   }
 </style>
 <<document.title = "TechnoViper - search" >>
-<div class="search">
+<div class="search-header">
   <<<
     yield include('../body/partial/input.html', {
       value: '',
@@ -15,10 +37,11 @@
     });
   >>>
   <<
-    vars.input = document.querySelector('.search .input');
-    vars.button = document.querySelector('.search .button');
+    vars.input = document.querySelector('.search-header .input');
+    vars.button = document.querySelector('.search-header .button');
   >>
   <<
+    vars.input.focus();
     vars.button.onclick = (e) => {
       e.preventDefault();
       history.pushState(null, null, '#' + vars.input.value.replace(/ /g, '-'));
@@ -42,17 +65,18 @@
       vars.button.click();
     }
   >>
-  <<
-    var search = watch.searchQuery;
-    if(search == '') return;
-    var ids = JSON.parse((await include('../body/partial/card-list.html', {
-      opr: 'search',
-      tags: [search],
-      excl: 'zero',
-      max: 1000,
-    })).text);
-    yield include('/body/partial/mosaic/full.html', {
-      ids: ids,
-    });
-  >>
 </div>
+<<
+  var search = watch.searchQuery;
+  if(search == '') return;
+  var ids = JSON.parse((await include('../body/partial/card-list.html', {
+    opr: 'search',
+    tags: [search],
+    excl: 'zero',
+    max: 1000,
+  })).text);
+  if(ids.length == 0) return yield '<div class="search-text-result markup-h2">No results</div>';
+  yield include('/body/partial/mosaic/full.html', {
+    ids: ids,
+  });
+>>
