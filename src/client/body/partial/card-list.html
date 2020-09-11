@@ -1,5 +1,22 @@
 <<<
-  if(params.opr == 'search') return yield 'Searching for: ' + params.tags[0];
+  //import fetch from 'node-fetch';
+  //const fetch = require('node-fetch');
+  //https://javascript.info/modules-dynamic-imports
+  const fetch = (await import('node-fetch')).default;
+  var words;
+  if(params.opr == 'search'){
+    query = encodeURIComponent(params.tags[0].replace(/ /g, '+'));
+    var res = await fetch('https://api.datamuse.com/words?ml=' + query);
+    var text = await res.text();
+    _words = JSON.parse(text);
+    words = [];
+    for(var word of _words)
+      if(word.score >= 40000) words.push(word);
+    _words = params.tags[0].split(' ');
+    for(var word of _words)
+      words.push({word: word, score: 100000});
+    yield JSON.stringify(words);
+  }
   var ids = JSON.parse((await include('../../pages/pages.json')).text);
   var scores = [];
   for(var id of ids){
@@ -18,6 +35,21 @@
         case 'like':
           if(infoTag == paramTag) score++;
           break;
+        case 'search':
+          var str = '';
+          str += (await include('../../pages/' + id + '/info.json')).text;
+          str += (await include('../../pages/' + id + '/index.md')).text;
+          var scr = 0;
+          function escapeRegExp(string) {
+            return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
+          }
+          for(var word of words){
+            //https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string
+            scr += (str.match(new RegExp(escapeRegExp(word.word), 'gi')) || []).length * Math.pow(word.score, 2);
+            yield scr;
+          }
+          score += scr;
+        break;
         }
       }
       if(params.opr == 'and' && !match) score = 0;
