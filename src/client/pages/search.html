@@ -48,7 +48,7 @@
     var ids = JSON.parse((await include('../body/partial/card-list.html', {
       opr: 'search',
       tags: [search],
-      excl: null,
+      excl: 'zero',
       max: 1000,
     })).text);
     yield include('/body/partial/mosaic/full.html', {
