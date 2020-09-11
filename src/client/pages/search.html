@@ -37,11 +37,14 @@
   <<
     var search = watch.searchQuery;
     if(search == '') return;
-    yield include('../body/partial/card-list.html', {
+    var ids = JSON.parse((await include('../body/partial/card-list.html', {
       opr: 'search',
       tags: [search],
       excl: null,
       max: 1000,
+    })).text);
+    yield include('/body/partial/mosaic/full.html', {
+      ids: ids,
     });
   >>
 </div>

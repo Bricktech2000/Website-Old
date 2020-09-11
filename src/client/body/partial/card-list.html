@@ -6,6 +6,7 @@
   var words;
   if(params.opr == 'search'){
     query = encodeURIComponent(params.tags[0].replace(/ /g, '+'));
+    //https://www.datamuse.com/api/
     var res = await fetch('https://api.datamuse.com/words?ml=' + query);
     var text = await res.text();
     _words = JSON.parse(text);
@@ -15,7 +16,6 @@
     _words = params.tags[0].split(' ');
     for(var word of _words)
       words.push({word: word, score: 100000});
-    yield JSON.stringify(words);
   }
   var ids = JSON.parse((await include('../../pages/pages.json')).text);
   var scores = [];
@@ -43,11 +43,9 @@
           function escapeRegExp(string) {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
           }
-          for(var word of words){
+          for(var word of words)
             //https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string
             scr += (str.match(new RegExp(escapeRegExp(word.word), 'gi')) || []).length * Math.pow(word.score, 2);
-            yield scr;
-          }
           score += scr;
         break;
         }
