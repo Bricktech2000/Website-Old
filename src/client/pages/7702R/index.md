@@ -14,8 +14,8 @@ A few days ago, I received almost all the parts necessary to build my 5-inch dro
   var path = '/pages/7702R/';
   yield include('../../body/partial/mosaic/img.html', {
     srcs: [
-      path + 'IMG_20200827_182520_3.jpg',
-	  path + 'IMG_20200827_184808_8.jpg',
+      path + 'IMG_20200827_182520_3.min.jpg',
+	  path + 'IMG_20200827_184808_8.min.jpg',
     ]
   })
 >>>
@@ -31,11 +31,11 @@ Since I had received all of the main parts needed, I decided I would build a moc
   var path = '/pages/7702R/';
   yield include('../../body/partial/mosaic/img.html', {
     srcs: [
-      path + 'IMG_20200828_183908_4.jpg',
-	  path + 'IMG_20200828_183933_3.jpg',
-	  path + 'IMG_20200828_184500_9.jpg',
-	  path + 'IMG_20200828_185331_5.jpg',
-	  path + 'IMG_20200828_185559_2.jpg',
+      path + 'IMG_20200828_183908_4.min.jpg',
+	  path + 'IMG_20200828_183933_3.min.jpg',
+	  path + 'IMG_20200828_184500_9.min.jpg',
+	  path + 'IMG_20200828_185331_5.min.jpg',
+	  path + 'IMG_20200828_185559_2.min.jpg',
     ]
   })
 >>>
