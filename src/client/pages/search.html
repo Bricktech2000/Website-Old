@@ -21,6 +21,7 @@
   <<
     vars.button.onclick = (e) => {
       e.preventDefault();
+      history.pushState(null, null, '#' + vars.input.value.replace(/ /g, '-'));
       watch.searchQuery = vars.input.value;
     }
     vars.button.click();
@@ -32,6 +33,13 @@
       else setTimeout((lku) => {
         if(vars.lastKeyup == lku) vars.button.click();
       }, consts.searchDelay, vars.lastKeyup);
+    }
+  >>
+  <<
+    var query = watch.hash.replace(/-/g, ' ');
+    if(query){
+      vars.input.value = query;
+      vars.button.click();
     }
   >>
   <<

@@ -45,7 +45,7 @@
           }
           for(var word of words)
             //https://stackoverflow.com/questions/4009756/how-to-count-string-occurrence-in-string
-            scr += (str.match(new RegExp(escapeRegExp(word.word), 'gi')) || []).length * Math.pow(word.score, 2);
+            scr += (str.match(new RegExp(escapeRegExp(word.word), 'gi')) || []).length * Math.pow(word.score, 2) / str.length;
           score += scr;
         break;
         }
