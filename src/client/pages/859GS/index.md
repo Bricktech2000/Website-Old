@@ -27,34 +27,34 @@ Here is an example image, used as a source:
 The AI can then take this source image as an input, and compress it to a seemingly garbage-filled file, which looks nothing like the original image, but contains critical information. Then, it takes this file, which can be up to [16 times] smaller in size, and tries to reconstruct the image it started with as best as it can. Here are various {compression ratios:: https://en.wikipedia.org/wiki/Data_compression_ratio} applied to the source image (compressed [256 x, 128 x, 64 x, 32 x, 16 x, 8 x, 4 x, 2 x and 1 x] respectively):
 	[[
 		//&emsp;&emsp;1000 x
-		//{{img:: ./7.predicted36.1@0.0%.png}}
+		//{{img:: ./7.predicted36.1@0.0%25.png}}
 		//&nbsp;
 		&emsp;&emsp;256 x
-		{{img:: ./7.predicted36.1@0.390625%.png}}
+		{{img:: ./7.predicted36.1@0.390625%25.png}}
 		&nbsp;
 		&emsp;&emsp;128 x
-		{{img:: ./7.predicted36.1@0.781250%.png}}
+		{{img:: ./7.predicted36.1@0.781250%25.png}}
 		&nbsp;
 		&emsp;&emsp;64 x
-		{{img:: ./7.predicted36.1@1.5625%.png}}
+		{{img:: ./7.predicted36.1@1.5625%25.png}}
 		&nbsp;
 		&emsp;&emsp;32 x
-		{{img:: ./7.predicted36.1@3.125%.png}}
+		{{img:: ./7.predicted36.1@3.125%25.png}}
 		&nbsp;
 		&emsp;&emsp;16 x
-		{{img:: ./7.predicted36.1@6.25%.png}}
+		{{img:: ./7.predicted36.1@6.25%25.png}}
 		&nbsp;
 		&emsp;&emsp;8 x
-		{{img:: ./7.predicted36.1@12.5%.png}}
+		{{img:: ./7.predicted36.1@12.5%25.png}}
 		&nbsp;
 		&emsp;&emsp;4 x
-		{{img:: ./7.predicted36.1@25.0%.png}}
+		{{img:: ./7.predicted36.1@25.0%25.png}}
 		&nbsp;
 		&emsp;&emsp;2 x
-		{{img:: ./7.predicted36.1@50.0%.png}}
+		{{img:: ./7.predicted36.1@50.0%25.png}}
 		&nbsp;
 		&emsp;&emsp;1 x
-		{{img:: ./7.predicted36.1@100.0%.png}}
+		{{img:: ./7.predicted36.1@100.0%25.png}}
 	]]
 
 
