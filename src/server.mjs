@@ -15,8 +15,10 @@ reUpdate.log();
 
 
 
-
-
+//https://medium.com/dailyjs/how-to-prevent-your-node-js-process-from-crashing-5d40247b8ab2
+//https://stackoverflow.com/questions/19882344/node-js-server-crashing-without-error-message
+process.on('uncaughtException',  function(exception      ){ console.log(exception);       });
+process.on('unhandledRejection', function(reason, promise){ console.log(promise, reason); });
 
 app.use(reUpdate.express(basePath, clientPath));
 //https://evanhahn.com/express-dot-static-deep-dive/
