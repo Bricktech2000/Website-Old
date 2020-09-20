@@ -27,7 +27,7 @@ var parse = function(src, stx = 'miniML'){
 
   var syntax = syntax[stx].source.replace(keys, (match) => 'SPLIT' + match + 'SPLIT');
   var regexArr = syntax.split('SPLIT');
-  console.log(regexArr);
+  //console.log(regexArr);
   /*return code.replace(syntax[stx], function(a){
     return a;
   });*/
