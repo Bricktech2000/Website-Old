@@ -6,72 +6,15 @@
       '*Hardware': 'on',
     }[params.label] || 'off';
 >>>
-<style style="display: none;">
-  <<<vars.type = params.mini ? '-mini' : ''>>>
-  .tag<<<yield vars.type>>>{
-    color: var(--dark-text);
-    display: inline-block;
-    cursor: pointer;
-    text-decoration: none;
-    white-space: nowrap;
-    <<<
-      if(!params.mini) yield `
-        font-size: calc(var(--smart-res-unit) * 2);
-        padding: calc(var(--smart-unit) * .5) calc(var(--smart-unit) * 1.5);
-      `
-      else yield `
-        font-size: calc(var(--smart-res-unit) * 1.25);
-        padding: calc(var(--smart-unit) * .1) calc(var(--smart-unit) * .7);
-      `
-    >>>;
-    margin: calc(var(--smart-unit) * .5);
-    border-radius: calc(var(--smart-unit) * .5);
-    border: calc(var(--smart-unit) * .15) solid var(--card2-bg);
-    transition: color 0.125s ease-in-out, border-color .125s ease-in-out, transform 0.125s ease-in-out;
-    -webkit-tap-highlight-color: rgba(255, 0, 0, .25);
-  }
-  .tag<<<yield vars.type>>>-off{
-    background: var(--bg);
-    color: var(--text);
-    font-weight: lighter;
-  }
-  .tag<<<yield vars.type>>>-on{
-    background: var(--bg);
-    border-color: var(--color);
-    color: var(--color);
-    font-weight: lighter;
-  }
-  /*https://stackoverflow.com/questions/10964729/javascript-style-overriding-css-hover*/
-  
-  .tag-on:hover{
-    color: var(--color) !important;
-    border-color: var(--color) !important;
-    transform: translateY(-4%);
-  }
-  .tag-off:hover{
-    color: var(--color) !important;
-    transform: translateY(-4%);
-  }
-
-  .tag<<<yield vars.type>>> u{
-    text-decoration: none;
-    font-variant: small-caps;
-    font-weight: 400;
-  }
-  .tag<<<yield vars.type>>> b{
-    font-weight: 500;
-  }
-  .tag<<<yield vars.type>>> i{
-    font-style: italic;
-  }
-</style>
+<<<vars.type = params.mini ? '-mini' : ''>>>
+<link rel="stylesheet" href="/body/partial/tag.css">
 <<<vars.label = params.label.replace(/^([\*\/-])([^]*)/, function(_, idf, label){
   var tag = {'*': 'b', '/': 'i', '-': 'u'}[idf];
   return `<${tag}>${label}</${tag}>`;
 })>>>
 <<<vars.tag = params.mini ? 'div' : 'a'>>>
 <<<yield '<' + vars.tag>>>
-  class="tag<<<yield vars.type>>> tag<<<yield vars.type>>>-<<<yield params.type>>>"
+  class="tag tag<<<yield vars.type>>> tag-<<<yield params.type>>>"
   href="/tags/#<<<yield params.label.replace(/ /g, '-')>>>" onclick="reUpdate.utils.redirect(event)">
   <<<yield vars.label>>>
 </<<<yield vars.tag>>> >
