@@ -14,9 +14,7 @@ A Quick Demo
 
 After a bunch of hassle, I managed to get a song to work! Here's a short video of my 3D printer, the {Ender 3:: https://www.creality3d.shop/products/creality3d-ender-3-pro-high-precision-3d-printer}, playing the /Zelda Titlescreen/ theme song:
 # demo
-	[[
-		{{video:: Untitled 3_1080p.mp4}}
-	]]
+	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/hEUc-tUa53M" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>
 
 How it is Done
 --------------
