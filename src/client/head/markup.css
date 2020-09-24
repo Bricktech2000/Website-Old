@@ -106,7 +106,7 @@ iframe{
   .markup-quote{
     border-left-width: .5vw;
   }
-  .markup iframe{
+  iframe{
     height: calc(75vw * 9 / 16);
   }
 }
