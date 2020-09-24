@@ -18,6 +18,9 @@
     if(!popstate && (urlChanged || urlhChanged)){
       if(urlh && urlhChanged) history.pushState(null, null, url + '#' + urlh);
       else history.pushState(null, null, url);
+      
+      //https://developers.google.com/analytics/devguides/collection/gtagjs/pages
+      gtag('config', 'UA-163126541-1', { 'page_path': url + (urlh ? '#' + urlh : '') });
     }
     window.scrollTo({top: 0, left: 0, behavior: 'smooth'});
 

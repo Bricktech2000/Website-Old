@@ -45,6 +45,10 @@
     vars.button.onclick = (e) => {
       e.preventDefault();
       history.pushState(null, null, '#' + vars.input.value.replace(/ /g, '-'));
+      reUpdate.utils.redirect({
+        preventDefault: () => null,
+        currentTarget: window.location,
+      });
       watch.searchQuery = vars.input.value;
     }
     vars.button.click();
