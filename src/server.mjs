@@ -20,7 +20,15 @@ reUpdate.log();
 process.on('uncaughtException',  function(exception      ){ console.log(exception);       });
 process.on('unhandledRejection', function(reason, promise){ console.log(promise, reason); });
 
+//https://enable-cors.org/server_expressjs.html
+app.use(function(req, res, next){
+  res.header("Access-Control-Allow-Origin", "webcache.googleusercontent.com"); //cached version of page for debugging
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 app.use(reUpdate.express(basePath, clientPath));
+
 //https://evanhahn.com/express-dot-static-deep-dive/
 app.use(express.static(clientPath, {
   index: 'index.html'
@@ -38,8 +46,6 @@ var credentials = {
 var httpServer = http.createServer(function(req, res){
   res.writeHead(301, { "Location": "https://" + req.headers['host'] + req.url });
   res.end();
-  //res.redirect('https://' + req.headers.host + req.url);
-  //console.log('https://' + req.headers.host + req.url);
 });
 httpServer.listen(80);
 
