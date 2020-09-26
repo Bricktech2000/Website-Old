@@ -22,7 +22,7 @@ process.on('unhandledRejection', function(reason, promise){ console.log(promise,
 
 //https://enable-cors.org/server_expressjs.html
 app.use(function(req, res, next){
-  res.header("Access-Control-Allow-Origin", "webcache.googleusercontent.com"); //cached version of page for debugging
+  res.header("Access-Control-Allow-Origin", "https://webcache.googleusercontent.com"); //cached version of page for debugging
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
