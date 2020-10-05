@@ -51,7 +51,7 @@ In order to work, this machine uses 2 {servo motors:: https://en.wikipedia.org/w
   })
 >>>
 
-The software side of this box is pretty simple, but very clever (in my opinion at least). When the code detects that the switch was flipped, it runs the following code:
+The software side of this box is pretty simple, but very clever (in my opinion at least). When the program detects that the switch was flipped, it runs the following code:
 	[[
 	beforeFlip()
 	actualFlip()
@@ -63,4 +63,4 @@ Each one of these three functions chooses a random action from a list of them. T
 Final words
 -----------
 
-This project is an awesome example on how useful 3D printing can be. It has allowed me to design and produce parts way quicker and way cheaper than I could before. Furthermore, I am really proud of the way {the program:: ./Useless_Box_1.zip} works, since programming 12 /actions/ allows the {useless box:: https://en.wikipedia.org/wiki/Useless_machine} to flip the switch in more than 60 different ways. The box is really heavy for some reason, weighing more than [... g], which makes it feel very premium in your hands. All in all, I am stoked with the result!
+This project is an awesome example on how useful 3D printing can be. It has allowed me to design and produce parts way quicker and way cheaper than I could before. Furthermore, I am really proud of the way {the program:: ./Useless_Box_1.zip} works, since programming 12 /actions/ allows the {useless box:: https://en.wikipedia.org/wiki/Useless_machine} to flip the switch in more than 60 different ways. The box is really heavy for some reason, weighing more than [152 g], which makes it feel very premium in your hands. All in all, I am stoked with the result!
