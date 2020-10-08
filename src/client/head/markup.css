@@ -107,7 +107,7 @@ iframe{
     border-left-width: .5vw;
   }
   iframe{
-    height: calc(75vw * 9 / 16);
+    height: calc(75vw * 3 / 4);
   }
 }
 /*.markup *:not(li){
