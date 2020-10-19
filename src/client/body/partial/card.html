@@ -9,7 +9,6 @@
   .card.row{ grid-row: span 2; }
   .card.col{ grid-column: span 2; }
   .card.row.inv img{ align-self: flex-end; }
-  @media (max-aspect-ratio: <<<yield consts.portrait>>>){ .card{ margin-left: 0; margin-right: 0; } }
 </style>
 <<<vars.info = JSON.parse((await include('../../pages/' + params.id + '/info.json')).text);>>>
 

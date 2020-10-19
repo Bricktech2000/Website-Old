@@ -12,7 +12,6 @@
           align-items: center;
   position: relative;
   top: 0;
-  margin: calc(var(--smart-unit) * 1.25);
   background: var(--card-bg);
   -webkit-transition: opacity .25s ease-in-out, background-color 0.25s ease-in-out, top 0.25s ease-in-out;
   transition: opacity .25s ease-in-out, background-color 0.25s ease-in-out, top 0.25s ease-in-out;
