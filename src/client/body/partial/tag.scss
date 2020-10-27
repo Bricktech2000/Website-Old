@@ -10,11 +10,11 @@
   transition: color 0.125s ease-in-out, border-color .125s ease-in-out, transform 0.125s ease-in-out;
   -webkit-tap-highlight-color: rgba(255, 0, 0, .25);
 
-  font-size: calc(var(--smart-res-unit) * 2);
+  font-size: calc(var(--smart-res-unit) * 1.75);
   padding: calc(var(--smart-unit) * .5) calc(var(--smart-unit) * 1.5);
 }
 .tag-mini{
-  font-size: calc(var(--smart-res-unit) * 1.25);
+  font-size: calc(var(--smart-res-unit) * 1);
   padding: calc(var(--smart-unit) * .1) calc(var(--smart-unit) * .7);
 }
 .tag-off{

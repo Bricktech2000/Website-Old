@@ -41,7 +41,7 @@ body{
   overflow-x: hidden;
   /*https://www.hostinger.com/tutorials/best-html-web-fonts*/
   font-family: Calibri, Verdana, sans-serif;
-  font-size: calc(var(--smart-res-unit) * 2);
+  font-size: calc(var(--smart-res-unit) * 1.75);
   line-height: 1.6;
   color: var(--text);
   background: var(--bg);

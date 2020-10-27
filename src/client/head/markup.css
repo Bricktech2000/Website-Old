@@ -10,7 +10,7 @@
   color: var(--title);
 }
 .markup-h1{
-  font-size: calc(var(--smart-res-unit) * 5);
+  font-size: calc(var(--smart-res-unit) * 4.5);
 }
 .markup-h2{
   font-size: calc(var(--smart-res-unit) * 3);
