@@ -70,7 +70,7 @@ li{
   text-decoration: none;
   position: relative;
 }
-@media(max-aspect-ratio: <<<yield consts.portrait>>>){
+@media <<<yield consts.portrait>>>{
   .markup-anchor{
     top: calc(var(--smart-unit) * -10);
   }
@@ -98,7 +98,7 @@ iframe{
   height: calc(50vw * 9 / 16);
 }
 /*Portrait*/
-@media (max-aspect-ratio: <<<yield consts.portrait>>>){
+@media <<<yield consts.portrait>>>{
   .markup-block{
     padding: 1vw 5vw;
   }

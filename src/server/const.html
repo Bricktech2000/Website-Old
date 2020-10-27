@@ -1,6 +1,11 @@
 <<<consts.lang = 'en'>>>
-<<<consts.portrait = '1/1'>>>
 <<<consts.phone = '1000px'>>>
+<<<
+  //https://stackoverflow.com/questions/23897946/how-do-i-combine-two-media-queries/23898019
+  //https://stackoverflow.com/questions/8883163/css-media-query-soft-keyboard-breaks-css-orientation-rules-alternative-solut
+  //this media query gets applied when the device aspect ratio is in portrait mode. It ignores any software keyboard.
+  consts.portrait = `(min-device-width: ${consts.phone}) and (max-aspect-ratio: 1/1), (max-device-width: ${consts.phone}) and (max-device-aspect-ratio: 1/1)`
+>>>
 <<<var { miniML } = await import('./server/MiniMLCompiler V2.js');
 utils.miniML = miniML.compile;>>>
 <<<consts.github = 'https://github.com/Bricktech2000/Website'>>>
