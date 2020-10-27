@@ -12,7 +12,7 @@
   --title: #fff;
 
   --smart-pixel-ratio: 3; /*the importance of the screen resolution in the scaling of items*/
-  --smart-unit: 1vh;
+  --smart-unit: var(--vh);
 
   --bs:
     0 0
@@ -23,9 +23,6 @@
     linear-gradient(-45deg, var(--color-l), var(--color));
   --lg-d:
     linear-gradient(-45deg, var(--color), var(--color-d));
-}
-@media (max-device-width: <<<yield consts.phone>>>){
-  :root{ --smart-unit: 1vmax; }
 }
 :root{ --smart-res-unit: calc(var(--smart-unit) + calc(1px * var(--smart-pixel-ratio))); }
 *{
@@ -52,8 +49,8 @@ body{
 }
 
 ::-webkit-scrollbar{
-  width: 1vh;
-  height: 1vh;
+  width: var(--smart-unit);
+  height: var(--smart-unit);
 }
 ::-webkit-scrollbar-track{
   background: inherit;
