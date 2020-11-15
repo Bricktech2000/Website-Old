@@ -96,6 +96,7 @@ iframe{
   display: block;
   width: 100%;
   height: calc(50vw * 9 / 16);
+  box-shadow: var(--bs);
 }
 /*Portrait*/
 @media <<<yield consts.portrait>>>{
