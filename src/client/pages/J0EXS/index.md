@@ -28,5 +28,5 @@ Here's a list of all the parts I will use to make this drone (keep in mind that 
 
 And here's a list of the potential parts I would use if I were to upgrade this drone one day:
 	* {Foxeer Razer Mini 1/3 CMOS Camera:: https://www.banggood.com/Foxeer-Razer-Mini-13-CMOS-HD-5MP-2_1mm-M12-Lens-1200TVL-43169-NTSCPAL-Switchable-FPV-Camera-For-RC-Drone-p-1578759.html?akmClientCountry=CA&rmmds=cart_middle_products&ID=6269620530498522237&cur_warehouse=USA}
-	* {Eachine TX805S 5.8GHz RP-SMA Female:: https://www.banggood.com/Eachine-TX805S-5_8GHz-40CH-25-or-500-or-1000-or-1600mW-AV-FPV-Transmitter-VTX-LED-Display-With-Mic-Heatsink-Support-OSD-or-Pitmode-or-Smart-Audio-for-RC-Drone-Airplane-Long-Range-p-1495313.html?akmClientCountry=CA&rmmds=cart_middle_products&ID=512671&cur_warehouse=USA}
+	* {Eachine TX805 5.8GHz RP-SMA Female:: https://www.banggood.com/Eachine-TX805-5_8G-40CH-25-or-200-or-600-or-800mW-FPV-Transmitter-TX-LED-Display-Support-OSD-or-Pitmode-or-Smart-Audio-p-1333984.html?rmmds=search&ID=512671&cur_warehouse=USA}
 	* {Realacc RHCP mini Stubby RP-SMA Male:: https://www.banggood.com/Realacc-RHCP-Super-mini-AXII-Stubby-5_8GHz-1_6dBi-Antenna-For-TX-RX-Fatshark-Goggles-p-1221877.html?akmClientCountry=CA&rmmds=cart_middle_products&ID=512670&cur_warehouse=CN}
