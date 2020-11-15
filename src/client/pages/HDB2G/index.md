@@ -18,7 +18,7 @@ Demo
 ----
 
 Here is a demo of the drone on a 6S battery, with a {blackbox preview: ../L6ROQ/} on the side:
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/zvR7YFpPX3k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/mtHC_svNsn8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
 Conclusion

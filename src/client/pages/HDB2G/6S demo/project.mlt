@@ -25,9 +25,9 @@
     <property name="progressive">1</property>
     <property name="seekable">1</property>
     <property name="mlt_service">qimage</property>
-    <property name="creation_time">2020-11-14T23:37:39</property>
+    <property name="creation_time">2020-11-15T16:29:47</property>
     <property name="shotcut:caption">frame_start.png</property>
-    <property name="shotcut:hash">488998ff6ab73460a333b48a35f6be64</property>
+    <property name="shotcut:hash">050ce37711fdefac9b6ced1ac5e3e54c</property>
     <property name="ignore_points">0</property>
     <property name="global_feed">1</property>
     <property name="xml">was here</property>
@@ -35,7 +35,7 @@
   <producer id="producer1" in="00:00:00.000" out="00:00:59.633">
     <property name="length">00:00:59.667</property>
     <property name="eof">pause</property>
-    <property name="resource">e078a74f-ad12-402f-a189-9729e9664bfd.webm</property>
+    <property name="resource">dbe77a02-e869-4148-ba9d-cf6d370f95b8.webm</property>
     <property name="audio_index">-1</property>
     <property name="video_index">0</property>
     <property name="mute_on_pause">0</property>
@@ -43,9 +43,9 @@
     <property name="seekable">1</property>
     <property name="aspect_ratio">1</property>
     <property name="creation_time">2020-11-14T21:37:57</property>
-    <property name="shotcut:hash">9214a626f759f726daa64df9e065d837</property>
+    <property name="shotcut:hash">ad82c4b031a1947459cad2613c529c63</property>
     <property name="ignore_points">0</property>
-    <property name="shotcut:caption">e078a74f-ad12-402f-a189-9729e9664bfd.webm</property>
+    <property name="shotcut:caption">dbe77a02-e869-4148-ba9d-cf6d370f95b8.webm</property>
     <property name="shotcut:skipConvert">1</property>
     <property name="global_feed">1</property>
     <property name="xml">was here</property>
@@ -72,9 +72,9 @@
     <property name="progressive">1</property>
     <property name="seekable">1</property>
     <property name="mlt_service">qimage</property>
-    <property name="creation_time">2020-11-14T23:38:15</property>
+    <property name="creation_time">2020-11-15T16:30:00</property>
     <property name="shotcut:caption">frame_end.png</property>
-    <property name="shotcut:hash">526cb51161722873587faa005dae4411</property>
+    <property name="shotcut:hash">5e949aa5b746d125da42f96599ca4d3f</property>
     <property name="ignore_points">0</property>
     <property name="global_feed">1</property>
     <property name="xml">was here</property>
@@ -126,7 +126,7 @@
     <property name="shotcut">1</property>
     <property name="shotcut:projectAudioChannels">2</property>
     <property name="shotcut:projectFolder">0</property>
-    <property name="shotcut:scaleFactor">0.484551</property>
+    <property name="shotcut:scaleFactor">2.30997</property>
     <track producer="background"/>
     <track producer="playlist0"/>
     <track producer="playlist1"/>
