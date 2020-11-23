@@ -22,13 +22,13 @@
   }
 </style>
 <div class="mosaic-small">
-  <<
+  <<<
     vars.firstIsRow = Math.random() > .5;
     vars.secondIsRow = !vars.firstIsRow;
 
     var ids = params.ids.slice();
     vars.func = (dir) => {
-      return include('/body/partial/list.html', {
+      return include('../../../body/partial/list.html', {
         incl: 'card.html',
         //https://medium.com/@wisecobbler/4-ways-to-populate-an-array-in-javascript-836952aea79f
         params: new Array(2).fill(null).map(function(){return {
@@ -38,11 +38,11 @@
         }})
       });
     }
-  >>
+  >>>
   <div>
-    << yield vars.func(vars.firstIsRow); >>
+    <<< yield vars.func(vars.firstIsRow); >>>
   </div>
   <div>
-    << yield vars.func(vars.secondIsRow); >>
+    <<< yield vars.func(vars.secondIsRow); >>>
   </div>
 </div>

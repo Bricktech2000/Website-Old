@@ -175,6 +175,7 @@ var internal = {
     return filePath;
   }
 }
+reUpdate.internal = internal;
 //https://stackoverflow.com/questions/33631041/javascript-async-await-in-replace
 //cannot use this because all asyncFn's get executed at once in the beginning
 //execution order will be wrong, causing all sorts of problems
