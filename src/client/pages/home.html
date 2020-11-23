@@ -1,28 +1,30 @@
-<<
-  vars.func = async function(tag){
-    var ids = JSON.parse((await include('/body/partial/card-list.html', {
+<<<
+  vars.func = async (tag) => {
+    var incl = await include('../body/partial/card-list.html', {
       opr: 'or',
       tags: [tag],
       excl: null,
       max: 4,
-    })).text).slice();
-    
-    return include('/body/partial/mosaic/small.html', {
+    });
+    //TODO: get a proper yield function
+    var ids = JSON.parse(await this.internal.yield(incl, params)); //.slice();
+
+    return include('../body/partial/mosaic/small.html', {
       ids: ids,
     });
   }
->>
+>>>
 <<document.title = <<<yield JSON.stringify(consts.homeTitle)>>> >>
 
 <a id="posts" class="markup-anchor"></a>
 <h1 class="markup-h1">Recent Projects</h1>
 <br>
-<< yield vars.func('') >>
+<<< yield vars.func('') >>>
 <br>
 <br>
 <h1 class="markup-h1">Projects to Try</h1>
 <br>
-<< yield vars.func('*Try it Now') >>
+<<< yield vars.func('*Try it Now') >>>
 <br>
 <br>
 <h1 class="markup-h1">Projects by Tag</h1>

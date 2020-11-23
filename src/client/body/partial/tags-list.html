@@ -18,20 +18,24 @@
 
 <div class="tags-list">
   <<
-    var tags = JSON.parse((await include('/pages/tags.json')).text);
     //https://stackoverflow.com/questions/15669557/regex-match-pattern-as-long-as-its-not-in-the-beginning
-    var hashTag = watch.hash.replace(/(?!^)-/g, ' ');
-
-    yield include('/body/partial/list.html', {
+    var hashTag = watch.hash;
+    for(var tag of document.getElementsByClassName('tag'))
+      if(hashTag && tag.href && tag.href.includes(hashTag)) tag.classList.add('tag-on');
+      else tag.classList.remove('tag-on');
+  >>
+  <<<
+    var tags = JSON.parse((await include('../../pages/tags.json')).text);
+    yield include('../../body/partial/list.html', {
       incl: 'tag.html',
       params: new Array(tags.length).fill(null).map(function(){
         var tag = tags.shift();
         return {
           label: tag,
-          type: hashTag == tag ? 'on' : 'off',
+          type: 'off',
           mini: false,
         }
       })
     })
-  >>
+  >>>
 </div>
