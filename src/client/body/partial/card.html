@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/body/partial/card.css" style="display: none;">
 <<<vars.id = Math.random().toString().split('.')[1]>>>
+<<<vars.empty = params.id == '';>>>
 
 <style style="display: none;">
   .card.row.nor{ grid-template-areas: "img img img" "title title title" "desc desc desc" "tags tags tags"; }
@@ -9,21 +10,34 @@
   .card.row{ grid-row: span 2; }
   .card.col{ grid-column: span 2; }
   .card.row.inv img{ align-self: flex-end; }
+  .card-empty{
+    grid-row: span 1;
+    grid-column: span 1;
+    padding: 0;
+    margin: 0;
+    padding-top: 100%;
+    background: var(--lg);
+    border-radius: calc(var(--smart-unit) * 2.5);
+  }
+  .card-empty:hover{
+    top: 0;
+    cursor: default;
+  }
 </style>
-<<<vars.info = JSON.parse((await include('../../pages/' + params.id + '/info.json')).text);>>>
+<<<if(!vars.empty) vars.info = JSON.parse((await include('../../pages/' + params.id + '/info.json')).text);>>>
 
-<a class="card card-<<<yield vars.id>>>"
-  href="/pages/<<<yield params.id>>>/"
-  onclick="reUpdate.utils.redirect(event)">
+<a class="card card-<<<yield vars.id>>> <<<if(vars.empty) yield 'card-empty'>>>"
+  href="<<<if(!vars.empty) yield '/pages/' + params.id + '/'>>>"
+  onclick="<<<if(!vars.empty) yield 'reUpdate.utils.redirect(event)'; else yield 'event.preventDefault()'>>>">
   <img src="/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
   <div class="title markup-h2">
-    <<<yield vars.info.title>>>
+    <<<if(!vars.empty) yield vars.info.title>>>
   </div>
   <<<//yield include('date.html', {date: vars.info.date})>>>
-  <div class="desc"><<<yield vars.info.desc>>></div>
+  <div class="desc"><<<if(!vars.empty) yield vars.info.desc>>></div>
   <div class='tags'>
     <<<
-      yield include('list.html', {
+      if(!vars.empty) yield include('list.html', {
         incl: 'tag.html',
         params: new Array(vars.info.tags.length).fill(null).map(function(){return {
           label: vars.info.tags.shift(),
@@ -35,6 +49,7 @@
   </div>
 </a>
 <<
+  if(<<<yield vars.empty>>>) return;
   var card = document.querySelector('.card-<<<yield vars.id>>>');
   var func = () => {
     if(!document.body.contains(card)){
