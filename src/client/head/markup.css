@@ -83,7 +83,7 @@ li{
   text-decoration: underline;
 }
 .markup-block{
-  padding: 1vw 10vw;
+  padding: calc(1 * var(--smart-unit)) 10%;
 }
 .markup-object{
   width: 100%;
@@ -95,7 +95,6 @@ li{
 iframe{
   display: block;
   width: 100%;
-  height: calc(50vw * 9 / 16);
   box-shadow: var(--bs);
 }
 /*Portrait*/
