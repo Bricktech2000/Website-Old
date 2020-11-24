@@ -20,9 +20,15 @@
   <<
     //https://stackoverflow.com/questions/15669557/regex-match-pattern-as-long-as-its-not-in-the-beginning
     var hashTag = watch.hash;
-    for(var tag of document.getElementsByClassName('tag'))
-      if(hashTag && tag.href && tag.href.includes(hashTag)) tag.classList.add('tag-on');
-      else tag.classList.remove('tag-on');
+    for(var list of document.getElementsByClassName('tags-list'))
+      for(var tag of list.getElementsByClassName('tag'))
+        if(hashTag && tag.href && tag.href.includes(hashTag)){
+          tag.classList.add('tag-on');
+          tag.classList.remove('tag-off');
+        }else{
+          tag.classList.add('tag-off');
+          tag.classList.remove('tag-on');
+        }
   >>
   <<<
     var tags = JSON.parse((await include('../../pages/tags.json')).text);
