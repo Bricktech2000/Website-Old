@@ -30,7 +30,7 @@ Almost all of it is made out of /stainless steel/ or /aluminum/, so that it does
 In order for this generator to work, three of the screws are connected to the positive end of a battery, and the three other ones are connected to the negative side. Using screws is a very clever way to build such a powerful generator: they have about twice the surface area of metal rods because of their threads. Once I connect a very powerful battery to both terminals, the {/electrolysis/:: https://en.wikipedia.org/wiki/Electrolysis_of_water} can start!
 
 # parts
-For any one wondering, here is a list of the parts I used to make this generator:
+For anyone wondering, here is a list of the parts I used to make this generator:
 	* 6x [1/4 by 2-1/2] stainless machine screws
 	* 2x [1-1/2 od 13/32 id 1/16 thick] steel washers
 	* 6x [12-10 AWG #8-#10 stud] spade terminals
