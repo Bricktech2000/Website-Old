@@ -29,7 +29,7 @@
 <a class="card card-<<<yield vars.id>>> <<<if(vars.empty) yield 'card-empty'>>>"
   href="<<<if(!vars.empty) yield '/pages/' + params.id + '/'>>>"
   onclick="<<<if(!vars.empty) yield 'reUpdate.utils.redirect(event)'; else yield 'event.preventDefault()'>>>">
-  <img src="/pages/<<<yield params.id>>>/thumbnail.jpg" alt="">
+  <img src="<<<if(!vars.empty) yield '/pages/' + params.id + '/thumbnail.jpg'>>>" alt="">
   <div class="title markup-h2">
     <<<if(!vars.empty) yield vars.info.title>>>
   </div>
