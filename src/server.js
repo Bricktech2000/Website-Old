@@ -54,5 +54,5 @@ var httpsServer = https.createServer(credentials, app);
 httpsServer.listen(443, function(){
     var host = 'localhost';
     var port = httpsServer.address().port;
-    console.log('listening on http://' + host + ':' + port + '/');
+    console.log(`listening on ${host}:${port}\n`);
 });
