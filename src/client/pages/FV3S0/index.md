@@ -10,7 +10,9 @@ How it all started
 ------------------
 
 One night, I was casually watching a YouTube video... when sudently, it started buffering. I didn't think too much of what had just happened. However, a few minutes later, my whole WiFi network started to lag very badly. The router was working fine, the internet connection was randomly dropping, the /ping/ command was timing out from time to time.... After a bit of investigation, I finally figured out what was going on: someone was running a {DDoS:: https://en.wikipedia.org/wiki/Denial-of-service_attack} attack on me.
-	""In computing, a denial-of-service attack (DoS attack) is a cyber-attack in which the perpetrator seeks to make a machine or network resource unavailable to its intended users by temporarily or indefinitely disrupting services of a host connected to the Internet. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled.""
+
+""In computing, a denial-of-service attack (DoS attack) is a cyber-attack in which the perpetrator seeks to make a machine or network resource unavailable [...]. Denial of service is typically accomplished by flooding the targeted machine or resource with superfluous requests in an attempt to overload systems and prevent some or all legitimate requests from being fulfilled.
+{Wikipedia:: https://en.wikipedia.org/wiki/Denial-of-service_attack}""
 
 A few minutes later, a friend of mine finally confessed... However, what impressed me the most was the way she found my IP address. A few hours earlier, she had sent me a {bit.ly:: https://bit.ly/} link pointing to a video. I didn't suspect anything, so I simply clicked on it. Despite its innocent looks, this link was actually redirecting to {iplogger.org:: https://iplogger.org/} before redirecting a second time to the actual video.
 
