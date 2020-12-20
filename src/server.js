@@ -35,11 +35,11 @@ app.use(express.static(clientPath, {
 }));
 
 
-var p = path.join(basePath, serverPath);
+var p = '/etc/letsencrypt/live/emilien.ml/';
 var credentials = {
-  key: fs.readFileSync(path.join(p, '/private.key')),
-  cert: fs.readFileSync(path.join(p, '/certificate.crt')),
-  ca: fs.readFileSync(path.join(p, '/ca_bundle.crt')),
+  key: fs.readFileSync(path.join(p, 'privkey.pem')),
+  cert: fs.readFileSync(path.join(p, 'fullchain.pem')),
+  //ca: fs.readFileSync(path.join(p, '')),
 };
 
 //start an HTTP redirect server

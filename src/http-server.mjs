@@ -1,5 +1,4 @@
 import http from 'http';
-import https from 'https';
 import path from 'path';
 import fs from 'fs';
 import express from 'express';
@@ -27,18 +26,10 @@ app.use(express.static(clientPath, {
 }));
 
 
-var p = path.join(basePath, serverPath);
-var credentials = {
-  key: fs.readFileSync(path.join(p, '/private.key')),
-  cert: fs.readFileSync(path.join(p, '/certificate.crt')),
-  ca: fs.readFileSync(path.join(p, '/ca_bundle.crt')),
-};
-
-
 //start the server and log to the console
-var httpsServer = http.createServer(app);
-httpsServer.listen(80, function(){
+var httpServer = http.createServer(app);
+httpServer.listen(80, function(){
     var host = 'localhost';
-    var port = httpsServer.address().port;
+    var port = httpServer.address().port;
     console.log('listening on http://' + host + ':' + port + '/');
 });
