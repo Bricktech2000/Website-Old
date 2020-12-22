@@ -40,6 +40,7 @@ li{
   padding: calc(1 * var(--smart-unit));
   white-space: nowrap;
   overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 .markup-code-keyword{
   color: var(--color);
