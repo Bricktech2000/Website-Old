@@ -38,8 +38,8 @@ function getParameters(){
     input: process.stdin,
     output: process.stdout
   });*/
-  url = rl.question('URL (default 66.187.117.105/TIH4G): ');
-  if(url == '') url = 'https://66.187.117.105/TIH4G'; //66.187.117.105 192.168.1.2
+  url = rl.question('URL (default emilien.ml/TIH4G): ');
+  if(url == '') url = 'https://emilien.ml/TIH4G'; //emilien.ml 192.168.1.2
   rps = parseInt(rl.question('Requests per Second (default 20): '));
   if(isNaN(rps)) rps = 20;
 }
