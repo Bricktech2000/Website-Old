@@ -1,0 +1,91 @@
+log in to cloudflare
+
+add domain: emilien.ml
+update nameservers for emilien.ml
+
+go to DNS tab
+update IP address
+remove 'www' entry
+
+src: https://bytefreaks.net/applications/cloudflare-does-not-allow-port-22-usual-ssh-port-on-domain
+
+go to DNS tab
+add record
+type: cname
+name: -----
+content: emilien.ml
+TTL: auto
+Proxy status: uncheck
+
+cloudflare open ports HTTP:
+80
+8080
+8880
+2052
+2082
+2086
+2095
+
+cloudflare open ports HTTPS:
+443
+2053
+2083
+2087
+2096
+8443
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
