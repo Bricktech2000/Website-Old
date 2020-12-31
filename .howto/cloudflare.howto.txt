@@ -7,15 +7,30 @@ go to DNS tab
 update IP address
 remove 'www' entry
 
+
+
 src: https://bytefreaks.net/applications/cloudflare-does-not-allow-port-22-usual-ssh-port-on-domain
 
 go to DNS tab
+
 add record
 type: cname
-name: -----
+name: ----- (secret unproxied unportmapped subdomain for admin access)
 content: emilien.ml
 TTL: auto
 Proxy status: uncheck
+
+add record
+type: cname
+name: info
+content: emilien.ml
+TTL: auto
+
+go to SSL/TLS tab
+Edge Certificates
+Always Use HTTPS: ON
+
+
 
 cloudflare open ports HTTP:
 80
@@ -36,7 +51,28 @@ cloudflare open ports HTTPS:
 
 
 
+src: https://community.cloudflare.com/t/forward-all-requests-to-a-specific-port/92763/3
 
+go to Apps tab
+search for: portzilla
+click: preview on your site
+uncheck: Show Advanced Options [See Docs]
+
+
+route name: https port forward
+route url: https://emilien.ml/
+route target: proxies to a port on my domain
+target port: 25112
+
+add
+route name: webinfo port forward
+route url: https://info.emilien.ml/
+route target: proxies to a port on my domain
+target port: 41481
+
+
+install on all pages
+permission: continue
 
 
 
