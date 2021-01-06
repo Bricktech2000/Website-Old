@@ -16,12 +16,16 @@
 <div class="mosaic-full">
   <<<
     var ids = params.ids.slice();
+    var ids2 = []; //id list with empty cards
+    while(ids.length > 0){
+      if(Math.random() < (params.ids.length - ids.length + 1) / params.ids.length / 5) ids2.push('');
+      else ids2.push(ids.shift());
+    }
     yield  include('../../../body/partial/list.html', {
       incl: 'card.html',
       //https://medium.com/@wisecobbler/4-ways-to-populate-an-array-in-javascript-836952aea79f
-      params: new Array(ids.length).fill(null).map(function(){return {
-        id: (Math.random() < (params.ids.length - ids.length + 1) / params.ids.length / 5)
-            ? '' : ids.shift(),
+      params: new Array(ids2.length).fill(null).map(function(){return {
+        id: ids2.shift(),
         dir: Math.random() > .5 ? 'row' : 'col',
         inv: Math.random() > .5,
       }})
