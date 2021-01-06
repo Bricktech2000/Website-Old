@@ -22,7 +22,8 @@
     var hashTag = watch.hash;
     for(var list of document.getElementsByClassName('tags-list'))
       for(var tag of list.getElementsByClassName('tag'))
-        if(hashTag && tag.href && tag.href.includes(hashTag)){
+        if(hashTag && tag.href && tag.href.includes(hashTag) ||
+          (hashTag == '' && tag.href [tag.href.length - 1] == '#')){
           tag.classList.add('tag-on');
           tag.classList.remove('tag-off');
         }else{
@@ -32,6 +33,7 @@
   >>
   <<<
     var tags = JSON.parse((await include('../../pages/tags.json')).text);
+    if(params.all == true) tags.unshift('-All');
     yield include('../../body/partial/list.html', {
       incl: 'tag.html',
       params: new Array(tags.length).fill(null).map(function(){
