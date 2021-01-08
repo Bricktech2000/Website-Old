@@ -27,7 +27,7 @@ The program itslef
 # demo
 Below is an example link. Once you click on it, you will be redirected to {example.com:: https://example.com/} almost instantly. For the record: Yes, this will steal all your information.
 	[[
-	{Example Link:: https://emilien.ml:70/FV3S0demo}
+	{Example Link:: https://info.emilien.ml:/FV3S0demo}
 	]]
 Once a victim opens up such a link, {WebInfo:: https://github.com/Bricktech2000/WebInfo} will try to grab as much information as it can. It will then produce a log file, which looks something like this:
 	[[
