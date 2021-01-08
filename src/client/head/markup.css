@@ -93,10 +93,22 @@ li{
   box-shadow: var(--bs);
   /*min-height: 25vw;*/
 }
-iframe{
+.iframe-container{
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: calc(9 / 16 * 100%); /*16:9 aspect ratio*/
+  box-shadow: var(--bs);
+}
+.iframe-container > * {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   display: block;
   width: 100%;
-  box-shadow: var(--bs);
+  height: 100%;
 }
 /*Portrait*/
 @media <<<yield consts.portrait>>>{
@@ -105,9 +117,6 @@ iframe{
   }
   .markup-quote{
     border-left-width: .5vw;
-  }
-  iframe{
-    height: calc(75vw * 3 / 4);
   }
 }
 /*.markup *:not(li){

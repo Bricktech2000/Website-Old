@@ -6,7 +6,7 @@ The Problem
 -----------
 
 Ever since I got interested in FPV drones, I loved watching freestyle videos on the internet. However, it was really hard to know what the pilot was doing with the sticks, and I had no idea how most tricks were performed. There have been solutions to this problem, like sticking a {GoPro to record a video of your transmitter:: https://youtu.be/OFnPqIaliqg?t=57}, or using some editing magic to overlay the sticks using the {Betaflight Blackbox Explorer:: https://github.com/betaflight/blackbox-log-viewer/releases}:
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/t2FTDpKMfw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/t2FTDpKMfw8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 However, this approach has a few problems:
 	* It doesn't look that good and is not customizale
 	* It takes up alot of space in the video
@@ -20,7 +20,7 @@ Solving this problem was pretty easy. I found a way to take a [BFL] file from th
 	{{./screenshot.png}}
 {The program:: https://github.com/Bricktech2000/Blackbox-Video-Exporter} I made can then take this file, and generate a video file from it. It contains a lot of information, like the [stick positions], the [voltage], the [power] used, the current [orientation]... The video it exports is thin but tall, which means that it can easily be added on the sides of the Gopro footage. Here is a demo showing what video it can produce:
 # demo
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/ZwEiSLSOzwo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/ZwEiSLSOzwo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 
 # try
 How You Can Try it

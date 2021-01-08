@@ -6,7 +6,7 @@ Demo
 
 I recently posted {a video:: https://www.youtube.com/watch?v=vo7N044aZvU} on my {YouTube Channel:: https://www.youtube.com/channel/UCGj6pfxZ0XYJU29XNwXPPxg/featured} showing how easy it is to take control of a computer with a fake USB key. Here it is:
 # demo
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/vo7N044aZvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/vo7N044aZvU" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 
 Essentially, when you plug the USB key in a PC, it types commands to give control of your computer to the attacker. Once a computer is infected, you will be able to control it by going to a website from another computer or even from a cell phone!
 

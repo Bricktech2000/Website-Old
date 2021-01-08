@@ -35,7 +35,7 @@ This prototype is very similar to the first one, but it has one key difference: 
 {Wikipedia:: https://en.wikipedia.org/wiki/Flash_powder}""
 The idea is that the {flash powder:: https://en.wikipedia.org/wiki/Flash_powder} fills up the whole grenade, and it explodes when the steel sphere in the center hits a {gun cap:: https://www.google.ca/search?q=paper+gun+caps&safe=strict&tbm=isch}. There was only one problem: if the shell was more than half-filled with explosive powder, the steel sphere wouldn't be able to move at all, which means that the {gun caps:: https://www.google.ca/search?q=paper+gun+caps&safe=strict&tbm=isch} would never make any sparks. However, I still wanted to try it out, so I filled a quarter of it up with match heads, and then went outside to see if the ignition mechanism would work. Here is the demo, but keep in mind that I used match heads (which burn) instead of a real explosive (which actually explodes):
 # demo
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/KWI7b-ATx7Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/KWI7b-ATx7Q" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 And here's a macro photo of the insides after the "explosion" (if you can even call it that):
 	{{./IMG_20200621_155247_9.jpg}}
 

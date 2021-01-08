@@ -7,7 +7,7 @@ The idea
 --------
 
 A few weeks ago, I was browsing my /YouTube recommended feed/, trying to find new stuff to learn. Then, I stumbled upon this video:
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/kfYiQVzB3Cg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/kfYiQVzB3Cg" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 It showcases a very simple /HHO Generator/, which uses screws to {electrolize:: https://en.wikipedia.org/wiki/Electrolysis_of_water} water. This very simple contraption can generate [100 ml] of explosive {/HHO/:: https://en.wikipedia.org/wiki/Oxyhydrogen} gas per minute.
 
 When I saw this video for the first time, I new I had to build one. I immediately got to work thinking about how I would make my own. After a few trips to the hardware store and [30 $] well spent, I was ready to start building!
@@ -51,7 +51,7 @@ Now for the real show
 
 Here is a demo of the explosion of a small cup containing {HHO:: https://en.wikipedia.org/wiki/Oxyhydrogen} gas, which was made using my generator:
 //Here is a demo of the generator generating explosive /HHO/ gas, followed by the explosion of a small cup containing said gas:
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/uue630WiYNA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/uue630WiYNA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 
 
 Conclusion

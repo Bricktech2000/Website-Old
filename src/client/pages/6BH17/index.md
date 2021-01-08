@@ -8,7 +8,7 @@ Recently, I wanted to try FPV drone simulators, but my radio wouldn't connect to
 
 Below is a video from my {YouTube Channel:: https://www.youtube.com/channel/UCGj6pfxZ0XYJU29XNwXPPxg/featured} of me building and setting up the adapter:
 # demo
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/W75Hf516KTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/W75Hf516KTA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 
 And here's how the finished adapter looks:
 # img

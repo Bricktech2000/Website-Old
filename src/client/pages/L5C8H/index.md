@@ -8,7 +8,7 @@ Many years ago, I wanted to make a machine called a {Useles Box:: https://en.wik
 ""A /useless machine/ consists of a switch and an arm hidden behind a lid. Whenever someone flips the switch, the mechanical arm comes out of the box and flips it back off.""
 
 To better understand, here is a video showcasing such a machine:
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/oP8u0PQOMes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/oP8u0PQOMes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 I wanted to use a wooden box and metal hinges to make it work, but I quickly realised that it would be way too complicated to make, so I abandoned the project.
 
 However, recently, a friend of mine showed me a video of such a machine, and I told him about my faild attempt at creating one. He then told me something along the lines of:
@@ -21,7 +21,7 @@ Demo
 
 Here is a demo video of the {useless machine:: https://en.wikipedia.org/wiki/Useless_machine} I made:
 # demo
-	<iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/8sc6o9nVoc0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen><\/iframe>
+	<div class="iframe-container"><iframe width="560" height="315" src="https:\/\/www.youtube.com\/embed\/8sc6o9nVoc0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><\/div>
 Through clever code, it has 60 different ways to turn the switch back off once someone flips it on!
 
 
