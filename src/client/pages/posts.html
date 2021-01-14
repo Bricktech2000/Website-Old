@@ -3,8 +3,14 @@
 <br>
 <<<yield include('../body/partial/tags-list.html', {all: true})>>>
 <br>
+<div class="posts-list"></div>
+<<
+  var postsList = document.getElementsByClassName('posts-list')[0];
+  vars.postsList = postsList;
+>>
 <<
   var hashTag = watch.hash.replace(/(?!^)-/g, ' ');
+  if(!document.body.contains(vars.postsList)) return;
 
   var ids = JSON.parse((await include('/body/partial/card-list.html', {
     opr: 'or',
