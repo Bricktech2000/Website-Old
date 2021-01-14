@@ -1,3 +1,6 @@
 <<<
-  for(var param of params.params) yield await include(params.incl, param);
+  promises = [];
+  for(var param of params.params) promises.push(include(params.incl, param));
+  includes = await Promise.all(promises);
+  for(var include of includes) yield await include;
 >>>
