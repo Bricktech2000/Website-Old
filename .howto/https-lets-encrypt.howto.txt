@@ -1,4 +1,5 @@
 src: https://youtu.be/8huMBHx-TKY
+src: https://community.letsencrypt.org/t/force-certbot-auto-to-generate-certificate-at-a-custom-path-instead-of-etc-letsencrypt-live/30405
 
 
 navigate to: https://letsencrypt.org/
@@ -16,13 +17,13 @@ sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
 to run certbot:
-sudo certbot certonly --webroot
+sudo certbot certonly --standalone
 enter email address
 Y
 N (you wish I would)
-emilien.ml
+emilien.ml -----.emilien.ml
 /home/server/server/Website/src/client/
-//if a file not found error occurs, check previous line
+//if a file not found error occurs, check previous line, ensure port forwarding is setup properly and make sure no other HTTP servers are listening
 
 edit server cert and key for:
 /etc/letsencrypt/live/emilien.ml/fullchain.pem
