@@ -1,0 +1,7 @@
+{
+  "title": "Beetleweight Combat Robot",
+  "date": "2020-03-09",
+  "tags": ["*Blog", "*Work in Progress", "*Hardware", "-Arduino", "-Electronics", "-3D Printing", "-Radio Controlled", "-Tech"],
+  "btns": {"First Version": "#first", "Second Version": "#second", "Parts List": "#parts"},
+  "desc": "Taking you through the design and build process of my 3lb combat robot! Even though it is only CAD, I plan on building it in the near future..."
+}
