@@ -40,6 +40,7 @@ In essence, by concentrating the mass of the weapon on its outer perimeter, the 
 
 All of the required components were then encapsulated within a very robust chassis. It is made of an [8 mm] thick aluminium exoskeleton with a symmetrical [3D printed] body. It consists of two completely identical halves which are then assembled together using /plastic pins/, facilitating their replacement if one of them ever breaks. Here is a render of the whole body assembly containing all necessary electrical components:
 	{{869d4e23-790c-478a-9c14-9575de76ab20.PNG}}
+# parts
 Because of this robust chassis and its powerful weapon, I believe that this bot has a good chance of winning some matches! For anyone interested, here is a parts list for this version of the robot:
 	* {Tattu R-Line 750mAh 3S LiPo:: https://www.aliexpress.com/item/4000410612116.html?spm=a2g0o.cart.0.0.46f03c00wseQoI&mp=1}
 	* {Matek Systems PDB-XT60 W/ BEC 5V & 12V:: https://www.banggood.com/Matek-Systems-PDB-XT60-W-or-BEC-5V-and-12V-2oz-Copper-for-RC-Drone-FPV-Racing-Multi-Rotor-p-1049051.html?akmClientCountry=CA&cur_warehouse=CN}
