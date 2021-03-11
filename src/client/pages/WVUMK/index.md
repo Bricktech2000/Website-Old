@@ -14,7 +14,7 @@ Well, I am happy to tell you that I found the solution! /Caps Hotkeys/ is a soft
 How to Use it
 -------------
 
-If you intend to use this software on a Windows computer, you can directly download the program by {clicking here:: ./Caps Hotkeys.exe}. However, I have not compiled the code to run under Linux since it uses Win32 libraries to work. If you would like to take a look at the code for yourself, you can {click here:: ./main.cpp} to download it directly to your computer!
+If you intend to use this software on a Windows computer, you can directly download the program by {clicking here:: ./Caps Hotkeys.exe}. However, I have not compiled the code to run under Linux since it uses Win32 libraries to work. If you would like to take a look at the code for yourself, you can {click here:: https://github.com/Bricktech2000/Caps-Hotkeys-V2} to see its Github repository!
 	""And how do on earth do I use it?""
 It is very simple: hold down the [CAPS LOCK] key and press on one of the following keys:
 	{{./keyboard.jpg}}
@@ -34,7 +34,7 @@ There are only two important parameters for this function. First, vk is the {vir
 
 Once Windows tells the program that a hotkey was detected, /Caps Hotkeys/ looks up which key it needs to press. After that, it uses the [keybd_event] function to press on the corresponding key using a {virtual keyboard:: https://en.wikipedia.org/wiki/Virtual_keyboard#:~:text=A%20virtual%20keyboard%20is%20a,in%20virtual%20or%20augmented%20reality}. After that, the program's job is done. It really is that simple!
 
-If you would like to take a more in-depth look at the code, you can {click here:: ./main.cpp}.
+If you would like to take a more in-depth look at the code, you can {click here:: https://github.com/Bricktech2000/Caps-Hotkeys-V2}.
 
 Final Words
 -----------
