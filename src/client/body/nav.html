@@ -40,7 +40,10 @@
   }
 
   nav a:nth-of-type(1) svg{
-    fill: var(--title);
+    fill: none;
+    margin: -12.5%;
+    width: 125%;
+    height: 125%;
   }
 
   nav div:nth-of-type(2) svg{
@@ -73,7 +76,7 @@
     }
   }
 </style>
-<a href="/"        onclick="reUpdate.utils.redirect(event)" class="home lg-hover">   <<<yield include('icons/042-home.svg')>>>   </a>
+<a href="/"        onclick="reUpdate.utils.redirect(event)" class="home lg-hover">   <<<yield include('icons/logo.svg')>>>   </a>
 <a href="/posts/"   onclick="reUpdate.utils.redirect(event)" class="posts">   <<<yield include('icons/007-order.svg')>>>  </a>
 <a href="/search/" onclick="reUpdate.utils.redirect(event)" class="search"> <<<yield include('icons/050-search.svg')>>> </a>
 <a href="<<<yield consts.github>>>"         target="_blank" class="pages">  <<<yield include('icons/045-cat.svg')>>>    </a>
