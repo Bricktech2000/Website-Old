@@ -106,8 +106,8 @@
     var colors;
     var defaults = ['#ff8f0d', '#df6f08', '#df4f00', '#fa0'];
     var storage = JSON.parse(localStorage.getItem('lastColors'));
-    if(vars.count == 1 && storage.toString() != defaults.toString()) colors = defaults;
-    else if(vars.count == 0) colors = storage || defaults;
+    if(vars.count == 0) colors = storage || defaults;
+    else if(vars.count == 1 && storage.toString() != defaults.toString()) colors = defaults;
     else{
       var color = Math.floor(Math.random() * 360);
       colors = [
@@ -121,6 +121,8 @@
     document.documentElement.style.setProperty('--color',   colors[1]);
     document.documentElement.style.setProperty('--color-d', colors[2]);
     document.documentElement.style.setProperty('--color-h', colors[3]);
+    clearTimeout(vars.timeout);
+    vars.timeout = setTimeout(() => vars.count = 1, 1000);
     localStorage.setItem('lastColors', JSON.stringify(colors));
     vars.count++;
   }
