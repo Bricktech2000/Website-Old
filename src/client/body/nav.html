@@ -100,17 +100,30 @@
 >>
 
 <<
+  vars.count = 0;
   window.toggleMode = (e) => {
     e.preventDefault();
-    vars.isDark = !vars.isDark;
-    watch.mode = ['light', 'dark'][vars.isDark ? 1 : 0];
+    var colors;
+    var defaults = ['#ff8f0d', '#df6f08', '#df4f00', '#fa0'];
+    var storage = JSON.parse(localStorage.getItem('lastColors'));
+    if(vars.count == 1 && storage.toString() != defaults.toString()) colors = defaults;
+    else if(vars.count == 0) colors = storage || defaults;
+    else{
+      var color = Math.floor(Math.random() * 360);
+      colors = [
+        `hsl(${color}, 75%, 60%)`,
+        `hsl(${color}, 75%, 50%)`,
+        `hsl(${color}, 75%, 40%)`,
+        `hsl(${color + 30}, 75%, 50%)`,
+      ];
+    }
+    document.documentElement.style.setProperty('--color-l', colors[0]);
+    document.documentElement.style.setProperty('--color',   colors[1]);
+    document.documentElement.style.setProperty('--color-d', colors[2]);
+    document.documentElement.style.setProperty('--color-h', colors[3]);
+    localStorage.setItem('lastColors', JSON.stringify(colors));
+    vars.count++;
   }
   window.toggleMode({preventDefault: () => {}});
 >>
-<a href="" onclick="window.toggleMode(event)">
-  <<
-    var mode = watch.mode;
-    if(mode == 'dark') yield include('/body/icons/032-summer.svg');
-    else if(mode == 'light') yield include('/body/icons/030-moon.svg');
-  >>
-</a>
+<a href="" onclick="window.toggleMode(event)">  <<<yield include('icons/032-summer.svg')>>>  </a>
