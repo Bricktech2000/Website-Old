@@ -43,7 +43,7 @@ As soon as I saw how amazing it was to fly, I immediately ordered an action came
   })
 >>>
 //Finally, I created {a special program:: ./Music Offset Generator/index.html} which allows me to fly the drone synchronized to the music. To do so, it plays the music [8 beats] earlier in the left ear, meaning I can predict what the music will sound like.
-
+ 
 
 # demo
 Demo Footage
