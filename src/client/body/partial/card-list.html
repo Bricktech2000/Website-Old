@@ -23,7 +23,9 @@
   var scores = [];
   for(var id of ids){
     var score = params.opr == 'and' ? 1 : 0;
-    var info = JSON.parse((await include('../../pages/' + id + '/info.json')).text);
+    var infoText = (await include('../../pages/' + id + '/info.json')).text;
+    var indexText = (await include('../../pages/' + id + '/index.md')).text;
+    var info = JSON.parse(infoText);
     for(var paramTag of params.tags){
       var match = false;
       for(var infoTag of info.tags){
@@ -35,12 +37,15 @@
           if(infoTag == paramTag) match = true;
           break;
         case 'like':
-          if(infoTag == paramTag) score++;
+          if(infoTag == paramTag){
+            score++;
+            match = true;
+          }
           break;
         case 'search':
           var str = '';
-          str += (await include('../../pages/' + id + '/info.json')).text;
-          str += (await include('../../pages/' + id + '/index.md')).text;
+          str += infoText;
+          str += indexText;
           var scr = 0;
           function escapeRegExp(string) {
             return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
@@ -54,6 +59,9 @@
       }
       if(params.opr == 'and' && !match) score = 0;
     }
+    //score = tags that match
+    //score -= tags that do not match
+    if(params.opr == 'like') score -= (params.tags.length + info.tags.length) - score;
     scores.push({id: id, score: score});
     //yield await include(params.incl, param);
   }
