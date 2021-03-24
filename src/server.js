@@ -3,6 +3,8 @@ import https from 'https';
 import path from 'path';
 import fs from 'fs';
 import express from 'express';
+import bodyParser from 'body-parser';
+import webPush from 'web-push';
 var app = express();
 
 //https://stackoverflow.com/questions/8817423/node-dirname-not-defined
@@ -27,6 +29,27 @@ app.use(function(req, res, next){
   next();
 });
 
+var vapidDetails = {
+  public: fs.readFileSync(path.join('./client/', 'public_vapid.key')),
+  private: fs.readFileSync(path.join('./server/', 'private_vapid.key')),
+};
+
+webPush.setVapidDetails(
+  'mailto:bricktech2000@gmail.com',
+  vapidDetails.public.toString(),
+  vapidDetails.private.toString()
+);
+var subscription;
+app.post('/subscribe', bodyParser.json(), async function(req, res){
+  subscription = req.body;
+  //https://stackoverflow.com/questions/12899061/creating-a-file-only-if-it-doesnt-exist-in-node-js
+  var subscriptions = JSON.parse(await fs.promises.readFile('./server/subscriptions.json'));
+  subscriptions[subscription.endpoint] = subscription;
+  fs.writeFile('./server/subscriptions.json', JSON.stringify(subscriptions), {flag: 'w'}, (err) => {
+    console.log(err);
+  });
+  res.status(201).json({});
+});
 app.use(reUpdate.express(basePath, clientPath));
 
 //https://evanhahn.com/express-dot-static-deep-dive/
@@ -35,7 +58,7 @@ app.use(express.static(clientPath, {
 }));
 
 
-var p = '/etc/letsencrypt/live/emilien.ml/';
+/*var p = '/etc/letsencrypt/live/emilien.ml/';
 var credentials = {
   key: fs.readFileSync(path.join(p, 'privkey.pem')),
   cert: fs.readFileSync(path.join(p, 'fullchain.pem')),
@@ -55,4 +78,12 @@ httpsServer.listen(443, function(){
     var host = 'localhost';
     var port = httpsServer.address().port;
     console.log(`listening on ${host}:${port}\n`);
+});
+*/
+//start the server and log to the console
+var httpServer = http.createServer(app);
+httpServer.listen(80, function(){
+    var host = 'localhost';
+    var port = httpServer.address().port;
+    console.log('listening on http://' + host + ':' + port + '/');
 });

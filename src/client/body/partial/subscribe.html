@@ -1,0 +1,69 @@
+<button class="subscribe-button">asdfasdf</button>
+<<
+  //https://pusher.com/tutorials/push-notifications-node-service-workers
+  function urlBase64ToUint8Array(base64String){
+    const padding = '='.repeat((4 - base64String.length % 4) % 4);
+    const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
+
+    const rawData = window.atob(base64);
+    const outputArray = new Uint8Array(rawData.length);
+
+    for(let i = 0; i < rawData.length; ++i)
+      outputArray[i] = rawData.charCodeAt(i);
+    return outputArray;
+  }
+
+  var vapidDetails = {};
+  vapidDetails.public = (await include('./public_vapid.key')).text;
+  var subscribed = localStorage.getItem('subscription') == 'true';
+
+
+  document.getElementsByClassName('subscribe-button')[0].onclick = () => {
+    if(!subscribed) subscribe();
+    else unsubscribe();
+    subscribed = !subscribed;
+    localStorage.setItem('subscription', subscribed ? 'true' : 'false');
+  }
+  var subscribe = async () => {
+    if('serviceWorker' in navigator){
+      var register = await navigator.serviceWorker.register('/sw.js', {
+        scope: '/',
+      });
+      var subscription = await register.pushManager.subscribe({
+        userVisibleOnly: true,
+        applicationServerKey: urlBase64ToUint8Array(vapidDetails.public),
+      });
+      await fetch('/subscribe', {
+        method: 'POST',
+        body: JSON.stringify(subscription),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+    }
+  }
+  var unsubscribe = async () => {
+    if('serviceWorker' in navigator){
+      //https://love2dev.com/blog/how-to-uninstall-a-service-worker/
+      var registrations = await navigator.serviceWorker.getRegistrations();
+      registrations[0].unregister();
+    }
+  }
+>>
+<<<
+  const _fs = await import('fs');
+  const fs = _fs.promises;
+  const webPush = (await import('web-push')).default;
+  consts.sendNotification = async (data) => {
+    var subscriptions = JSON.parse(await fs.readFile('./server/subscriptions.json'));
+    console.log(subscriptions);
+    payload = JSON.stringify(data);
+    for(var key of Object.keys(subscriptions))
+      webPush.sendNotification(subscriptions[key], payload)
+        .catch(err => console.log(err));
+  }
+  consts.sendNotification({
+    title: 'Test Push Notification',
+    body: 'Test Body asdf2',
+  });
+>>>
