@@ -56,14 +56,24 @@
   const webPush = (await import('web-push')).default;
   consts.sendNotification = async (data) => {
     var subscriptions = JSON.parse(await fs.readFile('./server/subscriptions.json'));
-    console.log(subscriptions);
     payload = JSON.stringify(data);
     for(var key of Object.keys(subscriptions))
       webPush.sendNotification(subscriptions[key], payload)
-        .catch(err => console.log(err));
+        .catch(err => {});
   }
-  consts.sendNotification({
-    title: 'Test Push Notification',
-    body: 'Test Body asdf2',
-  });
+  var pages = (await fs.readFile('./client/pages/pages.json')).toString();
+  var lastPages = (await fs.readFile('./client/pages/lastPages.json')).toString();
+  if(pages != lastPages){
+    fs.writeFile('./client/pages/lastPages.json', pages, {flag: 'w'}, (err) => {
+      console.log(err);
+    });
+    var parsed = JSON.parse(pages);
+    var info = JSON.parse((await include('../../pages/' + parsed[Object.keys(parsed)[0]] + '/info.json')).text);
+    console.log(info);
+    consts.sendNotification({
+      title: 'New Post: ' + info.title,
+      body: info.desc,
+      icon: '/icon.png',
+    });
+  }
 >>>
