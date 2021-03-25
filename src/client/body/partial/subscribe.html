@@ -55,7 +55,7 @@
   }
 
   var vapidDetails = {};
-  vapidDetails.public = (await include('./public_vapid.key')).text.trim();
+  vapidDetails.public = (await include('/public_vapid.key')).text.trim();
   var subscribed = localStorage.getItem('subscription') == 'true';
   var button = document.getElementsByClassName('subscribe-container')[0];
 
