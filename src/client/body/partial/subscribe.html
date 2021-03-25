@@ -109,7 +109,7 @@
     payload = JSON.stringify(data);
     for(var key of Object.keys(subscriptions))
       webPush.sendNotification(subscriptions[key], payload)
-        .catch(err => {});
+        .catch(err => { console.log(err) });
   }
   var pages = (await fs.readFile('./client/pages/pages.json')).toString();
   var lastPages = (await fs.readFile('./client/pages/lastPages.json')).toString();

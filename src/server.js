@@ -46,7 +46,7 @@ app.post('/subscribe', bodyParser.json(), async function(req, res){
   var subscriptions = JSON.parse(await fs.promises.readFile('./server/subscriptions.json'));
   subscriptions[subscription.endpoint] = subscription;
   fs.writeFile('./server/subscriptions.json', JSON.stringify(subscriptions), {flag: 'w'}, (err) => {
-    console.log(err);
+    if(err) console.log(err);
   });
   res.status(201).json({});
 });
