@@ -44,7 +44,7 @@ app.post('/subscribe', bodyParser.json(), async function(req, res){
   subscription = req.body;
   //https://stackoverflow.com/questions/12899061/creating-a-file-only-if-it-doesnt-exist-in-node-js
   var subscriptions = JSON.parse(await fs.promises.readFile('./server/subscriptions.json'));
-  subscriptions[subscription.endpoint] = subscription;
+  subscriptions[subscription.keys.auth] = subscription;
   fs.writeFile('./server/subscriptions.json', JSON.stringify(subscriptions), {flag: 'w'}, (err) => {
     if(err) console.log(err);
   });

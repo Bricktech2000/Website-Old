@@ -3,6 +3,6 @@ npm install web-push
 
 generate keys:
 ./node_modules/.bin/web-push generate-vapid-keys
-public key: copy to ./src/client/public_vapid.key
-private key: copy to ./src/server/private_vapid.key
+public key: copy to ./client/public_vapid.key
+private key: copy to ./server/private_vapid.key
 
