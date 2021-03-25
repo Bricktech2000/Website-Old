@@ -6,3 +6,6 @@ generate keys:
 public key: copy to ./client/public_vapid.key
 private key: copy to ./server/private_vapid.key
 
+subscription system:
+create src/client/pages/lastPages.json
+create src/server/subscriptions.json
