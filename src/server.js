@@ -58,7 +58,7 @@ app.use(express.static(clientPath, {
 }));
 
 
-/*var p = '/etc/letsencrypt/live/emilien.ml/';
+var p = '/etc/letsencrypt/live/emilien.ml/';
 var credentials = {
   key: fs.readFileSync(path.join(p, 'privkey.pem')),
   cert: fs.readFileSync(path.join(p, 'fullchain.pem')),
@@ -78,12 +78,4 @@ httpsServer.listen(443, function(){
     var host = 'localhost';
     var port = httpsServer.address().port;
     console.log(`listening on ${host}:${port}\n`);
-});
-*/
-//start the server and log to the console
-var httpServer = http.createServer(app);
-httpServer.listen(80, function(){
-    var host = 'localhost';
-    var port = httpServer.address().port;
-    console.log('listening on http://' + host + ':' + port + '/');
 });
