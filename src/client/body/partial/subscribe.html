@@ -1,4 +1,45 @@
-<button class="subscribe-button">asdfasdf</button>
+<style>
+  .subscribe-container{
+    display: inline-flex;
+    width: auto;
+    align-items: center;
+    cursor: pointer;
+  }
+  .subscribe-container p{
+    display: inline-block;
+    margin: calc(var(--smart-unit) * 2);
+  }
+  .toggle-container{
+    display: inline-block;
+    width: calc(var(--smart-unit) * 6);
+    height: calc(var(--smart-unit) * 3);
+    border-radius: 100vh;
+    background: var(--color-d);
+    box-shadow: var(--bs);
+    transition: background-color .125s ease-in-out;
+  }
+  .toggle-thumb{
+    display: inline-block;
+    width: calc(var(--smart-unit) * 3);
+    height: calc(var(--smart-unit) * 3);
+    border-radius: 100vh;
+    background: var(--title);
+    box-shadow: var(--bs);
+    transition: margin-left .125s ease-in-out;
+  }
+  .subscribe-container.active .toggle-thumb{
+    margin-left: calc(var(--smart-unit) * 3);
+  }
+  .subscribe-container.active .toggle-container{
+    background: var(--color-l);
+  }
+</style>
+<div class="subscribe-container">
+  <div class="toggle-container">
+    <div class="toggle-thumb"></div>
+  </div>
+  <p>Receive Notifications</p>
+</div>
 <<
   //https://pusher.com/tutorials/push-notifications-node-service-workers
   function urlBase64ToUint8Array(base64String){
@@ -16,29 +57,38 @@
   var vapidDetails = {};
   vapidDetails.public = (await include('./public_vapid.key')).text;
   var subscribed = localStorage.getItem('subscription') == 'true';
+  var button = document.getElementsByClassName('subscribe-container')[0];
 
-
-  document.getElementsByClassName('subscribe-button')[0].onclick = () => {
-    if(!subscribed) subscribe();
-    else unsubscribe();
+  button.onclick = () => {
+    if(subscribed) unsubscribe();
+    else subscribe();
     subscribed = !subscribed;
     localStorage.setItem('subscription', subscribed ? 'true' : 'false');
+    updateToggle();
   }
+  var updateToggle = () => {
+    if(subscribed) button.classList.add('active');
+    else button.classList.remove('active');
+  }
+  updateToggle();
   var subscribe = async () => {
     if('serviceWorker' in navigator){
-      var register = await navigator.serviceWorker.register('/sw.js', {
+      navigator.serviceWorker.register('/sw.js', {
         scope: '/',
-      });
-      var subscription = await register.pushManager.subscribe({
-        userVisibleOnly: true,
-        applicationServerKey: urlBase64ToUint8Array(vapidDetails.public),
-      });
-      await fetch('/subscribe', {
-        method: 'POST',
-        body: JSON.stringify(subscription),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+      }).then(async register => {
+        //https://stackoverflow.com/questions/39624676/uncaught-in-promise-domexception-subscription-failed-no-active-service-work/39673915
+        if(!register.active) return;
+        var subscription = await register.pushManager.subscribe({
+          userVisibleOnly: true,
+          applicationServerKey: urlBase64ToUint8Array(vapidDetails.public),
+        });
+        await fetch('/subscribe', {
+          method: 'POST',
+          body: JSON.stringify(subscription),
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
       });
     }
   }
