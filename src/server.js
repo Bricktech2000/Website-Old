@@ -30,14 +30,14 @@ app.use(function(req, res, next){
 });
 
 var vapidDetails = {
-  public: fs.readFileSync(path.join('./client/', 'public_vapid.key')),
-  private: fs.readFileSync(path.join('./server/', 'private_vapid.key')),
+  public: fs.readFileSync(path.join('./client/', 'public_vapid.key')).toString().trim(),
+  private: fs.readFileSync(path.join('./server/', 'private_vapid.key')).toString().trim(),
 };
 
 webPush.setVapidDetails(
   'mailto:bricktech2000@gmail.com',
-  vapidDetails.public.toString(),
-  vapidDetails.private.toString()
+  vapidDetails.public,
+  vapidDetails.private,
 );
 var subscription;
 app.post('/subscribe', bodyParser.json(), async function(req, res){

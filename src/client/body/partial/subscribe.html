@@ -55,7 +55,7 @@
   }
 
   var vapidDetails = {};
-  vapidDetails.public = (await include('./public_vapid.key')).text;
+  vapidDetails.public = (await include('./public_vapid.key')).text.trim();
   var subscribed = localStorage.getItem('subscription') == 'true';
   var button = document.getElementsByClassName('subscribe-container')[0];
 
@@ -119,7 +119,6 @@
     });
     var parsed = JSON.parse(pages);
     var info = JSON.parse((await include('../../pages/' + parsed[Object.keys(parsed)[0]] + '/info.json')).text);
-    console.log(info);
     consts.sendNotification({
       title: 'New Post: ' + info.title,
       body: info.desc,
