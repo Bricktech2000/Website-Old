@@ -34,7 +34,7 @@ var MiniML = {
       }
       regexes = regexes.concat([
         {find: /^\\(\\|\[\[|\]\]|\[|\]|\{\{|\}\}|\{|\}|\/|\*)/, replace: (a, b) => `${b}`},
-        {find: /^\n\/\/[^\n]*\n*/, replace: (a) => ``},
+        {find: /^\n(\/\/[^\n]*\n*)+/, replace: (a) => ``},
         {find: /^((\n\t[^\n]*)+)/, replace: (a, b, c) => `<div class="markup-block">${parse([b.replace(/\n\t/g, '\n')], isCode)}</div>`},
         {find: /^\n\[\[([^]*?)\]\]/, replace: (a, c) => `<div class="markup-code-block">${parse([c.replace(/^\n([^\t])|\n$/, (a, b) => b == undefined ? '' : b)], true)}</div>`},
         {find: /^\n<<<?([^]*?)>>>?/, replace: (a, c) => a}, //ignore reUpdate code
